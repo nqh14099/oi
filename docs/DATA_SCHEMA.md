@@ -1,0 +1,29 @@
+# Presentation data contract (T03)
+
+`build/content.json` is canonical presentation content. `build/data-schema.mjs` defines a small native JavaScript descriptor schema, not a JSON Schema implementation. `build/validate-data.mjs` exports the browser-compatible pure `validatePresentation(data)` function, returning `{ valid, errors }`. No dependencies, network, renderer or editor are used. The CLI catches unreadable files and malformed JSON and exits 1 on failure; valid data exits 0.
+
+Run from the repository: `node scripts/validate-presentation.mjs` and `node --test tests/data-validator.test.mjs`. An optional CLI argument selects another JSON file; the default path is resolved relative to the script, independent of the current directory.
+
+## Canonical fields and identity
+
+- Metadata: schemaVersion 1, exact title/course/Topic 6, team member names, English audience/presenter language, Vietnamese editor and Vietnamese gloss disabled by default. Roles/contributions are absent until confirmed; optional `teamAssignments` references existing member names.
+- Chapters and scenes retain numeric IDs in separate entity namespaces. The fixed storyboard is scenes 1–2→chapter 1; 3→2; 4→3; 5→4; 6→5; 7→6; 8–10→7; 11–15→8. Scene kinds also preserve the approved sequence. Arrays define playback order; explicit `order` values must equal their 1-based positions. IDs identify content and must not be regenerated during editing. Reordering fields are representable, but scene/chapter edits must preserve the approved sequence to pass validation.
+- Beat IDs (`s01-b01`, etc.) are globally unique; beat arrays/order are canonical. `label` is editor/navigation metadata. Scene `title`/`subtitle` and beat `audience` heading/body/keys are public text. Optional Vietnamese `audience.gloss` remains gated by the metadata default. `presenter.script`, optional transition/cues/anticipatedQuestions are private speaking materials; notes no longer depend on a parallel array index. Source lists are IDs in `refs`, not citation strings copied into each beat.
+- Optional `timing` records contain seconds, estimated/verified status, and main/quiz clock. Existing values remain estimates, including the 25-second spoken closing. Main estimate is 660 seconds, quiz estimate 300 seconds. Timing can be omitted; no lecturer limit is assumed.
+- Optional beat `claims` reference an audience field (`heading`, `body`, or `keys`) without duplicating its words. Kinds are fact, policy_intention, illustration, demonstrated_outcome. Verification is explicit; verified records require sources, unverified records require uncertainty, illustrations use not_applicable. Existing prose is preserved without automatically classifying or declaring every statement verified. The validator checks relationships/status shape, not source truth; academic gaps remain in CONTENT_AUDIT.md.
+- `refs` retain existing stable IDs/title/url/note. Publisher/date/origin/verification/evidence note are optional until established. A verified source status requires an evidence note; source verification does not automatically verify every claim citing it.
+- `characters` registers one reusable minimal citizen, referenced by scenes 3 and 7. Visual metadata specifies the illustrative maze label, symbolic 63→34 arithmetic and the four service stages plus connected Help. This describes future visuals; no renderer or geographical evidence is supplied.
+
+## Quiz privacy contract
+
+Scenes 11–14 have unique quiz IDs. Only `quiz.audience.question/options` belongs on the pre-submission audience stage. Options have scoped stable IDs A–D. `quiz.assessment.correctAnswerId/explanation` is private before Submit; the fixed answers are D/A/C/B. `behavior` requires after-submit reveal, evaluate-selection Submit, clear-selection-and-feedback Reset, and autoAdvance false. Selected options, submitted flags and feedback are runtime state and must not enter persisted content. The schema rejects assessment fields inserted into the public quiz object. It cannot detect an explanation pasted into arbitrary free text or prove actual UI hiding; runtime tasks must render only the permitted public fields until Submit.
+
+Scene 15 permits only the exact public ending “Thank you for listening”; its private spoken conclusion and citation IDs remain available to the presenter.
+
+## Optional editor/export data
+
+Beat `objects` support text/image IDs and editable stage transforms (position/size/scale/rotation/opacity/font/color/depth/background sensitivity/camera perspective). Objects are absent in current content. Do not copy a heading into an editor object and retain two independently editable versions; editing existing beat text should target its canonical audience field. Image objects reference a shared `assets` registry. Assets require embedded base64 data with matching MIME; optional dimensions and originalAssetId support retained originals without snapshot duplication. Transform values belong to saved content; camera animation, undo stacks and selection do not. Scene layout camera/parallax overrides are optional. Data validation does not decode image bytes or assess visual quality.
+
+## Migration and limits
+
+T03 preserves every previous title, subtitle, beat label/heading/body/key, note, citation record, quiz question/option/explanation and timing value. Parallel notes became per-beat private scripts; numeric correct-answer indices became explicit option IDs. `build/SPEAKER_SCRIPT.md` remains the unchanged printable source/reference until a later task establishes generation/synchronization; the presentation runtime must use content.json, not a second script parser. Existing CSS, shell, original HTML and all assets remain untouched. No presentation build, runtime behavior or academic source verification is claimed by this validation task.
