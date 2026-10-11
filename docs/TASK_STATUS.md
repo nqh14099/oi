@@ -5,7 +5,7 @@ One task per Codex turn. A status is PASS only with the stated evidence; TODO do
 | Task | Status | Evidence / check | Blocker / note |
 |---|---|---|---|
 | T00 | PASS | Read-only inventory; `docs/REPO_AUDIT.md` written | Runtime/build behavior explicitly unverified |
-| T01 | TODO | Not run | — |
+| T01 | PASS | Baseline commit `884743aee1875691d320fc80afadb0c32cd50290`; 40 existing files committed; clean-tree check after documentation commit | No presentation build or validation performed (out of scope) |
 | T02 | TODO | Not run | Draft content exists under `build/`; no acceptance audit yet |
 | T03 | TODO | Not run | — |
 | T04 | TODO | Not run | — |
