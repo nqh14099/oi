@@ -6,7 +6,7 @@ One task per Codex turn. A status is PASS only with the stated evidence; TODO do
 |---|---|---|---|
 | T00 | PASS | Read-only inventory; `docs/REPO_AUDIT.md` written | Runtime/build behavior explicitly unverified |
 | T01 | PASS | Baseline commit `884743aee1875691d320fc80afadb0c32cd50290`; 40 existing files committed; clean-tree check after documentation commit | No presentation build or validation performed (out of scope) |
-| T02 | TODO | Not run | Draft content exists under `build/`; no acceptance audit yet |
+| T02 | PASS | Audit completed in `docs/CONTENT_AUDIT.md`; 15 scenes/8 chapters, 14 source IDs, 4 quizzes and 11+5-minute timing checked; relevant official sources reviewed | Unresolved content/source issues are listed in audit; `content.json` and speaker script intentionally unchanged |
 | T03 | TODO | Not run | — |
 | T04 | TODO | Not run | — |
 | T05 | TODO | Not run | — |
