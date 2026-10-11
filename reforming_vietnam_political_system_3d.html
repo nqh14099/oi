@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#050407">
+<title>Reforming Vietnam's Political System</title>
+<style>
+/* ===== 1. DESIGN TOKENS ===== */
+:root {
+  --bg-deep: #050407;
+  --bg-dark: #100E12;
+  --bg-wine: #1A1015;
+  --wine: #4C0F1E;
+  --wine-light: #6D1427;
+  --red-accent: #B51F3C;
+  --gold: #D7B66D;
+  --gold-light: #F0DDAA;
+  --ivory: #F7F0E5;
+  --text-primary: #F7F0E5;
+  --text-secondary: #C8BEC3;
+  --text-muted: #988C94;
+  --digital: #79C7D2;
+  --positive: #9AC6A1;
+  --ease: cubic-bezier(.2,.8,.2,1);
+  --ease-out: cubic-bezier(.16,1,.3,1);
+  --ease-bounce: cubic-bezier(.34,1.56,.64,1);
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html, body { height:100%; overflow:hidden; background:var(--bg-deep); }
+body {
+  font-family: 'Georgia', 'Times New Roman', 'Palatino Linotype', serif;
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===== 2. CORE LAYOUT ===== */
+#stage { position:fixed; inset:0; overflow:hidden; }
+.slide {
+  position:absolute; inset:0;
+  display:flex; align-items:center; justify-content:center;
+  visibility:hidden; opacity:0;
+  overflow-x:hidden; overflow-y:auto;
+  overscroll-behavior:contain;
+  background:var(--bg-deep);
+  transition: none;
+}
+.slide.active { visibility:visible; opacity:1; z-index:2; }
+.slide.exiting { visibility:visible; z-index:1; }
+
+.slide-inner {
+  width:100%; max-width:1600px;
+  padding: 5vh 5vw 6vh;
+  position:relative; z-index:5;
+  margin:auto;
+}
+
+/* 16:9 stage scaling */
+@media (min-aspect-ratio:16/9) {
+  .slide-inner { max-height:100vh; }
+}
+
+/* ===== 3. TYPOGRAPHY ===== */
+.serif { font-family: 'Georgia', 'Palatino Linotype', 'Times New Roman', serif; }
+.sans { font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; }
+
+h1, h2, h3 { font-family: 'Georgia', 'Palatino Linotype', serif; line-height:1.08; font-weight:700; }
+h1 { font-size:clamp(2.8rem, 6.5vw, 6rem); color:#fff; text-shadow:0 3px 12px rgba(0,0,0,.5); }
+h2 { font-size:clamp(2rem, 4.2vw, 3.8rem); color:#fff; }
+h3 { font-size:clamp(1.2rem, 2vw, 1.8rem); color:var(--gold-light); }
+
+.body-text {
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  font-size:clamp(.9rem, 1.3vw, 1.15rem);
+  line-height:1.7; font-weight:400;
+  color:var(--text-secondary);
+  max-width:60ch;
+}
+
+.kicker {
+  font-family:'Segoe UI', sans-serif;
+  font-size:.78rem; letter-spacing:.35em;
+  text-transform:uppercase; color:var(--gold);
+  margin-bottom:1.2rem;
+  display:flex; align-items:center; gap:.8rem;
+}
+.kicker::before {
+  content:''; width:3rem; height:1px; background:var(--gold);
+  flex:none; transform-origin:left;
+}
+
+.chapter-num {
+  font-family: Georgia, serif;
+  font-size:clamp(5rem, 10vw, 9rem);
+  color:transparent; -webkit-text-stroke:1.5px var(--gold);
+  line-height:.9; margin-bottom:.8rem;
+}
+
+.gold { color:var(--gold); }
+.gold-light { color:var(--gold-light); }
+.red { color:var(--red-accent); }
+.digital-color { color:var(--digital); }
+.muted { color:var(--text-muted); }
+
+.highlight-box {
+  border-left:3px solid var(--gold);
+  padding:.8rem 1.2rem;
+  background:rgba(215,182,109,.08);
+  margin:1rem 0;
+  font-style:italic;
+  color:var(--text-secondary);
+}
+
+.stat-large {
+  font-family:Georgia, serif;
+  font-size:clamp(3rem, 7vw, 6rem);
+  font-weight:700; color:var(--gold-light);
+  line-height:1;
+  text-shadow:0 0 40px rgba(215,182,109,.3);
+}
+
+/* ===== 4. SLIDE BACKGROUNDS ===== */
+.slide-bg {
+  position:absolute; inset:0; z-index:0;
+  overflow:hidden;
+}
+.slide-bg::after {
+  content:''; position:absolute; inset:0;
+  background:radial-gradient(ellipse at center, transparent 50%, rgba(5,4,7,.6) 100%);
+}
+
+.gradient-wine {
+  background:linear-gradient(135deg, var(--bg-deep) 0%, var(--bg-wine) 40%, var(--wine) 100%);
+}
+.gradient-dark {
+  background:linear-gradient(160deg, var(--bg-deep) 0%, #0A0810 50%, var(--bg-dark) 100%);
+}
+.gradient-gold {
+  background:linear-gradient(135deg, var(--bg-deep) 0%, #1A1508 50%, #0D0A04 100%);
+}
+
+/* Grain overlay */
+#grain {
+  position:fixed; inset:0; z-index:400; pointer-events:none; opacity:.04;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  background-size:200px 200px;
+}
+/* Vignette */
+#vignette {
+  position:fixed; inset:0; z-index:399; pointer-events:none;
+  background:radial-gradient(ellipse at center, transparent 45%, rgba(5,4,7,.65) 100%);
+}
+
+/* Watermark */
+.watermark {
+  position:absolute; right:3vw; bottom:2vh; z-index:1;
+  font-family:Georgia,serif; font-size:clamp(5rem, 13vw, 12rem);
+  font-weight:700; color:transparent;
+  -webkit-text-stroke:1px rgba(215,182,109,.06);
+  pointer-events:none; white-space:nowrap; line-height:1;
+}
+
+/* ===== 5. TRANSITIONS & ANIMATIONS ===== */
+/* Entrance animations for active slides */
+.slide.active .anim-up {
+  animation: animUp .9s var(--ease-out) both;
+  animation-delay: calc(var(--d, 0) * 1s);
+}
+@keyframes animUp {
+  from { opacity:0; transform:translateY(40px); filter:blur(4px); }
+}
+
+.slide.active .anim-fade {
+  animation: animFade .8s ease both;
+  animation-delay: calc(var(--d, 0) * 1s);
+}
+@keyframes animFade {
+  from { opacity:0; }
+}
+
+.slide.active .anim-scale {
+  animation: animScale 1s var(--ease-out) both;
+  animation-delay: calc(var(--d, 0) * 1s);
+}
+@keyframes animScale {
+  from { opacity:0; transform:scale(.85); filter:blur(6px); }
+}
+
+.slide.active .anim-left {
+  animation: animLeft .9s var(--ease-out) both;
+  animation-delay: calc(var(--d, 0) * 1s);
+}
+@keyframes animLeft {
+  from { opacity:0; transform:translateX(-60px); }
+}
+
+.slide.active .anim-right {
+  animation: animRight .9s var(--ease-out) both;
+  animation-delay: calc(var(--d, 0) * 1s);
+}
+@keyframes animRight {
+  from { opacity:0; transform:translateX(60px); }
+}
+
+/* Word reveal */
+.word-wrap { display:inline-block; overflow:hidden; vertical-align:top; padding:.15em .04em; margin:-.15em -.04em; }
+.word-wrap > span { display:inline-block; }
+.slide.active .word-wrap > span {
+  animation: wordReveal 1s var(--ease-out) both;
+  animation-delay: calc(var(--wi, 0) * 50ms + .2s);
+}
+@keyframes wordReveal {
+  from { transform:translateY(110%) rotate(4deg); opacity:0; }
+}
+
+/* Line draw for SVG */
+.slide.active .draw-line {
+  animation: drawLine 2s ease both;
+  animation-delay: calc(var(--d, 0) * 1s);
+}
+@keyframes drawLine {
+  from { stroke-dashoffset: var(--len, 500); }
+}
+
+/* Slide transitions */
+@keyframes slideIn-fade { from { opacity:0; transform:scale(1.04); } }
+@keyframes slideIn-wipe { from { clip-path:inset(0 100% 0 0); } }
+@keyframes slideIn-rise { from { transform:translateY(100%); } }
+@keyframes slideIn-circle { from { clip-path:circle(0% at 50% 50%); } to { clip-path:circle(80% at 50% 50%); } }
+@keyframes slideIn-blur { from { opacity:0; transform:scale(.9); filter:blur(12px); } }
+
+.slide.trans-fade.active { animation: slideIn-fade .9s var(--ease-out) both; }
+.slide.trans-wipe.active { animation: slideIn-wipe .9s var(--ease-out) both; }
+.slide.trans-rise.active { animation: slideIn-rise .9s var(--ease-out) both; }
+.slide.trans-circle.active { animation: slideIn-circle 1s var(--ease-out) both; }
+.slide.trans-blur.active { animation: slideIn-blur .9s var(--ease-out) both; }
+
+/* Floating particles */
+.particle {
+  position:absolute; border-radius:50%;
+  background:var(--gold); opacity:0;
+  pointer-events:none;
+  animation: particleFloat var(--dur, 8s) var(--delay, 0s) linear infinite;
+}
+@keyframes particleFloat {
+  0% { transform:translateY(0) translateX(0); opacity:0; }
+  10% { opacity:var(--op, .4); }
+  90% { opacity:var(--op, .4); }
+  100% { transform:translateY(calc(var(--dy, -100vh))) translateX(var(--dx, 30px)); opacity:0; }
+}
+
+/* Glow pulse */
+@keyframes glowPulse {
+  0%, 100% { opacity:.5; transform:scale(1); }
+  50% { opacity:1; transform:scale(1.08); }
+}
+
+/* Counter animation handled by JS */
+
+/* ===== 6. NAVIGATION CONTROLS ===== */
+#progress {
+  position:fixed; top:0; left:0; height:3px;
+  background:linear-gradient(90deg, var(--red-accent), var(--gold));
+  z-index:500; transition:width .5s var(--ease);
+  box-shadow:0 0 10px rgba(215,182,109,.3);
+}
+
+#slide-counter {
+  position:fixed; bottom:2rem; right:3rem; z-index:500;
+  font-family:'Segoe UI',sans-serif;
+  font-size:.75rem; letter-spacing:.3em;
+  color:rgba(215,182,109,.5);
+  pointer-events:none;
+}
+#slide-counter b { color:var(--gold); }
+
+/* Nav buttons (subtle) */
+#nav-prev, #nav-next {
+  position:fixed; top:50%; z-index:500;
+  width:48px; height:48px; border:1px solid rgba(215,182,109,.2);
+  background:rgba(5,4,7,.6); color:var(--gold);
+  border-radius:50%; cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+  font-size:1.2rem; backdrop-filter:blur(8px);
+  opacity:0; transition:opacity .3s, background .3s, transform .3s;
+  transform:translateY(-50%);
+}
+#nav-prev { left:1.5rem; }
+#nav-next { right:1.5rem; }
+#nav-prev:hover, #nav-next:hover {
+  background:rgba(215,182,109,.15); border-color:var(--gold);
+  transform:translateY(-50%) scale(1.1);
+}
+body:hover #nav-prev, body:hover #nav-next { opacity:1; }
+
+/* ===== 7. THUMBNAIL GRID ===== */
+#grid-overlay {
+  position:fixed; inset:0; z-index:600;
+  background:rgba(5,4,7,.95); backdrop-filter:blur(12px);
+  display:none; overflow-y:auto;
+  padding:4vh 4vw;
+}
+#grid-overlay.open { display:block; }
+#grid-overlay h3 {
+  font-family:'Segoe UI',sans-serif;
+  font-size:1rem; letter-spacing:.3em; color:var(--gold);
+  text-transform:uppercase; margin-bottom:2rem;
+}
+#grid-container {
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(220px, 1fr));
+  gap:12px;
+}
+.grid-thumb {
+  background:rgba(26,16,21,.6); border:1px solid rgba(215,182,109,.1);
+  border-radius:6px; padding:1rem; cursor:pointer;
+  transition:border-color .3s, background .3s, transform .3s;
+  min-height:90px;
+}
+.grid-thumb:hover { border-color:var(--gold); background:rgba(215,182,109,.05); transform:translateY(-2px); }
+.grid-thumb.current { border-color:var(--gold); border-width:2px; }
+.grid-thumb b { color:var(--gold); font-size:.85rem; display:block; margin-bottom:.3rem; }
+.grid-thumb small { color:var(--text-muted); font-size:.72rem; font-family:'Segoe UI',sans-serif; display:block; }
+#grid-close {
+  position:fixed; top:2rem; right:2rem; z-index:601;
+  background:none; border:1px solid var(--gold);
+  color:var(--gold); padding:.5rem 1rem;
+  cursor:pointer; font-size:.85rem; border-radius:4px;
+  font-family:'Segoe UI',sans-serif;
+}
+#grid-close:hover { background:var(--gold); color:var(--bg-deep); }
+
+/* ===== 8. QUIZ STYLES ===== */
+.quiz-container {
+  max-width:700px; margin:0 auto;
+}
+.quiz-option {
+  display:block; width:100%;
+  padding:1rem 1.4rem;
+  margin:.6rem 0;
+  background:rgba(215,182,109,.05);
+  border:1px solid rgba(215,182,109,.15);
+  border-radius:8px; cursor:pointer;
+  color:var(--text-primary);
+  font-family:'Segoe UI',sans-serif;
+  font-size:clamp(.9rem, 1.2vw, 1.05rem);
+  text-align:left;
+  transition:all .3s;
+}
+.quiz-option:hover { border-color:var(--gold); background:rgba(215,182,109,.1); transform:translateX(6px); }
+.quiz-option.selected { border-color:var(--gold); background:rgba(215,182,109,.12); }
+.quiz-option.correct { border-color:var(--positive); background:rgba(154,198,161,.15); color:#fff; }
+.quiz-option.wrong { border-color:var(--red-accent); background:rgba(181,31,60,.12); opacity:.6; }
+.quiz-submit {
+  display:inline-block; margin-top:1rem;
+  padding:.7rem 2rem;
+  background:var(--gold); color:var(--bg-deep);
+  border:none; border-radius:6px; cursor:pointer;
+  font-family:'Segoe UI',sans-serif;
+  font-weight:600; font-size:.9rem;
+  letter-spacing:.1em;
+  transition:background .3s, transform .3s;
+}
+.quiz-submit:hover { background:var(--gold-light); transform:translateY(-2px); }
+.quiz-submit:disabled { opacity:.4; cursor:default; transform:none; }
+.quiz-result {
+  margin-top:1.2rem; padding:1rem 1.4rem;
+  border-radius:8px; display:none;
+  font-family:'Segoe UI',sans-serif;
+  font-size:.95rem; line-height:1.6;
+}
+.quiz-result.show { display:block; }
+.quiz-result.pass { background:rgba(154,198,161,.1); border:1px solid var(--positive); }
+.quiz-result.fail { background:rgba(181,31,60,.08); border:1px solid var(--red-accent); }
+
+/* ===== 9. EDITING PANEL ===== */
+#edit-panel {
+  position:fixed; right:0; top:0; bottom:0; width:320px;
+  background:rgba(16,14,18,.96); border-left:1px solid rgba(215,182,109,.15);
+  z-index:700; transform:translateX(100%);
+  transition:transform .4s var(--ease-out);
+  overflow-y:auto; padding:1.5rem;
+  font-family:'Segoe UI',sans-serif;
+  backdrop-filter:blur(12px);
+}
+#edit-panel.open { transform:translateX(0); }
+#edit-panel h3 { color:var(--gold); font-size:1rem; margin-bottom:1rem; letter-spacing:.1em; }
+#edit-panel label {
+  display:block; color:var(--text-muted); font-size:.78rem;
+  margin-top:.8rem; margin-bottom:.3rem; letter-spacing:.05em;
+}
+#edit-panel input[type="range"] {
+  width:100%; accent-color:var(--gold); background:transparent;
+}
+#edit-panel input[type="color"] {
+  width:40px; height:28px; border:1px solid rgba(215,182,109,.2);
+  background:transparent; cursor:pointer; border-radius:4px;
+}
+.edit-btn {
+  display:inline-block; padding:.45rem .9rem;
+  background:rgba(215,182,109,.1); border:1px solid rgba(215,182,109,.2);
+  color:var(--gold); border-radius:4px; cursor:pointer;
+  font-size:.78rem; margin:.3rem .2rem;
+  font-family:'Segoe UI',sans-serif;
+  transition:all .2s;
+}
+.edit-btn:hover { background:var(--gold); color:var(--bg-deep); }
+.edit-status {
+  font-size:.72rem; color:var(--text-muted);
+  margin-top:.6rem; padding:.4rem;
+  border-top:1px solid rgba(215,182,109,.08);
+}
+.edit-instruction {
+  font-size:.7rem; color:var(--text-muted);
+  margin-bottom:1rem; line-height:1.5;
+  font-style:italic;
+}
+
+/* Selection outline in edit mode */
+body.editing .editable:hover { outline:1px dashed rgba(215,182,109,.3); outline-offset:4px; cursor:move; }
+body.editing .editable.selected { outline:2px solid var(--gold); outline-offset:4px; }
+
+/* Validation report */
+#validation-report {
+  position:fixed; left:50%; top:50%;
+  transform:translate(-50%,-50%);
+  background:rgba(16,14,18,.98); border:1px solid rgba(215,182,109,.2);
+  border-radius:12px; padding:2rem;
+  max-width:600px; width:90%; max-height:80vh; overflow-y:auto;
+  z-index:800; display:none;
+  font-family:'Segoe UI',sans-serif;
+  box-shadow:0 30px 80px rgba(0,0,0,.8);
+}
+#validation-report.open { display:block; }
+#validation-report h3 { color:var(--gold); margin-bottom:1rem; }
+.val-item { padding:.5rem 0; border-bottom:1px solid rgba(215,182,109,.06); font-size:.85rem; }
+.val-error { color:var(--red-accent); }
+.val-warn { color:var(--gold); }
+.val-ok { color:var(--positive); }
+
+/* ===== 10. MAP SLIDE SPECIAL ===== */
+.map-stage {
+  position:absolute; inset:0;
+  display:flex; align-items:center; justify-content:center;
+  overflow:hidden;
+}
+.map-container {
+  position:relative;
+  transition:transform 1.5s var(--ease), opacity 1s ease;
+}
+.map-container img {
+  max-height:75vh; max-width:55vw;
+  object-fit:contain;
+  filter:drop-shadow(0 0 30px rgba(215,182,109,.15));
+  border-radius:4px;
+}
+.map-label {
+  position:absolute; font-family:Georgia,serif;
+  font-weight:700; text-shadow:0 2px 10px rgba(0,0,0,.8);
+}
+.map-badge {
+  position:absolute;
+  padding:.6rem 1.6rem;
+  font-family:'Segoe UI',sans-serif;
+  font-size:.75rem; letter-spacing:.3em;
+  text-transform:uppercase;
+  border:1px solid rgba(215,182,109,.3);
+  background:rgba(5,4,7,.7);
+  backdrop-filter:blur(8px);
+  border-radius:4px;
+}
+
+/* Phase indicators for map */
+.phase-indicator {
+  position:absolute; bottom:4vh; left:50%;
+  transform:translateX(-50%);
+  display:flex; gap:1rem; z-index:10;
+}
+.phase-dot {
+  width:8px; height:8px; border-radius:50%;
+  border:1px solid var(--gold);
+  background:transparent;
+  transition:all .3s;
+  cursor:pointer;
+}
+.phase-dot.active { background:var(--gold); box-shadow:0 0 8px rgba(215,182,109,.5); }
+
+/* ===== 11. FIRE EFFECT (Slide 6) ===== */
+.fire-container {
+  position:absolute; bottom:0; left:50%; transform:translateX(-50%);
+  width:400px; height:350px;
+  pointer-events:none; z-index:2;
+}
+
+/* ===== 12. TWO-COLUMN LAYOUTS ===== */
+.grid-2col {
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:3rem; align-items:center;
+}
+.grid-2col-wide {
+  display:grid; grid-template-columns:55fr 45fr;
+  gap:4rem; align-items:start;
+}
+.grid-3col {
+  display:grid; grid-template-columns:repeat(3, 1fr);
+  gap:2rem;
+}
+
+/* Cards */
+.content-card {
+  padding:1.5rem; border-radius:8px;
+  background:rgba(215,182,109,.03);
+  border:1px solid rgba(215,182,109,.08);
+  transition:transform .4s var(--ease-out), border-color .3s;
+}
+.content-card:hover { transform:translateY(-4px); border-color:rgba(215,182,109,.2); }
+.content-card h3 { margin-bottom:.6rem; }
+
+/* Timeline */
+.timeline { position:relative; padding-left:3rem; }
+.timeline::before {
+  content:''; position:absolute; left:.7rem; top:0; bottom:0;
+  width:2px; background:linear-gradient(var(--gold), rgba(215,182,109,.1));
+}
+.timeline-item { position:relative; margin-bottom:2rem; }
+.timeline-item::before {
+  content:''; position:absolute; left:-2.55rem; top:.4rem;
+  width:12px; height:12px; border-radius:50%;
+  border:2px solid var(--gold); background:var(--bg-deep);
+}
+.timeline-item.active::before { background:var(--gold); }
+
+/* ===== 13. DISCUSSION SLIDE ===== */
+.discussion-card {
+  padding:2rem; border-radius:10px;
+  background:rgba(215,182,109,.04);
+  border:1px solid rgba(215,182,109,.1);
+  cursor:pointer;
+  transition:all .4s var(--ease-out);
+}
+.discussion-card:hover, .discussion-card.focused {
+  border-color:var(--gold);
+  background:rgba(215,182,109,.08);
+  transform:translateY(-4px);
+  box-shadow:0 12px 40px rgba(0,0,0,.3);
+}
+.discussion-prompt {
+  max-height:0; overflow:hidden;
+  transition:max-height .5s var(--ease-out), opacity .3s;
+  opacity:0;
+}
+.discussion-card.focused .discussion-prompt {
+  max-height:200px; opacity:1;
+  margin-top:1rem; padding-top:1rem;
+  border-top:1px solid rgba(215,182,109,.15);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width:900px) {
+  .grid-2col, .grid-2col-wide, .grid-3col { grid-template-columns:1fr; }
+  .slide-inner { padding:4vh 6vw; }
+  h1 { font-size:clamp(2rem, 8vw, 3.5rem); }
+}
+@media (max-width:600px) {
+  #nav-prev, #nav-next { display:none; }
+  #edit-panel { width:100%; }
+}
+
+/* ===== REDUCED MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration:.01ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:.01ms !important;
+  }
+  .particle { display:none; }
+}
+</style>
+</head>
+<body>
+<!-- Grain & Vignette overlays -->
+<div id="grain"></div>
+<div id="vignette"></div>
+
+<!-- Progress bar -->
+<div id="progress" style="width:0%"></div>
+
+<!-- Navigation arrows -->
+<button id="nav-prev" aria-label="Previous slide">&#8592;</button>
+<button id="nav-next" aria-label="Next slide">&#8594;</button>
+
+<!-- Slide counter -->
+<div id="slide-counter"><b>01</b> / 17</div>
+
+<!-- Main stage -->
+<div id="stage">
+
+<!-- ========== SLIDE 1: CINEMATIC COVER ========== -->
+<div class="slide trans-blur" id="slide-1" data-title="Reforming Vietnam's Political System">
+  <div class="slide-bg gradient-wine">
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 30% 40%, rgba(181,31,60,.12), transparent 60%), radial-gradient(ellipse at 70% 60%, rgba(215,182,109,.08), transparent 50%);"></div>
+  </div>
+  <canvas id="cover-canvas" style="position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none;"></canvas>
+  <div class="slide-inner" style="text-align:center; display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:80vh;">
+    <div class="anim-up" style="--d:0">
+      <div class="kicker" style="justify-content:center;"><span>Political Theory · Group Presentation</span></div>
+    </div>
+    <h1 class="anim-up" style="--d:.15; margin-bottom:1.5rem;">
+      Reforming Vietnam's<br><em style="font-style:italic; color:var(--gold-light);">Political System</em>
+    </h1>
+    <div class="anim-up body-text" style="--d:.35; max-width:50ch; margin:0 auto; text-align:center;">
+      <p style="color:var(--text-secondary); font-size:clamp(1rem,1.5vw,1.2rem);">Why reform is necessary. What is changing. What students can contribute.</p>
+    </div>
+    <div class="anim-up" style="--d:.55; margin-top:2.5rem; display:flex; gap:2rem; flex-wrap:wrap; justify-content:center;">
+      <span style="padding:.5rem 1.2rem; border:1px solid rgba(215,182,109,.25); border-radius:20px; font-family:'Segoe UI',sans-serif; font-size:.75rem; letter-spacing:.2em; color:var(--gold);">A More Effective State</span>
+      <span style="padding:.5rem 1.2rem; border:1px solid rgba(215,182,109,.25); border-radius:20px; font-family:'Segoe UI',sans-serif; font-size:.75rem; letter-spacing:.2em; color:var(--gold);">A Better Public Experience</span>
+      <span style="padding:.5rem 1.2rem; border:1px solid rgba(181,31,60,.3); border-radius:20px; font-family:'Segoe UI',sans-serif; font-size:.75rem; letter-spacing:.2em; color:var(--red-accent);">10–12 Minutes</span>
+    </div>
+    <!-- SVG Institutional illustration -->
+    <div class="anim-scale" style="--d:.6; margin-top:2rem; width:min(60vw,500px); opacity:.3;">
+      <svg viewBox="0 0 600 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M300 10L100 50H500L300 10Z" stroke="var(--gold)" stroke-width="1.5" opacity=".5"/>
+        <rect x="120" y="50" width="360" height="5" fill="var(--gold)" opacity=".2"/>
+        <rect x="140" y="55" width="30" height="55" stroke="var(--gold)" stroke-width="1" opacity=".3"/>
+        <rect x="200" y="55" width="30" height="55" stroke="var(--gold)" stroke-width="1" opacity=".3"/>
+        <rect x="260" y="55" width="30" height="55" stroke="var(--gold)" stroke-width="1" opacity=".3"/>
+        <rect x="320" y="55" width="30" height="55" stroke="var(--gold)" stroke-width="1" opacity=".3"/>
+        <rect x="380" y="55" width="30" height="55" stroke="var(--gold)" stroke-width="1" opacity=".3"/>
+        <rect x="440" y="55" width="30" height="55" stroke="var(--gold)" stroke-width="1" opacity=".3"/>
+        <rect x="100" y="110" width="400" height="6" fill="var(--gold)" opacity=".15"/>
+      </svg>
+    </div>
+  </div>
+  <div class="watermark">REFORM</div>
+</div>
+
+<!-- ========== SLIDE 2: PART 01 - WHY REFORM? ========== -->
+<div class="slide trans-wipe" id="slide-2" data-title="Part 01: Why Does Reform Matter?">
+  <div class="slide-bg gradient-dark"></div>
+  <div class="slide-inner" style="display:flex; flex-direction:column; justify-content:center; min-height:80vh;">
+    <div class="chapter-num anim-up" style="--d:0">01</div>
+    <div class="kicker anim-up" style="--d:.1">PART ONE</div>
+    <h1 class="anim-up" style="--d:.2; max-width:14ch;">Why does reform matter?</h1>
+    <div class="anim-up body-text" style="--d:.4; margin-top:1.5rem;">
+      <p>As society changes, institutions must keep pace.</p>
+    </div>
+    <div class="anim-up" style="--d:.6; margin-top:3rem;">
+      <div class="highlight-box" style="max-width:600px; font-size:clamp(1.1rem,1.8vw,1.4rem); font-weight:600; font-style:normal; color:var(--gold-light); border-left-color:var(--red-accent);">
+        REFORM IS A PROCESS, NOT A SINGLE DECISION.
+      </div>
+    </div>
+  </div>
+  <div class="watermark">01</div>
+</div>
+
+<!-- ========== SLIDE 3: THREE FORCES FOR REFORM ========== -->
+<div class="slide trans-fade" id="slide-3" data-title="Three Forces for Reform">
+  <div class="slide-bg gradient-wine"></div>
+  <div class="slide-inner">
+    <div class="kicker anim-up" style="--d:0">PART 01 · DRIVERS OF CHANGE</div>
+    <h2 class="anim-up" style="--d:.1; margin-bottom:2rem;">Three Forces for Reform</h2>
+    <div class="grid-3col" style="margin-bottom:2rem;">
+      <div class="content-card anim-up" style="--d:.2">
+        <div style="font-size:2.5rem; color:var(--gold); margin-bottom:.5rem;">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5"><path d="M3 21h18M3 7l9-4 9 4M4 7v10h16V7"/><path d="M9 21V11h6v10" opacity=".6"/></svg>
+        </div>
+        <h3>Economic Change</h3>
+        <p class="body-text" style="max-width:none;">A market economy needs institutions that are responsive, predictable, and able to coordinate complex decisions.</p>
+      </div>
+      <div class="content-card anim-up" style="--d:.35">
+        <div style="font-size:2.5rem; color:var(--gold); margin-bottom:.5rem;">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <h3>Administrative Efficiency</h3>
+        <p class="body-text" style="max-width:none;">Overlapping duties and unclear accountability can slow decisions and make procedures harder to navigate.</p>
+      </div>
+      <div class="content-card anim-up" style="--d:.5">
+        <div style="font-size:2.5rem; color:var(--gold); margin-bottom:.5rem;">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2c3 3 4.5 6 4.5 10s-1.5 7-4.5 10c-3-3-4.5-6-4.5-10S9 5 12 2z"/></svg>
+        </div>
+        <h3>Global Integration</h3>
+        <p class="body-text" style="max-width:none;">International cooperation and investment benefit from transparent rules, consistent enforcement, and reliable services.</p>
+      </div>
+    </div>
+    <div class="anim-up" style="--d:.65; text-align:center; margin-top:1rem;">
+      <div style="font-family:Georgia,serif; font-size:clamp(1.5rem,3vw,2.5rem); font-weight:700; letter-spacing:.15em; color:var(--gold-light);">
+        ADAPTABILITY · CLARITY · TRUST
+      </div>
+    </div>
+    <div class="anim-up highlight-box" style="--d:.8; max-width:600px; margin:1.5rem auto 0;">
+      "Clear responsibility should enable lawful decisions, not create a culture of fear."
+    </div>
+  </div>
+</div>
+
+<!-- ========== SLIDE 4: PART 02 - REFORM IN ACTION ========== -->
+<div class="slide trans-circle" id="slide-4" data-title="Part 02: Reform in Action">
+  <div class="slide-bg gradient-gold"></div>
+  <div class="slide-inner" style="display:flex; flex-direction:column; justify-content:center; min-height:80vh;">
+    <div class="chapter-num anim-up" style="--d:0">02</div>
+    <div class="kicker anim-up" style="--d:.1">PART TWO</div>
+    <h1 class="anim-up" style="--d:.2; max-width:16ch;">Reform in action.</h1>
+    <div class="anim-up body-text" style="--d:.4; margin-top:1.5rem;">
+      <p>Three practical examples:</p>
+    </div>
+    <div class="anim-up" style="--d:.5; margin-top:2rem; display:flex; gap:2rem; flex-wrap:wrap;">
+      <div style="display:flex; align-items:center; gap:.8rem;">
+        <span style="width:36px;height:36px;border-radius:50%;border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:Georgia,serif;font-weight:700;color:var(--gold);font-size:.9rem;">1</span>
+        <span class="body-text" style="font-weight:600;color:var(--text-primary);">Administrative restructuring</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:.8rem;">
+        <span style="width:36px;height:36px;border-radius:50%;border:2px solid var(--red-accent);display:flex;align-items:center;justify-content:center;font-family:Georgia,serif;font-weight:700;color:var(--red-accent);font-size:.9rem;">2</span>
+        <span class="body-text" style="font-weight:600;color:var(--text-primary);">Integrity</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:.8rem;">
+        <span style="width:36px;height:36px;border-radius:50%;border:2px solid var(--digital);display:flex;align-items:center;justify-content:center;font-family:Georgia,serif;font-weight:700;color:var(--digital);font-size:.9rem;">3</span>
+        <span class="body-text" style="font-weight:600;color:var(--text-primary);">Digital services</span>
+      </div>
+    </div>
+  </div>
+  <div class="watermark">02</div>
+</div>
+
+<!-- ========== SLIDE 5: ADMINISTRATIVE RESTRUCTURING: 63 → 34 ========== -->
+<div class="slide trans-blur" id="slide-5" data-title="Administrative Restructuring: 63 to 34">
+  <div class="slide-bg" style="background:radial-gradient(ellipse at 50% 50%, #120810 0%, #080406 60%, #030204 100%);"></div>
+  <canvas id="map-canvas" style="position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none;"></canvas>
+  <div class="slide-inner" style="position:relative; z-index:5;">
+    <!-- Map Slide Content managed by JS phases -->
+    <div id="map-slide-content">
+      <!-- HUD top -->
+      <div class="anim-up" style="--d:0; position:absolute; top:3vh; left:5vw; z-index:10;">
+        <div class="kicker">PART 02 · ADMINISTRATIVE RESTRUCTURING</div>
+        <h2 style="font-size:clamp(1.5rem,3vw,2.5rem);">63 → 34</h2>
+        <p class="body-text" style="font-size:.85rem; margin-top:.3rem;"><em>A simpler structure, closer to citizens.</em></p>
+      </div>
+      <!-- Map display area -->
+      <div style="display:flex; align-items:center; justify-content:center; min-height:72vh; gap:3rem; flex-wrap:wrap; padding-top:10vh;">
+        <!-- BEFORE map -->
+        <div id="map-before" class="anim-left" style="--d:.3; text-align:center; transition:opacity 1s, transform 1s;">
+          <div class="map-badge" style="position:relative; margin-bottom:.8rem;">BEFORE</div>
+          <div style="position:relative; display:inline-block;">
+            <img id="img-map63" alt="Vietnam 63 provinces map" style="max-height:55vh; max-width:28vw; object-fit:contain; border-radius:4px; filter:drop-shadow(0 0 25px rgba(181,31,60,.2)); border:1px solid rgba(215,182,109,.1);">
+            <div style="position:absolute;inset:0;box-shadow:inset 0 0 40px rgba(5,4,7,.5);border-radius:4px;pointer-events:none;"></div>
+          </div>
+          <div style="margin-top:.8rem;">
+            <span class="stat-large" style="font-size:clamp(2.5rem,5vw,4rem);">63</span>
+            <p class="body-text" style="font-size:.8rem; margin-top:.3rem;">provincial-level units</p>
+          </div>
+        </div>
+        <!-- Arrow -->
+        <div class="anim-fade" style="--d:.6; color:var(--gold); font-size:2.5rem; padding:0 1rem;">
+          <svg width="60" height="40" viewBox="0 0 60 40" fill="none"><path d="M5 20h45M40 10l12 10-12 10" stroke="var(--gold)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <!-- AFTER map -->
+        <div id="map-after" class="anim-right" style="--d:.4; text-align:center; transition:opacity 1s, transform 1s;">
+          <div class="map-badge" style="position:relative; margin-bottom:.8rem;">AFTER</div>
+          <div style="position:relative; display:inline-block;">
+            <img id="img-map34" alt="Vietnam 34 provinces map after merger" style="max-height:55vh; max-width:28vw; object-fit:contain; border-radius:4px; filter:drop-shadow(0 0 25px rgba(215,182,109,.2)); border:1px solid rgba(215,182,109,.15);">
+            <div style="position:absolute;inset:0;box-shadow:inset 0 0 40px rgba(5,4,7,.5);border-radius:4px;pointer-events:none;"></div>
+          </div>
+          <div style="margin-top:.8rem;">
+            <span class="stat-large" style="font-size:clamp(2.5rem,5vw,4rem); color:var(--gold);">34</span>
+            <p class="body-text" style="font-size:.8rem; margin-top:.3rem;">provincial-level units</p>
+          </div>
+        </div>
+      </div>
+      <!-- Bottom info -->
+      <div class="anim-up" style="--d:.8; position:absolute; bottom:4vh; left:5vw; right:5vw; z-index:10;">
+        <div style="display:flex; justify-content:space-between; align-items:end; flex-wrap:wrap; gap:1rem;">
+          <div>
+            <p class="body-text" style="font-size:.82rem;">The new two-tier local government model began operating on <strong style="color:var(--gold-light);">1 July 2025</strong>.</p>
+            <div style="margin-top:.8rem; display:flex; gap:1.5rem; align-items:center;">
+              <div style="text-align:center; padding:.5rem 1rem; border:1px solid rgba(215,182,109,.15); border-radius:6px;">
+                <div style="font-family:Georgia,serif; font-weight:700; color:var(--gold-light); font-size:.9rem;">Provincial / City Level</div>
+              </div>
+              <span style="color:var(--gold); font-size:1.5rem;">↓</span>
+              <div style="text-align:center; padding:.5rem 1rem; border:1px solid rgba(215,182,109,.15); border-radius:6px;">
+                <div style="font-family:Georgia,serif; font-weight:700; color:var(--gold-light); font-size:.9rem;">Commune / Ward Level</div>
+              </div>
+            </div>
+            <p style="margin-top:.5rem; font-family:'Segoe UI',sans-serif; font-size:.78rem; color:var(--red-accent); font-weight:600; letter-spacing:.05em;">DISTRICT-LEVEL ADMINISTRATION ABOLISHED</p>
+            <div style="margin-top:.6rem; display:flex; gap:2rem; flex-wrap:wrap;">
+              <div class="body-text" style="font-size:.78rem;"><strong style="color:var(--positive);">Potential benefit:</strong> Fewer administrative layers.</div>
+              <div class="body-text" style="font-size:.78rem;"><strong style="color:var(--gold);">Real test:</strong> Simpler services and clear local responsibility.</div>
+            </div>
+          </div>
+          <div class="body-text" style="font-size:.68rem; color:var(--text-muted); text-align:right;">[1] Provincial-level administrative restructuring</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== SLIDE 6: ANTI-CORRUPTION & INTEGRITY ========== -->
+<div class="slide trans-wipe" id="slide-6" data-title="Anti-Corruption and Integrity">
+  <div class="slide-bg" style="background:linear-gradient(180deg, #0A0406 0%, #180810 40%, #200A10 80%, #0A0406 100%);"></div>
+  <canvas id="fire-canvas" style="position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none;"></canvas>
+  <div class="slide-inner" style="position:relative; z-index:5;">
+    <div class="kicker anim-up" style="--d:0">PART 02 · INTEGRITY</div>
+    <h2 class="anim-up" style="--d:.15; margin-bottom:.5rem;">Enforcement must be matched<br>by prevention.</h2>
+    <div class="anim-up" style="--d:.25; margin-bottom:2rem;">
+      <span style="font-family:Georgia,serif; font-size:clamp(1.2rem,2vw,1.6rem); font-weight:700; color:var(--red-accent); letter-spacing:.15em;">NO EXCEPTIONS.</span>
+    </div>
+    <div class="grid-3col" style="max-width:900px;">
+      <div class="content-card anim-up" style="--d:.35; border-color:rgba(181,31,60,.2); background:rgba(181,31,60,.05);">
+        <div style="font-family:Georgia,serif; font-size:2rem; color:var(--red-accent); font-weight:700; margin-bottom:.5rem;">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--red-accent)" stroke-width="2"><path d="M12 3c1 4 5 5 5 10a5 5 0 01-10 0c0-2 1-3 2-4 0 2 1 3 2 3 0-3-1-5 1-9z"/></svg>
+        </div>
+        <h3 style="color:var(--red-accent);">Enforce</h3>
+        <p class="body-text" style="max-width:none; font-size:.88rem;">Investigate misconduct and apply rules consistently.</p>
+      </div>
+      <div class="content-card anim-up" style="--d:.5; border-color:rgba(215,182,109,.15);">
+        <div style="font-family:Georgia,serif; font-size:2rem; color:var(--gold); font-weight:700; margin-bottom:.5rem;">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><path d="M12 3l8 3v5c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg>
+        </div>
+        <h3>Prevent</h3>
+        <p class="body-text" style="max-width:none; font-size:.88rem;">Improve institutions, laws, oversight, and accountability.</p>
+      </div>
+      <div class="content-card anim-up" style="--d:.65; border-color:rgba(240,221,170,.15);">
+        <div style="font-family:Georgia,serif; font-size:2rem; color:var(--gold-light); font-weight:700; margin-bottom:.5rem;">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--gold-light)" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/><path d="M11 8v6M8 11h6"/></svg>
+        </div>
+        <h3 style="color:var(--gold-light);">Disclose</h3>
+        <p class="body-text" style="max-width:none; font-size:.88rem;">Use asset and income declarations with verification and follow-up.</p>
+      </div>
+    </div>
+    <div class="anim-up" style="--d:.8; margin-top:1rem; text-align:right;">
+      <span class="body-text" style="font-size:.68rem; color:var(--text-muted);">[2] Asset and income control</span>
+    </div>
+  </div>
+</div>
+
+<!-- ========== SLIDE 7: DIGITAL TRANSFORMATION ========== -->
+<div class="slide trans-fade" id="slide-7" data-title="Digital Transformation and Services">
+  <div class="slide-bg" style="background:linear-gradient(135deg, #050407 0%, #081015 50%, #050A10 100%);"></div>
+  <div class="slide-inner">
+    <div class="kicker anim-up" style="--d:0">PART 02 · DIGITAL SERVICES</div>
+    <h2 class="anim-up" style="--d:.1; margin-bottom:2rem;">Make public services<br>easier to access.</h2>
+    <div class="grid-2col">
+      <div>
+        <div class="anim-left" style="--d:.2;">
+          <div style="display:flex; gap:1.5rem; margin-bottom:1.5rem; align-items:flex-start;">
+            <div style="min-width:44px;height:44px;border-radius:50%;background:rgba(121,199,210,.12);border:1px solid rgba(121,199,210,.3);display:flex;align-items:center;justify-content:center;font-family:Georgia,serif;font-weight:700;color:var(--digital);font-size:1rem;">1</div>
+            <div><h3 style="color:var(--digital); font-size:1.1rem;">Access online</h3><p class="body-text" style="font-size:.85rem;">Submit applications through a single digital portal.</p></div>
+          </div>
+          <div style="display:flex; gap:1.5rem; margin-bottom:1.5rem; align-items:flex-start;">
+            <div style="min-width:44px;height:44px;border-radius:50%;background:rgba(121,199,210,.12);border:1px solid rgba(121,199,210,.3);display:flex;align-items:center;justify-content:center;font-family:Georgia,serif;font-weight:700;color:var(--digital);font-size:1rem;">2</div>
+            <div><h3 style="color:var(--digital); font-size:1.1rem;">Reuse data</h3><p class="body-text" style="font-size:.85rem;">Citizens should not need to resubmit documents the government already holds.</p></div>
+          </div>
+          <div style="display:flex; gap:1.5rem; margin-bottom:1.5rem; align-items:flex-start;">
+            <div style="min-width:44px;height:44px;border-radius:50%;background:rgba(121,199,210,.12);border:1px solid rgba(121,199,210,.3);display:flex;align-items:center;justify-content:center;font-family:Georgia,serif;font-weight:700;color:var(--digital);font-size:1rem;">3</div>
+            <div><h3 style="color:var(--digital); font-size:1.1rem;">Track progress</h3><p class="body-text" style="font-size:.85rem;">Every request has a visible status and estimated timeline.</p></div>
+          </div>
+          <div style="display:flex; gap:1.5rem; align-items:flex-start;">
+            <div style="min-width:44px;height:44px;border-radius:50%;background:rgba(121,199,210,.12);border:1px solid rgba(121,199,210,.3);display:flex;align-items:center;justify-content:center;font-family:Georgia,serif;font-weight:700;color:var(--digital);font-size:1rem;">4</div>
+            <div><h3 style="color:var(--digital); font-size:1.1rem;">Leave a trail</h3><p class="body-text" style="font-size:.85rem;">Decisions are recorded and auditable.</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="anim-right" style="--d:.4;">
+        <!-- Digital SVG illustration -->
+        <svg viewBox="0 0 400 320" fill="none" style="width:100%; max-height:45vh;">
+          <rect x="60" y="40" width="280" height="180" rx="12" stroke="var(--digital)" stroke-width="1.5" opacity=".4"/>
+          <rect x="80" y="60" width="240" height="140" rx="6" fill="rgba(121,199,210,.04)" stroke="rgba(121,199,210,.15)" stroke-width="1"/>
+          <circle cx="200" cy="130" r="30" stroke="var(--digital)" stroke-width="1.5" opacity=".5"/>
+          <path d="M190 130l7 7 13-14" stroke="var(--digital)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <line x1="100" y1="85" x2="180" y2="85" stroke="rgba(121,199,210,.3)" stroke-width="2"/>
+          <line x1="100" y1="95" x2="155" y2="95" stroke="rgba(121,199,210,.2)" stroke-width="2"/>
+          <line x1="220" y1="180" x2="300" y2="180" stroke="rgba(121,199,210,.3)" stroke-width="2"/>
+          <!-- Connection lines -->
+          <circle cx="100" cy="270" r="16" stroke="var(--digital)" stroke-width="1" opacity=".5"/>
+          <circle cx="200" cy="270" r="16" stroke="var(--digital)" stroke-width="1" opacity=".5"/>
+          <circle cx="300" cy="270" r="16" stroke="var(--digital)" stroke-width="1" opacity=".5"/>
+          <line x1="116" y1="270" x2="184" y2="270" stroke="var(--digital)" stroke-width="1" stroke-dasharray="4 4" opacity=".4"/>
+          <line x1="216" y1="270" x2="284" y2="270" stroke="var(--digital)" stroke-width="1" stroke-dasharray="4 4" opacity=".4"/>
+          <line x1="200" y1="220" x2="200" y2="254" stroke="var(--digital)" stroke-width="1" stroke-dasharray="4 4" opacity=".4"/>
+          <text x="100" y="274" fill="var(--digital)" font-size="10" text-anchor="middle" font-family="Segoe UI, sans-serif">📱</text>
+          <text x="200" y="274" fill="var(--digital)" font-size="10" text-anchor="middle" font-family="Segoe UI, sans-serif">🏛️</text>
+          <text x="300" y="274" fill="var(--digital)" font-size="10" text-anchor="middle" font-family="Segoe UI, sans-serif">👤</text>
+          <text x="100" y="298" fill="rgba(121,199,210,.6)" font-size="9" text-anchor="middle" font-family="Segoe UI, sans-serif">Online</text>
+          <text x="200" y="298" fill="rgba(121,199,210,.6)" font-size="9" text-anchor="middle" font-family="Segoe UI, sans-serif">Government</text>
+          <text x="300" y="298" fill="rgba(121,199,210,.6)" font-size="9" text-anchor="middle" font-family="Segoe UI, sans-serif">Citizen</text>
+        </svg>
+        <div style="margin-top:1rem; padding:.8rem; background:rgba(121,199,210,.05); border:1px solid rgba(121,199,210,.12); border-radius:6px;">
+          <p class="body-text" style="font-size:.82rem; max-width:none;">Hanoi's 2026 digital public-service plan covers <strong style="color:var(--digital);">126 communes and wards</strong>. <span style="color:var(--text-muted); font-size:.7rem;">[3]</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="anim-up highlight-box" style="--d:.7; max-width:650px; margin-top:1.5rem; border-left-color:var(--digital);">
+      Digital services should not exclude people who need in-person support.
+    </div>
+  </div>
+</div>
+
+<!-- ========== SLIDE 8: PART 03 - WHAT CAN STUDENTS DO? ========== -->
+<div class="slide trans-circle" id="slide-8" data-title="Part 03: What Can Students Do?">
+  <div class="slide-bg gradient-wine"></div>
+  <div class="slide-inner" style="display:flex; flex-direction:column; justify-content:center; min-height:80vh;">
+    <div class="chapter-num anim-up" style="--d:0">03</div>
+    <div class="kicker anim-up" style="--d:.1">PART THREE</div>
+    <h1 class="anim-up" style="--d:.2; max-width:16ch;">What can students do?</h1>
+    <div class="anim-up body-text" style="--d:.4; margin-top:1.5rem; max-width:50ch;">
+      <p>Reform becomes meaningful when everyday conduct supports the same values.</p>
+    </div>
+  </div>
+  <div class="watermark">03</div>
+</div>
+
+<!-- ========== SLIDE 9: OUR GROUP'S RESPONSIBILITIES ========== -->
+<div class="slide trans-fade" id="slide-9" data-title="Our Group's Responsibilities">
+  <div class="slide-bg gradient-dark"></div>
+  <div class="slide-inner">
+    <div class="kicker anim-up" style="--d:0">PART 03 · STUDENT RESPONSIBILITY</div>
+    <h2 class="anim-up" style="--d:.1; margin-bottom:2rem;">Our Group's Responsibilities</h2>
+    <div class="grid-3col" style="max-width:1000px;">
+      <div class="content-card anim-up" style="--d:.25; border-top:3px solid var(--gold); padding-top:2rem;">
+        <div style="font-family:Georgia,serif; font-size:2.5rem; color:var(--gold); font-weight:700; margin-bottom:.5rem; opacity:.4;">01</div>
+        <h3>Learn Deeply</h3>
+        <p style="font-size:.7rem; color:var(--text-muted); letter-spacing:.15em; text-transform:uppercase; margin-bottom:.5rem;">Academic Focus</p>
+        <p class="body-text" style="max-width:none; font-size:.88rem;">Understand policy frameworks. Check sources. Ask how a policy affects real people.</p>
+      </div>
+      <div class="content-card anim-up" style="--d:.4; border-top:3px solid var(--red-accent); padding-top:2rem;">
+        <div style="font-family:Georgia,serif; font-size:2.5rem; color:var(--red-accent); font-weight:700; margin-bottom:.5rem; opacity:.4;">02</div>
+        <h3 style="color:var(--red-accent);">Participate</h3>
+        <p style="font-size:.7rem; color:var(--text-muted); letter-spacing:.15em; text-transform:uppercase; margin-bottom:.5rem;">Civic Duty</p>
+        <p class="body-text" style="max-width:none; font-size:.88rem;">Join community service, student activities, and constructive dialogue about shared problems.</p>
+      </div>
+      <div class="content-card anim-up" style="--d:.55; border-top:3px solid var(--positive); padding-top:2rem;">
+        <div style="font-family:Georgia,serif; font-size:2.5rem; color:var(--positive); font-weight:700; margin-bottom:.5rem; opacity:.4;">03</div>
+        <h3 style="color:var(--positive);">Act with Integrity</h3>
+        <p style="font-size:.7rem; color:var(--text-muted); letter-spacing:.15em; text-transform:uppercase; margin-bottom:.5rem;">Personal Ethics</p>
+        <p class="body-text" style="max-width:none; font-size:.88rem;">Avoid plagiarism, do not offer or accept unfair favors, and handle group work transparently.</p>
+      </div>
+    </div>
+    <div class="anim-up highlight-box" style="--d:.7; max-width:700px; margin:1.5rem auto 0;">
+      Make decisions traceable: record contributions, cite sources, and explain how shared work was done.
+    </div>
+    <!-- Connecting SVG -->
+    <div class="anim-fade" style="--d:.8; text-align:center; margin-top:1rem; opacity:.4;">
+      <svg viewBox="0 0 400 40" fill="none" style="width:min(80%,500px);">
+        <circle cx="80" cy="20" r="8" fill="var(--gold)" opacity=".5"/><circle cx="200" cy="20" r="8" fill="var(--red-accent)" opacity=".5"/><circle cx="320" cy="20" r="8" fill="var(--positive)" opacity=".5"/>
+        <line x1="88" y1="20" x2="192" y2="20" stroke="rgba(215,182,109,.3)" stroke-width="1.5" stroke-dasharray="6 4"/>
+        <line x1="208" y1="20" x2="312" y2="20" stroke="rgba(215,182,109,.3)" stroke-width="1.5" stroke-dasharray="6 4"/>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<!-- ========== SLIDE 10: LONG-TERM DEVELOPMENT VISION ========== -->
+<div class="slide trans-wipe" id="slide-10" data-title="Long-Term Development Vision">
+  <div class="slide-bg gradient-gold"></div>
+  <div class="slide-inner">
+    <div class="kicker anim-up" style="--d:0">VISION</div>
+    <h2 class="anim-up" style="--d:.1; margin-bottom:.8rem;">Reform should improve<br>people's lives.</h2>
+    <div class="anim-up highlight-box" style="--d:.2; max-width:650px; font-weight:500; border-left-color:var(--gold-light);">
+      Institutional effectiveness is a means. Sustainable development and public well-being are the ends.
+    </div>
+    <div class="timeline anim-up" style="--d:.35; margin-top:2.5rem; max-width:700px;">
+      <div class="timeline-item active">
+        <div style="display:flex; align-items:baseline; gap:1rem; margin-bottom:.3rem;">
+          <span style="font-family:Georgia,serif; font-size:clamp(1.5rem,3vw,2.2rem); font-weight:700; color:var(--gold-light);">2025–26</span>
+          <span class="body-text" style="font-weight:600; color:var(--text-primary);">System Reform</span>
+        </div>
+        <p class="body-text" style="font-size:.85rem;">Administrative restructuring, institutional realignment, and the 14th National Party Congress (2026). <span style="font-size:.7rem; color:var(--text-muted);">[4]</span></p>
+      </div>
+      <div class="timeline-item">
+        <div style="display:flex; align-items:baseline; gap:1rem; margin-bottom:.3rem;">
+          <span style="font-family:Georgia,serif; font-size:clamp(1.5rem,3vw,2.2rem); font-weight:700; color:var(--gold);">2030</span>
+          <span class="body-text" style="font-weight:600; color:var(--text-primary);">Modern Industry Goal</span>
+        </div>
+        <p class="body-text" style="font-size:.85rem;">Developing modern industry and achieving upper-middle-income status — a national goal.</p>
+      </div>
+      <div class="timeline-item">
+        <div style="display:flex; align-items:baseline; gap:1rem; margin-bottom:.3rem;">
+          <span style="font-family:Georgia,serif; font-size:clamp(1.5rem,3vw,2.2rem); font-weight:700; color:var(--gold);">2045</span>
+          <span class="body-text" style="font-weight:600; color:var(--text-primary);">A Developed Nation</span>
+        </div>
+        <p class="body-text" style="font-size:.85rem;">A developed, high-income country — a long-term aspiration.</p>
+      </div>
+    </div>
+    <div class="anim-up body-text" style="--d:.6; margin-top:1rem; font-size:.75rem; color:var(--text-muted);">
+      These are national development goals, not completed achievements. [4]
+    </div>
+  </div>
+</div>

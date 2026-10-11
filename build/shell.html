@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark"><title>REFORMING VIETNAM’S POLITICAL SYSTEM</title><style id="app-style">__CSS__</style></head>
+<body>
+<main id="viewport" aria-label="Presentation"><div id="stage"><canvas id="world" aria-hidden="true"></canvas><canvas id="fallback" aria-hidden="true"></canvas><div class="scrim"></div><div id="content"></div><div id="added"></div><div id="scene-foot"><span id="source-line"></span><span id="scene-label"></span></div><div id="beat-line"></div></div></main>
+<nav id="controls" aria-label="Presentation controls"><button data-action="prev" title="Previous beat (Left)">←</button><button data-action="overview" title="Overview (G)" id="counter">01 / 15</button><button data-action="next" title="Next beat (Space)">→</button><span class="nav-divider"></span><button data-action="replay" title="Replay (R)">Replay</button><button data-action="audio" title="Sound (M)" id="sound-button">Sound off</button><button data-action="notes" title="Presenter notes (N)">Notes</button><button data-action="fullscreen" title="Fullscreen (F)">Full screen</button><button data-action="settings" title="Settings and guide">Settings</button><button data-action="edit" title="Chỉnh sửa (E)">Edit</button></nav>
+<div id="toast" role="status" aria-live="polite"></div>
+<dialog id="modal"><div class="modal-head"><h2 id="modal-title"></h2><button id="close-modal" aria-label="Close">×</button></div><div id="modal-body"></div></dialog>
+<aside id="editor" lang="vi" hidden aria-label="Chỉnh sửa slide"><header><h2>Chỉnh sửa slide</h2><button data-action="edit" aria-label="Đóng chỉnh sửa">×</button></header><p id="edit-status">Chưa có thay đổi</p><label>Đối tượng<select id="object-select"></select></label><label>Nội dung<textarea id="object-text" rows="3"></textarea></label><div id="sliders"></div><label>Màu chữ<input id="object-color" type="color" value="#f5eee3"></label><div class="edit-buttons"><button id="replace-image">Thay ảnh</button><button id="remove-bg">Xóa nền</button><button id="add-text">Thêm chữ</button><button id="add-image">Thêm ảnh</button><button id="undo">Hoàn tác</button><button id="redo">Làm lại</button><button id="validate">Kiểm tra</button><button id="edit-data">Quiz / notes / nhóm</button></div><button id="save-file" class="primary">Lưu file HTML</button><p class="small">Click để chọn. Kéo ảnh trực tiếp; giữ Shift để kéo chữ. Ctrl+Z / Ctrl+Y để hoàn tác / làm lại. Ảnh thay thế giữ tỷ lệ.</p></aside>
+<input id="image-input" type="file" accept="image/png,image/jpeg,image/webp" hidden>
+<div id="presenter" hidden></div>
+<script id="presentation-data" type="application/json">__DATA__</script>
+<script id="three-runtime">__THREE__</script>
+<script id="world-engine">__WORLD__</script>
+<script id="app-runtime">__APP__</script>
+</body></html>

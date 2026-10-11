@@ -1,0 +1,15 @@
+# Local dependencies and transient tool caches
+node_modules/
+.cache/
+.vite/
+
+# Generated delivery and test output (source files in build/ stay tracked)
+/dist/
+/coverage/
+/playwright-report/
+/test-results/
+
+# Operating-system metadata
+.DS_Store
+Thumbs.db
+Desktop.ini
