@@ -1,0 +1,85 @@
+{
+  "checks": [
+    {
+      "name": "15 scenes and 37 beats",
+      "pass": true
+    },
+    {
+      "name": "academic data unchanged",
+      "pass": true
+    },
+    {
+      "name": "beat 0 selected book and navigation",
+      "pass": true
+    },
+    {
+      "name": "beat 0 actual WebGL2",
+      "pass": true
+    },
+    {
+      "name": "beat 0 visible year",
+      "pass": true
+    },
+    {
+      "name": "beat 0 replay deterministic",
+      "pass": true
+    },
+    {
+      "name": "beat 1 selected book and navigation",
+      "pass": true
+    },
+    {
+      "name": "beat 1 actual WebGL2",
+      "pass": true
+    },
+    {
+      "name": "beat 1 visible year",
+      "pass": true
+    },
+    {
+      "name": "beat 1 replay deterministic",
+      "pass": true
+    },
+    {
+      "name": "beat 2 selected book and navigation",
+      "pass": true
+    },
+    {
+      "name": "beat 2 actual WebGL2",
+      "pass": true
+    },
+    {
+      "name": "beat 2 visible year",
+      "pass": true
+    },
+    {
+      "name": "beat 2 replay deterministic",
+      "pass": true
+    },
+    {
+      "name": "Previous book",
+      "pass": true
+    },
+    {
+      "name": "Previous boundary",
+      "pass": true
+    },
+    {
+      "name": "Next boundary",
+      "pass": true
+    },
+    {
+      "name": "next into existing map",
+      "pass": true
+    },
+    {
+      "name": "no app or browser errors",
+      "pass": true
+    },
+    {
+      "name": "reference HTML unchanged",
+      "pass": true
+    }
+  ],
+  "errors": []
+}

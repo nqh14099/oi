@@ -1,0 +1,65 @@
+/* Scene 7 only. The 1600×900 board makes motion geometry independent of screen size. */
+body[data-scene="7"] #world,body[data-scene="7"] #fallback,body[data-scene="7"] .stage-atmosphere{visibility:hidden}
+body[data-scene="7"] #content.is-transitioning{animation:none;opacity:1;transform:none}
+.scene.pressure-scene{padding:0;overflow:hidden;background:#0c0d10;color:#eee8dc;isolation:isolate}
+.pressure-board{position:absolute;inset:0 auto auto 0;width:1600px;height:900px;transform-origin:0 0;background:radial-gradient(ellipse at 78% 40%,#24161c 0,transparent 60%),linear-gradient(110deg,#0b0d11,#141315)}
+.pressure-board:after{content:"";position:absolute;inset:0;pointer-events:none;z-index:30;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23fff' filter='url(%23n)' d='M0 0h90v90H0z'/%3E%3C/svg%3E")}
+.pressure-kicker{position:absolute;left:80px;top:64px;right:80px;z-index:22;font:500 12px/1.4 'Segoe UI',Arial,sans-serif;letter-spacing:3px;color:#c7ae85}
+.pressure-kicker span{float:right;color:#a69f92;letter-spacing:2px;font-size:11px}
+.pressure-images,.pressure-connections{position:absolute;inset:0;width:1600px;height:900px}
+.pressure-images{z-index:4}.pressure-connections{z-index:1;overflow:visible;fill:none;stroke-width:1.3;pointer-events:none}
+.pressure-link{stroke:#bca471;opacity:.5}
+.pressure-guide{stroke:url(#pressure-gold);stroke-width:2;stroke-dasharray:1;stroke-dashoffset:1;opacity:0}
+.pressure-bottleneck{stroke:#d58b7e;stroke-width:2;opacity:0}
+.pressure-frame{position:absolute;top:0;left:0;margin:0;transform-origin:0 0;box-sizing:border-box;will-change:transform;width:300px;height:200px}
+.pressure-surface{position:absolute;inset:0;overflow:hidden;border:1px solid #c2a67e60;background:#141b20;box-shadow:0 20px 50px #0009,0 2px 7px #0008;transform-origin:50% 50%}
+.pressure-frame img{display:block;width:100%;height:100%;object-fit:cover;filter:saturate(.8) brightness(1.12);user-select:none}
+.pressure-tint{position:absolute;inset:0;background:linear-gradient(0deg,#06090ded,transparent 42%,#08090a14);pointer-events:none}
+.pressure-placeholder{position:absolute;top:12px;left:12px;padding:4px 6px;background:#080c11c9;color:#bfb9ac;font:9px/1.1 'Segoe UI',Arial,sans-serif;letter-spacing:1.5px}
+.pressure-frame figcaption{position:absolute;left:15px;right:12px;bottom:13px;display:flex;align-items:baseline;gap:12px;font:400 23px/1.15 Georgia,serif;color:#f0e9dc;text-shadow:0 1px 4px #000}
+.pressure-index{font:10px/1 'Segoe UI',Arial,sans-serif;letter-spacing:1px;color:#cbb88f}
+.pressure-copy{position:absolute;z-index:20;left:80px;top:245px;width:490px;pointer-events:auto}
+.pressure-section-label{font:500 12px/1.5 'Segoe UI',Arial,sans-serif;letter-spacing:2.6px;text-transform:uppercase;color:#c9a676;margin-bottom:26px}
+.pressure-title{margin:0;font:400 100px/.98 Georgia,'Times New Roman',serif;letter-spacing:-4px;text-wrap:balance;color:#f0e8d8}
+.pressure-body{margin:32px 0 0;max-width:420px;font:400 20px/1.55 'Segoe UI',Arial,sans-serif;color:#c2bab0}
+.pressure-evidence{display:flex;flex-direction:column;gap:8px;margin-top:28px;padding-left:16px;border-left:1px solid #8e7050;color:#bba887;font:12px/1.5 'Segoe UI',Arial,sans-serif;letter-spacing:.5px}
+.pressure-echo{position:absolute;left:80px;top:290px;z-index:19;font:400 92px/1 Georgia,serif;letter-spacing:-3px;color:#ddcfbc;transform-origin:left center;opacity:0}
+.pressure-strain-label{position:absolute;left:1100px;top:760px;z-index:19;opacity:0;color:#d2a698;font:10px/1 'Segoe UI',Arial,sans-serif;letter-spacing:2px;transform:rotate(-90deg);transform-origin:left center;white-space:nowrap}
+.pressure-strain-label span{display:inline-block;width:42px;height:1px;background:currentColor;vertical-align:middle;margin-right:12px}
+.pressure-bottom{position:absolute;left:80px;right:80px;bottom:32px;z-index:25;display:flex;justify-content:space-between;color:#b0a698;font:11px/1.4 'Segoe UI',Arial,sans-serif;letter-spacing:.3px}
+.pressure-hold{font-size:9px;letter-spacing:2px;color:#81786b}
+.pressure-scene[data-pressure-beat="1"] .pressure-copy{top:222px;width:490px}
+.pressure-scene[data-pressure-beat="1"] .pressure-title{font-size:89px;line-height:1.02;letter-spacing:-3.8px}
+.pressure-scene[data-pressure-beat="1"] .pressure-body{font-size:19px;margin-top:26px;max-width:410px}
+.pressure-scene[data-pressure-beat="1"] .pressure-section-label{color:#d49a88}
+.pressure-scene[data-pressure-beat="2"] .pressure-copy,.pressure-scene[data-pressure-beat="3"] .pressure-copy{left:105px;top:115px;width:1375px}
+.pressure-scene[data-pressure-beat="2"] .pressure-title{font-size:76px;letter-spacing:-2.7px;line-height:1.03;max-width:1250px}
+.pressure-scene[data-pressure-beat="2"] .pressure-section-label,.pressure-scene[data-pressure-beat="3"] .pressure-section-label{margin-bottom:15px}
+.pressure-scene[data-pressure-beat="2"] .pressure-body{margin-top:20px;max-width:1100px;font-size:19px}
+.pressure-scene[data-pressure-beat="2"] .pressure-evidence{position:absolute;left:0;top:682px;flex-direction:row;gap:40px;margin:0;border:0;padding:0;font-size:14px}
+.pressure-scene[data-pressure-beat="3"] .pressure-title{font-size:65px;line-height:1.01;letter-spacing:-1.8px;max-width:1320px}
+.pressure-scene[data-pressure-beat="3"] .pressure-body{margin-top:16px;max-width:1250px;font-size:18px}
+.pressure-scene[data-pressure-beat="3"] .pressure-evidence{position:absolute;left:0;top:614px;max-width:245px;border-left:1px solid #94764c;padding-left:14px}
+.pressure-scene[data-pressure-beat="3"] .pressure-frame[data-pressure-id="citizens"] figcaption{font-size:31px;bottom:22px;left:25px}
+.pressure-scene[data-pressure-beat="3"] .pressure-frame:nth-child(n+6) figcaption{font-size:17px;gap:7px;bottom:8px}
+.pressure-scene[data-pressure-beat="3"] .pressure-frame:nth-child(n+6) .pressure-placeholder{font-size:7px;top:7px;left:7px}
+@media(max-width:700px) and (orientation:portrait){
+  body[data-scene="7"] #stage{aspect-ratio:auto;height:auto;min-height:100svh;padding-top:0;overflow:visible}
+  body[data-scene="7"] #content{position:relative;height:auto;min-height:100svh}
+  .scene.pressure-scene{position:relative;min-height:100svh;overflow:hidden;padding:0!important}
+  .pressure-board{position:relative;width:100%;height:auto;min-height:100svh;padding:65px 22px 100px;box-sizing:border-box;display:flex;flex-direction:column}
+  .pressure-kicker{position:relative;inset:auto;font-size:9px;letter-spacing:1.5px;order:0}.pressure-kicker span{display:none}
+  .pressure-scene .pressure-copy{position:relative;inset:auto!important;width:auto!important;order:1;margin:32px 0 28px}
+  .pressure-scene .pressure-section-label{font-size:10px;margin-bottom:15px}
+  .pressure-scene .pressure-title{font-size:clamp(38px,10.5vw,64px)!important;line-height:1.02!important;letter-spacing:-1.5px!important}
+  .pressure-scene .pressure-body{font-size:16px!important;line-height:1.5;margin-top:20px!important}
+  .pressure-scene .pressure-evidence{position:relative!important;inset:auto!important;flex-direction:column!important;margin-top:20px!important;padding-left:13px!important;gap:6px!important;font-size:12px!important;max-width:none!important;border-left:1px solid #957a51!important}
+  .pressure-images{position:relative;inset:auto;width:auto;height:auto;display:grid;grid-template-columns:1fr 1fr;gap:15px;order:2}
+  .pressure-frame{position:relative;width:100%!important;height:160px!important;transform:none!important;opacity:1!important}
+  .pressure-frame:first-child,.pressure-frame[data-pressure-id="citizens"]{grid-column:1/-1;height:225px!important}
+  .pressure-frame[aria-hidden="true"]{display:none}.pressure-frame figcaption{font-size:16px!important;left:9px!important;bottom:10px!important;gap:5px!important}
+  .pressure-placeholder{font-size:7px;top:7px;left:7px;letter-spacing:.5px}.pressure-index{font-size:8px}
+  .pressure-connections,.pressure-echo,.pressure-strain-label{display:none}
+  .pressure-bottom{position:relative;inset:auto;order:3;margin-top:25px;font-size:10px}.pressure-hold{display:none}
+  .pressure-surface{box-shadow:0 8px 20px #0005}
+}

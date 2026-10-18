@@ -1,0 +1,100 @@
+[
+  {
+    "scene": 2,
+    "beat": 0,
+    "field": "heading",
+    "before": "Party leadership",
+    "after": "Party leadership"
+  },
+  {
+    "scene": 2,
+    "beat": 1,
+    "field": "heading",
+    "before": "Different roles. Shared public purpose.",
+    "after": "Distinct roles. A shared purpose."
+  },
+  {
+    "scene": 2,
+    "beat": 2,
+    "field": "heading",
+    "before": "The people’s mastery",
+    "after": "People at the centre"
+  },
+  {
+    "scene": 3,
+    "beat": 2,
+    "field": "heading",
+    "before": "Make the path clearer",
+    "after": "Clarify the route"
+  },
+  {
+    "scene": 3,
+    "beat": 2,
+    "field": "body",
+    "before": "Clear responsibility. Better coordination.",
+    "after": "One lead for each task. Coordinated support."
+  },
+  {
+    "scene": 7,
+    "beat": 0,
+    "field": "heading",
+    "before": "Know where to submit",
+    "after": "Start in the right place"
+  },
+  {
+    "scene": 7,
+    "beat": 1,
+    "field": "heading",
+    "before": "Know what happens next",
+    "after": "One application. Connected work."
+  },
+  {
+    "scene": 7,
+    "beat": 2,
+    "field": "heading",
+    "before": "Know the status",
+    "after": "See where your application stands"
+  },
+  {
+    "scene": 7,
+    "beat": 3,
+    "field": "heading",
+    "before": "Reach a clear outcome",
+    "after": "Receive the result"
+  },
+  {
+    "scene": 8,
+    "beat": 0,
+    "field": "heading",
+    "before": "What can students contribute?",
+    "after": "Our responsibility starts here"
+  },
+  {
+    "scene": 8,
+    "beat": 0,
+    "field": "body",
+    "before": "From understanding reform to taking responsibility.",
+    "after": "Understand the reform. Take responsibility for our work."
+  },
+  {
+    "scene": 9,
+    "beat": 0,
+    "field": "heading",
+    "before": "Learn deeply",
+    "after": "Understand. Verify. Explain."
+  },
+  {
+    "scene": 9,
+    "beat": 1,
+    "field": "heading",
+    "before": "Participate",
+    "after": "Share the work. Support the team."
+  },
+  {
+    "scene": 9,
+    "beat": 2,
+    "field": "heading",
+    "before": "Act with integrity",
+    "after": "Present what the evidence supports."
+  }
+]

@@ -134,27 +134,37 @@ Source notes: REPORT14, DECREE130, TEXTBOOK
 
 Textbook lessons: pp. 404–405, building the Party and political system and controlling power; pp. 405–406, people’s needs; p. 406, responsibility, coordination and practical implementation. Selected lessons are paraphrases, not the full conclusion of the textbook.
 
-## Scene 7: The journey continues
+## Scene 7: The system can’t stay still
 
 Planned time: 90 seconds. Speaker: __________
 
-### Beat 1: Submit
+### Beat 1: A changing Vietnam
 
-Our citizen returns. The first question is practical: where do I submit? An online portal helps only if people can use it. Hands-on support belongs inside the same service journey. The person who cannot use the portal should still have a practical route to complete the task.
+Vietnam’s economy, cities and digital services are changing. New needs place new demands on public institutions. Each incoming frame stands for a demand: investment, coordination, skills or support. This moving layout is a visual metaphor. It is not a simulation of Vietnam’s political system.
 
-### Beat 2: Process
+Transition: What happens when these demands arrive together?
 
-Next comes processing. Reusing information where permitted can reduce repeated effort. The illustration does not claim a specific legal procedure or a guaranteed processing time.
+### Beat 2: The pressure is real
 
-### Beat 3: Track
+There is a documented implementation challenge. Dispatch 111, dated 17 July 2025, reported unstable information systems and gaps in data sharing during the first half of July. It called for technical fixes and staff training. These were reported early difficulties, not evidence of collapse. Can the system keep up?
 
-People also need to follow progress and find help. Hanoi’s plan covers digital public-service skills across 126 communes and wards. The city has also called for mobile digital-literacy support. These are implementation measures, not proof that everyone has received assistance.
+Cue: Pause at the bottleneck and let the final question land. The source covers 1–15 July 2025; do not generalise it to all places or the present day.
 
-### Beat 4: Receive
+Transition: The response must change how work is organised.
 
-At the end, the person should know how to receive the result. The 2024 PAPI findings report gaps in digital access before the 2025 restructuring. They remind us to examine different people’s experiences. The lesson of taking the people as the root means asking whether residents can actually use the service.
+### Beat 3: Reform the framework
 
-Source notes: HANOI12, HANOI126, HANOICAMPAIGN, PAPI2024, TEXTBOOK
+Reform must change how work is organised. Resolution 18 calls for one agency to lead each task. Clear responsibility needs coordination, capable staff and accountability. The same frames now find room to work together. Their movement illustrates a policy direction; it does not prove that services have already improved.
+
+Transition: The test is what people can actually do.
+
+### Beat 4: Built to respond
+
+The goal is better service for people. Hanoi’s digital-service plan includes hands-on assistance across 126 communes and wards. Such measures need evaluation. PAPI’s 2024 findings concern earlier digital-access gaps, not the results of the 2025 reforms. Ask whether people can submit, track and receive results, with help when needed. Our responsibility begins with explaining this honestly.
+
+Transition: What responsibilities does that give us as students?
+
+Source notes: HANOI12, HANOI126, HANOICAMPAIGN, PAPI2024, TEXTBOOK, NQ18, CD1112025. NQ18 provides the one-task/one-lead principle; CD1112025 supplies a dated implementation challenge and corrective measures. Hanoi support is planned implementation, not universal access. PAPI data predates the July 2025 changes. The moving frames are illustrative; they are not measured workloads, a simulation of collapse, or demonstrated reform outcomes. Submit → Process → Track → Receive and connected Help remain practical service-evaluation questions.
 
 ## Scene 8: What can students contribute?
 
@@ -351,6 +361,7 @@ These are consistent editorial translations, not a claim that every phrase is an
 - **CONGRESS14 — Nghị quyết Đại hội XIV** ([source](https://tulieuvankien.dangcongsan.vn/tin-hoat-dong/nghi-quyet-dai-hoi-dai-bieu-toan-quoc-lan-thu-xiv-cua-dang.html)). 2030 and 2045 development goals; future targets are labelled Goal, not achieved outcomes.
 - **WB2045 — World Bank — Viet Nam 2045: Breaking Through** ([source](https://www.worldbank.org/en/country/vietnam/publication/viet-nam-2045-breaking-through-institutions-for-a-high-income-future)). Publication overview: institutional function and implementation capacity. Analytical perspective, not an impact evaluation of the 2025 provincial mergers.
 - **PAPI2024 — UNDP — 2024 PAPI findings, 15 April 2025** ([source](https://www.undp.org/vietnam/press-releases/new-papi-report-government-reforms-offer-historic-opportunity-enhance-local-governance-all)). Full press release read 11 October 2026. Reports differences in citizen experience and digital access. Data predates the July 2025 changes; no claim about post-merger results. No survey statistics used here.
+- **CD1112025 — Công điện 111/CĐ-TTg — 17 July 2025** ([source](https://baochinhphu.vn/cong-dien-cua-thu-tuong-chinh-phu-ve-tap-trung-thao-go-kho-khan-vuong-mac-trong-thuc-hien-thu-tuc-hanh-chinh-chuyen-doi-so-giai-doan-dau-van-hanh-mo-hinh-to-chuc-chinh-quyen-dia-phuong-02-cap-102250718091931018.htm)). Full official text read 18 October 2026: opening assessment of difficulties during 1–15 July 2025; sections I.2/I.7 and III.2(c)/IV.1 address data coordination and training. This dated example is not a current nationwide assessment or proof that corrective measures succeeded.
 
 ## Source and presentation limits
 

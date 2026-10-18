@@ -1,0 +1,26 @@
+{
+  "state": {
+    "sceneId": 7,
+    "sceneIndex": 6,
+    "beatId": "s07-b02",
+    "beatIndex": 1,
+    "transition": {
+      "version": 3,
+      "status": "idle"
+    },
+    "destroyed": false
+  },
+  "errors": [],
+  "world": {
+    "initialized": true,
+    "destroyed": false,
+    "mode": "webgl",
+    "reason": null,
+    "quality": "high",
+    "reducedMotion": false,
+    "paused": false,
+    "activeSceneId": 7,
+    "width": 1600,
+    "height": 900
+  }
+}

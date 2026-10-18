@@ -1,0 +1,5415 @@
+{
+  "checks": [
+    {
+      "name": "desktop scene 1 beat 0 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "desktop scene 1 beat 1 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "desktop scene 2 beat 0 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "desktop scene 2 beat 1 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "desktop scene 2 beat 2 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "desktop scene 3 beat 0 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "desktop scene 3 beat 1 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "desktop scene 3 beat 2 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "desktop scene 3 beat 3 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "desktop scene 3 beat 4 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "desktop scene 3 beat 5 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "desktop scene 4 beat 0 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "desktop scene 4 beat 1 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "desktop scene 4 beat 2 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "desktop scene 5 beat 0 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "desktop scene 5 beat 1 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "desktop scene 5 beat 2 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "desktop scene 5 beat 3 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "desktop scene 6 beat 0 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "desktop scene 6 beat 1 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "desktop scene 6 beat 2 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "desktop scene 7 beat 0 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "desktop scene 7 beat 1 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "desktop scene 7 beat 2 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "desktop scene 7 beat 3 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "desktop scene 8 beat 0 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "desktop scene 9 beat 0 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "desktop scene 9 beat 1 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "desktop scene 9 beat 2 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "desktop scene 10 beat 0 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "desktop scene 10 beat 1 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "desktop scene 10 beat 2 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "desktop scene 11 beat 0 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "desktop scene 12 beat 0 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "desktop scene 13 beat 0 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "desktop scene 14 beat 0 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "desktop scene 15 beat 0 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "portrait scene 1 beat 0 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "portrait scene 1 beat 1 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "portrait scene 2 beat 0 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "portrait scene 2 beat 1 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "portrait scene 2 beat 2 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "portrait scene 3 beat 0 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "portrait scene 3 beat 1 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "portrait scene 3 beat 2 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "portrait scene 3 beat 3 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "portrait scene 3 beat 4 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "portrait scene 3 beat 5 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "portrait scene 4 beat 0 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "portrait scene 4 beat 1 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "portrait scene 4 beat 2 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "portrait scene 5 beat 0 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "portrait scene 5 beat 1 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "portrait scene 5 beat 2 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "portrait scene 5 beat 3 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "portrait scene 6 beat 0 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "portrait scene 6 beat 1 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "portrait scene 6 beat 2 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "portrait scene 7 beat 0 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "portrait scene 7 beat 1 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "portrait scene 7 beat 2 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "portrait scene 7 beat 3 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "portrait scene 8 beat 0 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "portrait scene 9 beat 0 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "portrait scene 9 beat 1 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "portrait scene 9 beat 2 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "portrait scene 10 beat 0 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "portrait scene 10 beat 1 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "portrait scene 10 beat 2 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "portrait scene 11 beat 0 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "portrait scene 12 beat 0 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "portrait scene 13 beat 0 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "portrait scene 14 beat 0 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "portrait scene 15 beat 0 coverage/final/overflow",
+      "pass": true
+    },
+    {
+      "name": "normal motion starts",
+      "pass": true
+    },
+    {
+      "name": "intermediate motion sampled",
+      "pass": true
+    },
+    {
+      "name": "animation settles exactly",
+      "pass": true
+    },
+    {
+      "name": "canonical text unchanged throughout animation",
+      "pass": true
+    },
+    {
+      "name": "number geometry stable",
+      "pass": true
+    },
+    {
+      "name": "replay restarts",
+      "pass": true
+    },
+    {
+      "name": "previous snaps final",
+      "pass": true
+    },
+    {
+      "name": "rapid navigation stable",
+      "pass": true
+    },
+    {
+      "name": "map progress drives 34",
+      "pass": true
+    },
+    {
+      "name": "map final exact",
+      "pass": true
+    },
+    {
+      "name": "quiz 11 selection does not restart",
+      "pass": true
+    },
+    {
+      "name": "quiz 11 explanation hidden",
+      "pass": true
+    },
+    {
+      "name": "quiz 11 correct",
+      "pass": true
+    },
+    {
+      "name": "quiz 11 new explanation animates",
+      "pass": true
+    },
+    {
+      "name": "quiz 12 selection does not restart",
+      "pass": true
+    },
+    {
+      "name": "quiz 12 explanation hidden",
+      "pass": true
+    },
+    {
+      "name": "quiz 12 correct",
+      "pass": true
+    },
+    {
+      "name": "quiz 12 new explanation animates",
+      "pass": true
+    },
+    {
+      "name": "quiz 13 selection does not restart",
+      "pass": true
+    },
+    {
+      "name": "quiz 13 explanation hidden",
+      "pass": true
+    },
+    {
+      "name": "quiz 13 correct",
+      "pass": true
+    },
+    {
+      "name": "quiz 13 new explanation animates",
+      "pass": true
+    },
+    {
+      "name": "quiz 14 selection does not restart",
+      "pass": true
+    },
+    {
+      "name": "quiz 14 explanation hidden",
+      "pass": true
+    },
+    {
+      "name": "quiz 14 correct",
+      "pass": true
+    },
+    {
+      "name": "quiz 14 new explanation animates",
+      "pass": true
+    },
+    {
+      "name": "academic data untouched",
+      "pass": true
+    },
+    {
+      "name": "countdown decimal grouping prefix suffix pause update cancel",
+      "pass": true
+    },
+    {
+      "name": "no browser exceptions",
+      "pass": true
+    }
+  ],
+  "inventory": [
+    {
+      "size": "desktop",
+      "scene": 1,
+      "beat": 0,
+      "numbers": [
+        {
+          "text": "6",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "01",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "01",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "01",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "desktop",
+      "scene": 1,
+      "beat": 1,
+      "numbers": [
+        {
+          "text": "01",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "01",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "01",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "desktop",
+      "scene": 2,
+      "beat": 0,
+      "numbers": [
+        {
+          "text": "02",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "01",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "02",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "desktop",
+      "scene": 2,
+      "beat": 1,
+      "numbers": [
+        {
+          "text": "02",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "01",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "02",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "desktop",
+      "scene": 2,
+      "beat": 2,
+      "numbers": [
+        {
+          "text": "02",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "01",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "02",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "desktop",
+      "scene": 3,
+      "beat": 0,
+      "numbers": [
+        {
+          "text": "03",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "02",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "03",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "01",
+          "mode": "canvas-reveal",
+          "progress": 1,
+          "channel": null,
+          "kind": "canvas"
+        },
+        {
+          "text": "02",
+          "mode": "canvas-reveal",
+          "progress": 1,
+          "channel": null,
+          "kind": "canvas"
+        },
+        {
+          "text": "03",
+          "mode": "canvas-reveal",
+          "progress": 1,
+          "channel": null,
+          "kind": "canvas"
+        },
+        {
+          "text": "04",
+          "mode": "canvas-reveal",
+          "progress": 1,
+          "channel": null,
+          "kind": "canvas"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "desktop",
+      "scene": 3,
+      "beat": 1,
+      "numbers": [
+        {
+          "text": "03",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "02",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "03",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "01",
+          "mode": "canvas-reveal",
+          "progress": 1,
+          "channel": null,
+          "kind": "canvas"
+        },
+        {
+          "text": "02",
+          "mode": "canvas-reveal",
+          "progress": 1,
+          "channel": null,
+          "kind": "canvas"
+        },
+        {
+          "text": "03",
+          "mode": "canvas-reveal",
+          "progress": 1,
+          "channel": null,
+          "kind": "canvas"
+        },
+        {
+          "text": "04",
+          "mode": "canvas-reveal",
+          "progress": 1,
+          "channel": null,
+          "kind": "canvas"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "desktop",
+      "scene": 3,
+      "beat": 2,
+      "numbers": [
+        {
+          "text": "03",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "02",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "03",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "01",
+          "mode": "canvas-reveal",
+          "progress": 1,
+          "channel": null,
+          "kind": "canvas"
+        },
+        {
+          "text": "02",
+          "mode": "canvas-reveal",
+          "progress": 1,
+          "channel": null,
+          "kind": "canvas"
+        },
+        {
+          "text": "03",
+          "mode": "canvas-reveal",
+          "progress": 1,
+          "channel": null,
+          "kind": "canvas"
+        },
+        {
+          "text": "04",
+          "mode": "canvas-reveal",
+          "progress": 1,
+          "channel": null,
+          "kind": "canvas"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "desktop",
+      "scene": 3,
+      "beat": 3,
+      "numbers": [
+        {
+          "text": "03",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "02",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "03",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "01",
+          "mode": "canvas-reveal",
+          "progress": 1,
+          "channel": null,
+          "kind": "canvas"
+        },
+        {
+          "text": "02",
+          "mode": "canvas-reveal",
+          "progress": 1,
+          "channel": null,
+          "kind": "canvas"
+        },
+        {
+          "text": "03",
+          "mode": "canvas-reveal",
+          "progress": 1,
+          "channel": null,
+          "kind": "canvas"
+        },
+        {
+          "text": "04",
+          "mode": "canvas-reveal",
+          "progress": 1,
+          "channel": null,
+          "kind": "canvas"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "desktop",
+      "scene": 3,
+      "beat": 4,
+      "numbers": [
+        {
+          "text": "03",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "02",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "03",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "01",
+          "mode": "canvas-reveal",
+          "progress": 1,
+          "channel": null,
+          "kind": "canvas"
+        },
+        {
+          "text": "02",
+          "mode": "canvas-reveal",
+          "progress": 1,
+          "channel": null,
+          "kind": "canvas"
+        },
+        {
+          "text": "03",
+          "mode": "canvas-reveal",
+          "progress": 1,
+          "channel": null,
+          "kind": "canvas"
+        },
+        {
+          "text": "04",
+          "mode": "canvas-reveal",
+          "progress": 1,
+          "channel": null,
+          "kind": "canvas"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "desktop",
+      "scene": 3,
+      "beat": 5,
+      "numbers": [
+        {
+          "text": "03",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "02",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "03",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "01",
+          "mode": "canvas-reveal",
+          "progress": 1,
+          "channel": null,
+          "kind": "canvas"
+        },
+        {
+          "text": "02",
+          "mode": "canvas-reveal",
+          "progress": 1,
+          "channel": null,
+          "kind": "canvas"
+        },
+        {
+          "text": "03",
+          "mode": "canvas-reveal",
+          "progress": 1,
+          "channel": null,
+          "kind": "canvas"
+        },
+        {
+          "text": "04",
+          "mode": "canvas-reveal",
+          "progress": 1,
+          "channel": null,
+          "kind": "canvas"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "desktop",
+      "scene": 4,
+      "beat": 0,
+      "numbers": [
+        {
+          "text": "1986",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "1986",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "2017",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "2025",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "04",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "03",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "04",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "desktop",
+      "scene": 4,
+      "beat": 1,
+      "numbers": [
+        {
+          "text": "1986",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "2017",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "2025",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "04",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "03",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "04",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "2017",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "18",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "desktop",
+      "scene": 4,
+      "beat": 2,
+      "numbers": [
+        {
+          "text": "1986",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "2017",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "2025",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "04",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "03",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "04",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "2025",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "60",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "desktop",
+      "scene": 5,
+      "beat": 0,
+      "numbers": [
+        {
+          "text": "63",
+          "mode": "count",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "34",
+          "mode": "count",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "63",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "11",
+          "mode": "count",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "52",
+          "mode": "count",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "23",
+          "mode": "count",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "3",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "05",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "04",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "63",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "34",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "05",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "desktop",
+      "scene": 5,
+      "beat": 1,
+      "numbers": [
+        {
+          "text": "63",
+          "mode": "count",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "34",
+          "mode": "count",
+          "progress": 1,
+          "channel": "restructuring",
+          "kind": "DOM"
+        },
+        {
+          "text": "11",
+          "mode": "count",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "52",
+          "mode": "count",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "23",
+          "mode": "count",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "3",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "05",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "04",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "63",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "34",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "05",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "34",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "desktop",
+      "scene": 5,
+      "beat": 2,
+      "numbers": [
+        {
+          "text": "63",
+          "mode": "count",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "34",
+          "mode": "count",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "11",
+          "mode": "count",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "52",
+          "mode": "count",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "23",
+          "mode": "count",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "3",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "05",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "04",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "63",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "34",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "05",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "1",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "2025",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "desktop",
+      "scene": 5,
+      "beat": 3,
+      "numbers": [
+        {
+          "text": "63",
+          "mode": "count",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "34",
+          "mode": "count",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "11",
+          "mode": "count",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "52",
+          "mode": "count",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "23",
+          "mode": "count",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "3",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "05",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "04",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "63",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "34",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "05",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "desktop",
+      "scene": 6,
+      "beat": 0,
+      "numbers": [
+        {
+          "text": "01",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "02",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "03",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "06",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "05",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "06",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "desktop",
+      "scene": 6,
+      "beat": 1,
+      "numbers": [
+        {
+          "text": "01",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "02",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "03",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "06",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "05",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "06",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "desktop",
+      "scene": 6,
+      "beat": 2,
+      "numbers": [
+        {
+          "text": "01",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "02",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "03",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "06",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "05",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "06",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "desktop",
+      "scene": 7,
+      "beat": 0,
+      "numbers": [
+        {
+          "text": "07",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "06",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "07",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "desktop",
+      "scene": 7,
+      "beat": 1,
+      "numbers": [
+        {
+          "text": "07",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "06",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "07",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "desktop",
+      "scene": 7,
+      "beat": 2,
+      "numbers": [
+        {
+          "text": "07",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "06",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "07",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "desktop",
+      "scene": 7,
+      "beat": 3,
+      "numbers": [
+        {
+          "text": "07",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "06",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "07",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "126",
+          "mode": "count",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "desktop",
+      "scene": 8,
+      "beat": 0,
+      "numbers": [
+        {
+          "text": "08",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "07",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "08",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "desktop",
+      "scene": 9,
+      "beat": 0,
+      "numbers": [
+        {
+          "text": "01",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "02",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "03",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "09",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "07",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "09",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "desktop",
+      "scene": 9,
+      "beat": 1,
+      "numbers": [
+        {
+          "text": "01",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "02",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "03",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "09",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "07",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "09",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "desktop",
+      "scene": 9,
+      "beat": 2,
+      "numbers": [
+        {
+          "text": "01",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "02",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "03",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "09",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "07",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "09",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "desktop",
+      "scene": 10,
+      "beat": 0,
+      "numbers": [
+        {
+          "text": "2025",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "26",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "2030",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "2045",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "10",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "07",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "10",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "desktop",
+      "scene": 10,
+      "beat": 1,
+      "numbers": [
+        {
+          "text": "2025",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "26",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "2030",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "2045",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "10",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "07",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "10",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "desktop",
+      "scene": 10,
+      "beat": 2,
+      "numbers": [
+        {
+          "text": "2025",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "26",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "2030",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "2045",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "10",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "07",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "10",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "desktop",
+      "scene": 11,
+      "beat": 0,
+      "numbers": [
+        {
+          "text": "01",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "1986",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "1980",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "1986",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "11",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "08",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "11",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "desktop",
+      "scene": 12,
+      "beat": 0,
+      "numbers": [
+        {
+          "text": "02",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "1",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "2025",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "34",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "63",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "34",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "63",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "12",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "08",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "12",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "desktop",
+      "scene": 13,
+      "beat": 0,
+      "numbers": [
+        {
+          "text": "03",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "1986",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "13",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "08",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "13",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "desktop",
+      "scene": 14,
+      "beat": 0,
+      "numbers": [
+        {
+          "text": "04",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "18",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "2017",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "14",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "08",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "14",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "desktop",
+      "scene": 15,
+      "beat": 0,
+      "numbers": [
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "portrait",
+      "scene": 1,
+      "beat": 0,
+      "numbers": [
+        {
+          "text": "6",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "01",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "01",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "01",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "portrait",
+      "scene": 1,
+      "beat": 1,
+      "numbers": [
+        {
+          "text": "01",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "01",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "01",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "portrait",
+      "scene": 2,
+      "beat": 0,
+      "numbers": [
+        {
+          "text": "02",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "01",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "02",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "portrait",
+      "scene": 2,
+      "beat": 1,
+      "numbers": [
+        {
+          "text": "02",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "01",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "02",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "portrait",
+      "scene": 2,
+      "beat": 2,
+      "numbers": [
+        {
+          "text": "02",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "01",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "02",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "portrait",
+      "scene": 3,
+      "beat": 0,
+      "numbers": [
+        {
+          "text": "03",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "02",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "03",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "01",
+          "mode": "canvas-reveal",
+          "progress": 1,
+          "channel": null,
+          "kind": "canvas"
+        },
+        {
+          "text": "02",
+          "mode": "canvas-reveal",
+          "progress": 1,
+          "channel": null,
+          "kind": "canvas"
+        },
+        {
+          "text": "03",
+          "mode": "canvas-reveal",
+          "progress": 1,
+          "channel": null,
+          "kind": "canvas"
+        },
+        {
+          "text": "04",
+          "mode": "canvas-reveal",
+          "progress": 1,
+          "channel": null,
+          "kind": "canvas"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "portrait",
+      "scene": 3,
+      "beat": 1,
+      "numbers": [
+        {
+          "text": "03",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "02",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "03",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "01",
+          "mode": "canvas-reveal",
+          "progress": 1,
+          "channel": null,
+          "kind": "canvas"
+        },
+        {
+          "text": "02",
+          "mode": "canvas-reveal",
+          "progress": 1,
+          "channel": null,
+          "kind": "canvas"
+        },
+        {
+          "text": "03",
+          "mode": "canvas-reveal",
+          "progress": 1,
+          "channel": null,
+          "kind": "canvas"
+        },
+        {
+          "text": "04",
+          "mode": "canvas-reveal",
+          "progress": 1,
+          "channel": null,
+          "kind": "canvas"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "portrait",
+      "scene": 3,
+      "beat": 2,
+      "numbers": [
+        {
+          "text": "03",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "02",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "03",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "01",
+          "mode": "canvas-reveal",
+          "progress": 1,
+          "channel": null,
+          "kind": "canvas"
+        },
+        {
+          "text": "02",
+          "mode": "canvas-reveal",
+          "progress": 1,
+          "channel": null,
+          "kind": "canvas"
+        },
+        {
+          "text": "03",
+          "mode": "canvas-reveal",
+          "progress": 1,
+          "channel": null,
+          "kind": "canvas"
+        },
+        {
+          "text": "04",
+          "mode": "canvas-reveal",
+          "progress": 1,
+          "channel": null,
+          "kind": "canvas"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "portrait",
+      "scene": 3,
+      "beat": 3,
+      "numbers": [
+        {
+          "text": "03",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "02",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "03",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "01",
+          "mode": "canvas-reveal",
+          "progress": 1,
+          "channel": null,
+          "kind": "canvas"
+        },
+        {
+          "text": "02",
+          "mode": "canvas-reveal",
+          "progress": 1,
+          "channel": null,
+          "kind": "canvas"
+        },
+        {
+          "text": "03",
+          "mode": "canvas-reveal",
+          "progress": 1,
+          "channel": null,
+          "kind": "canvas"
+        },
+        {
+          "text": "04",
+          "mode": "canvas-reveal",
+          "progress": 1,
+          "channel": null,
+          "kind": "canvas"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "portrait",
+      "scene": 3,
+      "beat": 4,
+      "numbers": [
+        {
+          "text": "03",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "02",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "03",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "01",
+          "mode": "canvas-reveal",
+          "progress": 1,
+          "channel": null,
+          "kind": "canvas"
+        },
+        {
+          "text": "02",
+          "mode": "canvas-reveal",
+          "progress": 1,
+          "channel": null,
+          "kind": "canvas"
+        },
+        {
+          "text": "03",
+          "mode": "canvas-reveal",
+          "progress": 1,
+          "channel": null,
+          "kind": "canvas"
+        },
+        {
+          "text": "04",
+          "mode": "canvas-reveal",
+          "progress": 1,
+          "channel": null,
+          "kind": "canvas"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "portrait",
+      "scene": 3,
+      "beat": 5,
+      "numbers": [
+        {
+          "text": "03",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "02",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "03",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "01",
+          "mode": "canvas-reveal",
+          "progress": 1,
+          "channel": null,
+          "kind": "canvas"
+        },
+        {
+          "text": "02",
+          "mode": "canvas-reveal",
+          "progress": 1,
+          "channel": null,
+          "kind": "canvas"
+        },
+        {
+          "text": "03",
+          "mode": "canvas-reveal",
+          "progress": 1,
+          "channel": null,
+          "kind": "canvas"
+        },
+        {
+          "text": "04",
+          "mode": "canvas-reveal",
+          "progress": 1,
+          "channel": null,
+          "kind": "canvas"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "portrait",
+      "scene": 4,
+      "beat": 0,
+      "numbers": [
+        {
+          "text": "1986",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "1986",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "2017",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "2025",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "04",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "03",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "04",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "portrait",
+      "scene": 4,
+      "beat": 1,
+      "numbers": [
+        {
+          "text": "1986",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "2017",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "2025",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "04",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "03",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "04",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "2017",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "18",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "portrait",
+      "scene": 4,
+      "beat": 2,
+      "numbers": [
+        {
+          "text": "1986",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "2017",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "2025",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "04",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "03",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "04",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "2025",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "60",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "portrait",
+      "scene": 5,
+      "beat": 0,
+      "numbers": [
+        {
+          "text": "63",
+          "mode": "count",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "34",
+          "mode": "count",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "63",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "11",
+          "mode": "count",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "52",
+          "mode": "count",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "23",
+          "mode": "count",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "3",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "05",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "04",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "63",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "34",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "05",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "portrait",
+      "scene": 5,
+      "beat": 1,
+      "numbers": [
+        {
+          "text": "63",
+          "mode": "count",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "34",
+          "mode": "count",
+          "progress": 1,
+          "channel": "restructuring",
+          "kind": "DOM"
+        },
+        {
+          "text": "11",
+          "mode": "count",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "52",
+          "mode": "count",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "23",
+          "mode": "count",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "3",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "05",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "04",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "63",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "34",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "05",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "34",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "portrait",
+      "scene": 5,
+      "beat": 2,
+      "numbers": [
+        {
+          "text": "63",
+          "mode": "count",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "34",
+          "mode": "count",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "11",
+          "mode": "count",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "52",
+          "mode": "count",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "23",
+          "mode": "count",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "3",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "05",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "04",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "63",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "34",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "05",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "1",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "2025",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "portrait",
+      "scene": 5,
+      "beat": 3,
+      "numbers": [
+        {
+          "text": "63",
+          "mode": "count",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "34",
+          "mode": "count",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "11",
+          "mode": "count",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "52",
+          "mode": "count",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "23",
+          "mode": "count",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "3",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "05",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "04",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "63",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "34",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "05",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "portrait",
+      "scene": 6,
+      "beat": 0,
+      "numbers": [
+        {
+          "text": "01",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "02",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "03",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "06",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "05",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "06",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "portrait",
+      "scene": 6,
+      "beat": 1,
+      "numbers": [
+        {
+          "text": "01",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "02",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "03",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "06",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "05",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "06",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "portrait",
+      "scene": 6,
+      "beat": 2,
+      "numbers": [
+        {
+          "text": "01",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "02",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "03",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "06",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "05",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "06",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "portrait",
+      "scene": 7,
+      "beat": 0,
+      "numbers": [
+        {
+          "text": "07",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "06",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "07",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "portrait",
+      "scene": 7,
+      "beat": 1,
+      "numbers": [
+        {
+          "text": "07",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "06",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "07",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "portrait",
+      "scene": 7,
+      "beat": 2,
+      "numbers": [
+        {
+          "text": "07",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "06",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "07",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "portrait",
+      "scene": 7,
+      "beat": 3,
+      "numbers": [
+        {
+          "text": "07",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "06",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "07",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "126",
+          "mode": "count",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "portrait",
+      "scene": 8,
+      "beat": 0,
+      "numbers": [
+        {
+          "text": "08",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "07",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "08",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "portrait",
+      "scene": 9,
+      "beat": 0,
+      "numbers": [
+        {
+          "text": "01",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "02",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "03",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "09",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "07",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "09",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "portrait",
+      "scene": 9,
+      "beat": 1,
+      "numbers": [
+        {
+          "text": "01",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "02",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "03",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "09",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "07",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "09",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "portrait",
+      "scene": 9,
+      "beat": 2,
+      "numbers": [
+        {
+          "text": "01",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "02",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "03",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "09",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "07",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "09",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "portrait",
+      "scene": 10,
+      "beat": 0,
+      "numbers": [
+        {
+          "text": "2025",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "26",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "2030",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "2045",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "10",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "07",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "10",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "portrait",
+      "scene": 10,
+      "beat": 1,
+      "numbers": [
+        {
+          "text": "2025",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "26",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "2030",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "2045",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "10",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "07",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "10",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "portrait",
+      "scene": 10,
+      "beat": 2,
+      "numbers": [
+        {
+          "text": "2025",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "26",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "2030",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "2045",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "10",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "07",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "10",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "portrait",
+      "scene": 11,
+      "beat": 0,
+      "numbers": [
+        {
+          "text": "01",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "1986",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "1980",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "1986",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "11",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "08",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "11",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "portrait",
+      "scene": 12,
+      "beat": 0,
+      "numbers": [
+        {
+          "text": "02",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "1",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "2025",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "34",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "63",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "34",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "63",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "12",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "08",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "12",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "portrait",
+      "scene": 13,
+      "beat": 0,
+      "numbers": [
+        {
+          "text": "03",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "1986",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "13",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "08",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "13",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "portrait",
+      "scene": 14,
+      "beat": 0,
+      "numbers": [
+        {
+          "text": "04",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "18",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "2017",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "14",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "08",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "14",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "portrait",
+      "scene": 15,
+      "beat": 0,
+      "numbers": [
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        },
+        {
+          "text": "15",
+          "mode": "odometer",
+          "progress": 1,
+          "channel": null,
+          "kind": "DOM"
+        }
+      ],
+      "missed": [],
+      "overflow": false,
+      "errors": []
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,110 @@
+{
+  "version": 1,
+  "provenance": "Original SVG illustrations authored locally; no external images or logos. All files are visibly labelled IMAGE PLACEHOLDER. They are concept artwork, not documentary evidence.",
+  "items": [
+    {
+      "id": "urban",
+      "file": "build/assets/scene7/urban.svg",
+      "caption": "Urban development",
+      "subject": "Urban change",
+      "kind": "illustrative-svg-placeholder",
+      "placeholder": true,
+      "credit": "Original code-native illustration for this presentation",
+      "claim": "Concept illustration only; not a photograph, verified event, or impact evidence.",
+      "replacementSearchTerms": [
+        "Vietnam urban development skyline real photograph source licensed"
+      ]
+    },
+    {
+      "id": "economy",
+      "file": "build/assets/scene7/economy.svg",
+      "caption": "Economic activity",
+      "subject": "Work and industry",
+      "kind": "illustrative-svg-placeholder",
+      "placeholder": true,
+      "credit": "Original code-native illustration for this presentation",
+      "claim": "Concept illustration only; not a photograph, verified event, or impact evidence.",
+      "replacementSearchTerms": [
+        "Vietnam industrial workers manufacturing industrial park official licensed photograph"
+      ]
+    },
+    {
+      "id": "digital",
+      "file": "build/assets/scene7/digital.svg",
+      "caption": "Digital expectations",
+      "subject": "Digital transition",
+      "kind": "illustrative-svg-placeholder",
+      "placeholder": true,
+      "credit": "Original code-native illustration for this presentation",
+      "claim": "Concept illustration only; not a photograph, verified event, or impact evidence.",
+      "replacementSearchTerms": [
+        "Vietnam digital public services computer citizen assistance licensed photograph"
+      ]
+    },
+    {
+      "id": "citizens",
+      "file": "build/assets/scene7/citizens.svg",
+      "caption": "Citizens’ needs",
+      "subject": "Citizens and services",
+      "kind": "illustrative-svg-placeholder",
+      "placeholder": true,
+      "credit": "Original code-native illustration for this presentation",
+      "claim": "Concept illustration only; not a photograph, verified event, or impact evidence.",
+      "replacementSearchTerms": [
+        "Vietnam citizens public service center assistance official photograph licensed"
+      ]
+    },
+    {
+      "id": "administration",
+      "file": "build/assets/scene7/administration.svg",
+      "caption": "Tasks and coordination",
+      "subject": "Administrative work",
+      "kind": "illustrative-svg-placeholder",
+      "placeholder": true,
+      "credit": "Original code-native illustration for this presentation",
+      "claim": "Concept illustration only; not a photograph, verified event, or impact evidence.",
+      "replacementSearchTerms": [
+        "Vietnam administration officials documents office public administration licensed photograph"
+      ]
+    },
+    {
+      "id": "cooperation",
+      "file": "build/assets/scene7/cooperation.svg",
+      "caption": "Capacity and cooperation",
+      "subject": "Learning and coordination",
+      "kind": "illustrative-svg-placeholder",
+      "placeholder": true,
+      "credit": "Original code-native illustration for this presentation",
+      "claim": "Concept illustration only; not a photograph, verified event, or impact evidence.",
+      "replacementSearchTerms": [
+        "Vietnam training public servants workshop cooperation licensed official photograph"
+      ]
+    },
+    {
+      "id": "accountability",
+      "file": "build/assets/scene7/accountability.svg",
+      "caption": "Clear responsibility",
+      "subject": "Accountability",
+      "kind": "illustrative-svg-placeholder",
+      "placeholder": true,
+      "credit": "Original code-native illustration for this presentation",
+      "claim": "Concept illustration only; not a photograph, verified event, or impact evidence.",
+      "replacementSearchTerms": [
+        "Vietnam public administration transparency accountability documents licensed photograph"
+      ]
+    },
+    {
+      "id": "help",
+      "file": "build/assets/scene7/help.svg",
+      "caption": "Help remains connected",
+      "subject": "Human support",
+      "kind": "illustrative-svg-placeholder",
+      "placeholder": true,
+      "credit": "Original code-native illustration for this presentation",
+      "claim": "Concept illustration only; not a photograph, verified event, or impact evidence.",
+      "replacementSearchTerms": [
+        "Vietnam elderly digital public service community assistance licensed photograph"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "checks": [
+    {
+      "name": "15 scenes / 37 beats / 3 Scene 2 beats",
+      "pass": true
+    },
+    {
+      "name": "academic data unchanged",
+      "pass": true
+    },
+    {
+      "name": "beat 0 navigation and world agree",
+      "pass": true
+    },
+    {
+      "name": "actual WebGL2 context",
+      "pass": true
+    },
+    {
+      "name": "beat 0 label boxes do not overlap",
+      "pass": true
+    },
+    {
+      "name": "beat 0 replay preserves position",
+      "pass": true
+    },
+    {
+      "name": "beat 1 navigation and world agree",
+      "pass": true
+    },
+    {
+      "name": "actual WebGL2 context",
+      "pass": true
+    },
+    {
+      "name": "beat 1 label boxes do not overlap",
+      "pass": true
+    },
+    {
+      "name": "beat 1 replay preserves position",
+      "pass": true
+    },
+    {
+      "name": "beat 2 navigation and world agree",
+      "pass": true
+    },
+    {
+      "name": "actual WebGL2 context",
+      "pass": true
+    },
+    {
+      "name": "beat 2 label boxes do not overlap",
+      "pass": true
+    },
+    {
+      "name": "beat 2 replay preserves position",
+      "pass": true
+    },
+    {
+      "name": "Previous reverses beat",
+      "pass": true
+    },
+    {
+      "name": "Previous crosses boundary",
+      "pass": true
+    },
+    {
+      "name": "Next reenters Scene 2",
+      "pass": true
+    },
+    {
+      "name": "Next exits to existing Scene 3",
+      "pass": true
+    },
+    {
+      "name": "no app or browser errors",
+      "pass": true
+    }
+  ],
+  "errors": []
+}

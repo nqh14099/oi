@@ -1,0 +1,149 @@
+{
+  "frames": [
+    {
+      "size": "desktop",
+      "beat": 0,
+      "webgl": {
+        "initialized": true,
+        "destroyed": false,
+        "mode": "webgl",
+        "reason": null,
+        "quality": "high",
+        "reducedMotion": true,
+        "paused": false,
+        "activeSceneId": 2,
+        "width": 1600,
+        "height": 900
+      },
+      "state": {
+        "beat": 0,
+        "meshes": 48,
+        "staticComposition": true,
+        "environmentReady": true
+      },
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "desktop",
+      "beat": 1,
+      "webgl": {
+        "initialized": true,
+        "destroyed": false,
+        "mode": "webgl",
+        "reason": null,
+        "quality": "high",
+        "reducedMotion": true,
+        "paused": false,
+        "activeSceneId": 2,
+        "width": 1600,
+        "height": 900
+      },
+      "state": {
+        "beat": 1,
+        "meshes": 48,
+        "staticComposition": true,
+        "environmentReady": true
+      },
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "desktop",
+      "beat": 2,
+      "webgl": {
+        "initialized": true,
+        "destroyed": false,
+        "mode": "webgl",
+        "reason": null,
+        "quality": "high",
+        "reducedMotion": true,
+        "paused": false,
+        "activeSceneId": 2,
+        "width": 1600,
+        "height": 900
+      },
+      "state": {
+        "beat": 2,
+        "meshes": 48,
+        "staticComposition": true,
+        "environmentReady": true
+      },
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "portrait",
+      "beat": 0,
+      "webgl": {
+        "initialized": true,
+        "destroyed": false,
+        "mode": "webgl",
+        "reason": null,
+        "quality": "high",
+        "reducedMotion": true,
+        "paused": false,
+        "activeSceneId": 2,
+        "width": 390,
+        "height": 405
+      },
+      "state": {
+        "beat": 0,
+        "meshes": 48,
+        "staticComposition": true,
+        "environmentReady": true
+      },
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "portrait",
+      "beat": 1,
+      "webgl": {
+        "initialized": true,
+        "destroyed": false,
+        "mode": "webgl",
+        "reason": null,
+        "quality": "high",
+        "reducedMotion": true,
+        "paused": false,
+        "activeSceneId": 2,
+        "width": 390,
+        "height": 405
+      },
+      "state": {
+        "beat": 1,
+        "meshes": 48,
+        "staticComposition": true,
+        "environmentReady": true
+      },
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "size": "portrait",
+      "beat": 2,
+      "webgl": {
+        "initialized": true,
+        "destroyed": false,
+        "mode": "webgl",
+        "reason": null,
+        "quality": "high",
+        "reducedMotion": true,
+        "paused": false,
+        "activeSceneId": 2,
+        "width": 390,
+        "height": 405
+      },
+      "state": {
+        "beat": 2,
+        "meshes": 48,
+        "staticComposition": true,
+        "environmentReady": true
+      },
+      "overflow": false,
+      "errors": []
+    }
+  ],
+  "errors": []
+}

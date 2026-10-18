@@ -150,6 +150,17 @@
       "title": "UNDP — 2024 PAPI findings, 15 April 2025",
       "url": "https://www.undp.org/vietnam/press-releases/new-papi-report-government-reforms-offer-historic-opportunity-enhance-local-governance-all",
       "note": "Full press release read 11 October 2026. Reports differences in citizen experience and digital access. Data predates the July 2025 changes; no claim about post-merger results. No survey statistics used here."
+    },
+    {
+      "id": "CD1112025",
+      "title": "Công điện 111/CĐ-TTg — 17 July 2025",
+      "url": "https://baochinhphu.vn/cong-dien-cua-thu-tuong-chinh-phu-ve-tap-trung-thao-go-kho-khan-vuong-mac-trong-thuc-hien-thu-tuc-hanh-chinh-chuyen-doi-so-giai-doan-dau-van-hanh-mo-hinh-to-chuc-chinh-quyen-dia-phuong-02-cap-102250718091931018.htm",
+      "note": "Official report of early implementation difficulties during 1–15 July 2025, including unstable information systems and gaps in data sharing. Corrective instructions are not evidence that every difficulty was later resolved.",
+      "publisher": "Báo Điện tử Chính phủ",
+      "date": "2025-07-17",
+      "origin": "cross_check",
+      "verification": "verified",
+      "verificationNote": "Full official text read 18 October 2026: opening assessment; sections I.2 and I.7 on systems/data; III.2(c) and IV.1 on staff training. Used only as a dated implementation example, not a current nationwide outcome claim."
     }
   ],
   "scenes": [
@@ -223,7 +234,7 @@
           "order": 2,
           "label": "Responsibilities",
           "audience": {
-            "heading": "Different roles. Shared public purpose.",
+            "heading": "Distinct roles. A shared purpose.",
             "body": "The State manages public affairs under the law.",
             "keys": [
               "State",
@@ -240,7 +251,7 @@
           "order": 3,
           "label": "People",
           "audience": {
-            "heading": "The people’s mastery",
+            "heading": "People at the centre",
             "body": "People are the focus of the system’s purpose.",
             "keys": [
               "Leadership",
@@ -309,8 +320,8 @@
           "order": 3,
           "label": "Apply Reform",
           "audience": {
-            "heading": "Make the path clearer",
-            "body": "Clear responsibility. Better coordination.",
+            "heading": "Clarify the route",
+            "body": "One lead for each task. Coordinated support.",
             "keys": [
               "Apply Reform",
               "Illustration"
@@ -619,72 +630,91 @@
       "id": 7,
       "order": 7,
       "chapter": 6,
-      "title": "The journey continues",
-      "subtitle": "DIGITAL SERVICES · People at the centre",
+      "title": "The system can’t stay still",
+      "subtitle": "THE BREAKING POINT · SYSTEM UNDER LOAD",
       "kind": "services",
       "beats": [
         {
           "id": "s07-b01",
           "order": 1,
-          "label": "Submit",
+          "label": "A changing Vietnam",
           "audience": {
-            "heading": "Know where to submit",
-            "body": "Access online, with hands-on help when needed.",
+            "heading": "Society is changing.",
+            "body": "New realities. New demands on public institutions.",
             "keys": [
-              "Access online",
-              "In-person support"
+              "Economic development",
+              "Urban life",
+              "Digital change"
             ]
           },
           "presenter": {
-            "script": "Our citizen returns. The first question is practical: where do I submit? An online portal helps only if people can use it. Hands-on support belongs inside the same service journey. The person who cannot use the portal should still have a practical route to complete the task."
-          }
+            "script": "Vietnam’s economy, cities and digital services are changing. New needs place new demands on public institutions. Each incoming frame stands for a demand: investment, coordination, skills or support. This moving layout is a visual metaphor. It is not a simulation of Vietnam’s political system.",
+            "cues": ["The frames represent types of demand, not measured volumes or historical events.", "Illustrative visual metaphor; do not describe the system as collapsing."],
+            "transition": "What happens when these demands arrive together?"
+          },
+          "claims": [
+            { "id": "s07-changing-demands", "field": "body", "kind": "illustration", "verification": "not_applicable", "sources": [] }
+          ]
         },
         {
           "id": "s07-b02",
           "order": 2,
-          "label": "Process",
+          "label": "The pressure is real",
           "audience": {
-            "heading": "Know what happens next",
-            "body": "Reuse available data where permitted.",
+            "heading": "CAN THE SYSTEM KEEP UP?",
+            "body": "July 2025: reported information-system instability and gaps in data sharing.",
             "keys": [
-              "Reuse data",
-              "Clear responsibility"
+              "Early implementation challenge",
+              "Dispatch 111 · 17 July 2025"
             ]
           },
           "presenter": {
-            "script": "Next comes processing. Reusing information where permitted can reduce repeated effort. The illustration does not claim a specific legal procedure or a guaranteed processing time."
-          }
+            "script": "There is a documented implementation challenge. Dispatch 111, dated 17 July 2025, reported unstable information systems and gaps in data sharing during the first half of July. It called for technical fixes and staff training. These were reported early difficulties, not evidence of collapse. Can the system keep up?",
+            "cues": ["Pause at the bottleneck and let the final question land.", "Source CD1112025: opening assessment covers 1–15 July 2025. Do not generalise it to all places or the present day."],
+            "transition": "The response must change how work is organised."
+          },
+          "claims": [
+            { "id": "s07-early-implementation", "field": "body", "kind": "fact", "verification": "verified", "sources": ["CD1112025"] }
+          ]
         },
         {
           "id": "s07-b03",
           "order": 3,
-          "label": "Track",
+          "label": "Reform the framework",
           "audience": {
-            "heading": "Know the status",
-            "body": "Follow progress and find support.",
+            "heading": "Adapting the system to new realities.",
+            "body": "Clear responsibility. Shared information. Capable people.",
             "keys": [
-              "Track progress",
-              "Connected assistance"
+              "One task, one lead",
+              "Coordination",
+              "Accountability"
             ]
           },
           "presenter": {
-            "script": "People also need to follow progress and find help. Hanoi’s plan covers digital public-service skills across 126 communes and wards. The city has also called for mobile digital-literacy support. These are implementation measures, not proof that everyone has received assistance."
-          }
+            "script": "Reform must change how work is organised. Resolution 18 calls for one agency to lead each task. Clear responsibility needs coordination, capable staff and accountability. The same frames now find room to work together. Their movement illustrates a policy direction; it does not prove that services have already improved.",
+            "cues": ["NQ18 provides the one-task/one-lead principle; CD1112025 supplies practical data-coordination and training measures.", "Reorganisation of the layout is an illustration, not measured evidence of implementation success."],
+            "transition": "The test is what people can actually do."
+          },
+          "claims": [
+            { "id": "s07-reform-measures", "field": "body", "kind": "policy_intention", "verification": "verified", "sources": ["NQ18", "CD1112025"] }
+          ]
         },
         {
           "id": "s07-b04",
           "order": 4,
-          "label": "Receive",
+          "label": "Built to respond",
           "audience": {
-            "heading": "Reach a clear outcome",
-            "body": "An accessible service keeps the whole journey visible.",
+            "heading": "A STRONGER SYSTEM SERVES PEOPLE BETTER.",
+            "body": "The goal: accessible services, effective coordination and accountable decisions.",
             "keys": [
-              "Leave a trail",
-              "Hanoi · 126 communes and wards"
+              "A policy goal",
+              "Judge by real experience"
             ]
           },
           "presenter": {
-            "script": "At the end, the person should know how to receive the result. The 2024 PAPI findings report gaps in digital access before the 2025 restructuring. They remind us to examine different people’s experiences. The lesson of taking the people as the root means asking whether residents can actually use the service."
+            "script": "The goal is better service for people. Hanoi’s digital-service plan includes hands-on assistance across 126 communes and wards. Such measures need evaluation. PAPI’s 2024 findings concern earlier digital-access gaps, not the results of the 2025 reforms. Ask whether people can submit, track and receive results, with help when needed. Our responsibility begins with explaining this honestly.",
+            "cues": ["HANOI12/HANOI126 describe planned support. HANOICAMPAIGN remains a supporting implementation reference; neither establishes universal access.", "PAPI2024 predates July 2025. Do not present it as an evaluation of the restructuring.", "Keep Submit → Process → Track → Receive and connected Help as practical service-evaluation questions, not four new beat titles."],
+            "transition": "What responsibilities does that give us as students?"
           }
         }
       ],
@@ -693,7 +723,9 @@
         "HANOI126",
         "HANOICAMPAIGN",
         "PAPI2024",
-        "TEXTBOOK"
+        "TEXTBOOK",
+        "NQ18",
+        "CD1112025"
       ],
       "timing": {
         "seconds": 90,
@@ -728,8 +760,8 @@
           "order": 1,
           "label": "Our role",
           "audience": {
-            "heading": "What can students contribute?",
-            "body": "From understanding reform to taking responsibility.",
+            "heading": "Our responsibility starts here",
+            "body": "Understand the reform. Take responsibility for our work.",
             "keys": []
           },
           "presenter": {
@@ -757,7 +789,7 @@
           "order": 1,
           "label": "Learn deeply",
           "audience": {
-            "heading": "Learn deeply",
+            "heading": "Understand. Verify. Explain.",
             "body": "Understand the argument. Check the original source.",
             "keys": [
               "Academic responsibility"
@@ -772,7 +804,7 @@
           "order": 2,
           "label": "Participate",
           "audience": {
-            "heading": "Participate",
+            "heading": "Share the work. Support the team.",
             "body": "Agree on tasks. Complete them. Support one another.",
             "keys": [
               "Team responsibility"
@@ -787,7 +819,7 @@
           "order": 3,
           "label": "Act with integrity",
           "audience": {
-            "heading": "Act with integrity",
+            "heading": "Present what the evidence supports.",
             "body": "Separate verified facts, goals and interpretations.",
             "keys": [
               "Presentation responsibility"

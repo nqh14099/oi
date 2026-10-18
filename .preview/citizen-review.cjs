@@ -1,0 +1,20 @@
+const {Browser}=require('./cpv-cdp.cjs');const delay=ms=>new Promise(r=>setTimeout(r,ms));
+(async()=>{const b=await new Browser().open();try{
+ await b.call('Emulation.setDeviceMetricsOverride',{width:1600,height:900,deviceScaleFactor:1,mobile:false});
+ await b.call('Network.enable');await b.call('Network.setBlockedURLs',{urls:['http://*','https://*']});
+ await b.call('Page.navigate',{url:'file:///D:/Downloads/CPV/dist/reforming_vietnam_complete.html'});await b.call('Page.bringToFront');await b.wait('window.CPVApp',20000);
+ await b.eval('CPVApp.world.setQuality("high");CPVApp.world.setReducedMotion(true);CPVApp.navigation.goToScene(3,0)');await delay(250);
+ await b.shot('D:/Downloads/CPV/.preview/citizen-maze.png');
+ await b.eval('document.querySelector("#content").style.visibility="hidden";document.querySelector("#controls").style.visibility="hidden";CPVApp.world.camera.reset({position:[-4.7,1.85,6.6],target:[-5.5,1.28,1],fov:31});CPVApp.world.invalidate()');await delay(200);
+ await b.shot('D:/Downloads/CPV/.preview/citizen-close.png');
+ await b.eval('document.querySelector("#content").style.visibility="";document.querySelector("#controls").style.visibility="";CPVApp.navigation.goToScene(7,0)');await delay(250);
+ await b.shot('D:/Downloads/CPV/.preview/citizen-service.png');
+ await b.eval('CPVApp.world.setReducedMotion(false);CPVApp.navigation.next()');await delay(500);
+ await b.shot('D:/Downloads/CPV/.preview/citizen-walk.png');await delay(1100);
+ if((await b.eval('CPVApp.getErrors()')).length)throw Error('App render errors');
+ const errors=b.events.filter(e=>e.method==='Runtime.exceptionThrown'||(e.method==='Runtime.consoleAPICalled'&&e.params.type==='error'));
+ console.log(JSON.stringify({appErrors:await b.eval('CPVApp.getErrors()'),browserErrors:errors.map(e=>e.params),scene:await b.eval('CPVApp.navigation.getState().sceneId')}));
+ await b.call('Emulation.setDeviceMetricsOverride',{width:390,height:844,deviceScaleFactor:1,mobile:true});await b.eval('CPVApp.world.resize();CPVApp.world.setReducedMotion(true);CPVApp.navigation.goToScene(3,0)');await delay(250);
+ await b.shot('D:/Downloads/CPV/.preview/citizen-portrait.png');
+ console.log('PORTRAIT',await b.eval('document.documentElement.scrollWidth<=innerWidth'));
+}finally{b.close();}})().catch(e=>{console.error(e);process.exitCode=1});

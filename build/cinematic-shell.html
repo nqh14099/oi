@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="An offline, presenter-controlled presentation on reforming Vietnam’s political system.">
+  <title>Reforming Vietnam’s Political System</title>
+  <style id="presentation-style">__CSS__</style>
+</head>
+<body class="show-controls">
+  <main id="viewport" aria-label="Presentation">
+    <div id="stage">
+      <canvas id="world" width="1600" height="900" aria-hidden="true"></canvas>
+      <canvas id="fallback" width="1600" height="900" aria-hidden="true"></canvas>
+      <div class="stage-atmosphere" aria-hidden="true"></div>
+      <div id="content" aria-live="polite" aria-atomic="true"></div>
+      <div class="stage-meta" aria-hidden="true"><span id="chapter-label"></span><span id="scene-label"></span></div>
+      <div id="beat-line" aria-hidden="true"></div>
+    </div>
+  </main>
+  <nav id="controls" class="presentation-chrome" aria-label="Presentation controls">
+    <button type="button" id="btn-prev" data-action="prev" aria-label="Previous beat" title="Previous beat · Left / PageUp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg></button>
+    <button type="button" id="counter" data-action="overview" title="Scene overview · G" aria-label="Scene overview">01 / 15</button>
+    <button type="button" id="btn-next" data-action="next" aria-label="Next beat" title="Next beat · Space / Right / PageDown"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 6 6 6-6 6"/></svg></button>
+    <span class="control-divider" aria-hidden="true"></span>
+    <button type="button" id="btn-replay" data-action="replay" aria-label="Replay beat" title="Replay beat · R"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10a8 8 0 1 1 1 7M4 4v6h6"/></svg></button>
+    <button type="button" data-action="mute" id="btn-mute" aria-label="Enable sound" aria-pressed="false" title="Sound off · M"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5m5 4 6 6m0-6-6 6"/></svg></button>
+    <button type="button" data-action="notes" aria-label="Private presenter notes" title="Presenter notes · N"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h14v18H5zM8 7h8m-8 5h8m-8 5h5"/></svg></button>
+    <button type="button" data-action="fullscreen" aria-label="Toggle fullscreen" title="Fullscreen · F"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9V3h6m6 0h6v6m0 6v6h-6M9 21H3v-6"/></svg></button>
+    <button type="button" data-action="settings" aria-label="Presentation settings" title="Settings"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 17h16M8 4v6m8 4v6"/></svg></button>
+    <button type="button" data-action="editor" aria-label="Chỉnh sửa nội dung" title="Chỉnh sửa · E"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 4 5 5M4 20l5-1L21 7a2 2 0 0 0-5-5L4 14v6Z"/></svg></button>
+  </nav>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <dialog id="overlay" aria-label="Presentation panel"><div id="panel-content"></div></dialog>
+  <script id="presentation-data" type="application/json">__DATA__</script>
+  <script id="three-runtime">__THREE__</script>
+  <script id="world-engine">__WORLD__</script>
+  <script id="app-runtime">__APP__</script>
+</body>
+</html>

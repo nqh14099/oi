@@ -1,0 +1,13 @@
+export function startRestructurePrototype(THREE,data,{createWorldEngine,createSceneController,createInputController,createRestructureScene}){
+ const $=id=>document.getElementById(id),s=data.scenes.find(s=>s.id===5),nav=createSceneController(data),errors=[],removers=[];let destroyed=false;
+ const listen=(el,e,fn)=>{el.addEventListener(e,fn);removers.push(()=>el.removeEventListener(e,fn));};
+ const scene=createRestructureScene({onProgress:p=>{$('number').textContent=p.count===null?'63 → 34':String(p.count);$('phase').textContent=p.animating?'REORGANISING':p.progress===1?'AFTER · 2025':'BEFORE';$('composition').textContent=p.progress===1?'11 unchanged + 23 reorganised units':'11 unchanged + 52 units to reorganise';}});
+ const world=createWorldEngine({THREE,canvas:$('view'),fallbackCanvas:$('fallback'),navigation:nav,onError:e=>errors.push(String(e))});world.registerScene(5,scene);world.initialize();nav.goToScene(5,0);
+ const controls={getState:nav.getState,next:()=>{if(nav.getState().beatIndex<3)nav.next();},previous:()=>{if(nav.getState().beatIndex>0)nav.previous();},replay:nav.replay};const input=createInputController(controls,$('stage'));
+ s.beats.forEach((b,i)=>{const el=document.createElement('button');el.textContent=b.label;listen(el,'click',()=>nav.goToScene(5,i));$('steps').append(el);});
+ function sync(){const i=nav.getState().beatIndex;$('heading').textContent=s.beats[i].audience.heading;$('body').textContent=s.beats[i].audience.body;$('tiers').hidden=i!==2;$('criteria').hidden=i!==3;$('next').textContent=['Apply restructuring','Two-tier government','What determines success?','Complete'][i];$('next').disabled=i===3;$('previous').disabled=i===0;[...$('steps').children].forEach((b,k)=>b.setAttribute('aria-current',k===i?'step':'false'));}
+ const unsub=nav.subscribe(sync);sync();listen($('next'),'click',controls.next);listen($('previous'),'click',controls.previous);listen($('replay'),'click',controls.replay);
+ const reduce=v=>{world.setReducedMotion(v);$('reduced').checked=v;world.setBeat(nav.getState().beatIndex);};const media=matchMedia('(prefers-reduced-motion:reduce)');$('reduced').checked=media.matches;listen(media,'change',e=>reduce(e.matches));listen($('reduced'),'change',()=>reduce($('reduced').checked));
+ function destroy(){if(destroyed)return;destroyed=true;input.destroy();unsub();removers.forEach(fn=>fn());world.destroy();nav.destroy();}listen(window,'pagehide',e=>{if(e.persisted)world.pause();else destroy();});listen(window,'pageshow',e=>{if(e.persisted)world.resume();});
+ window.CPVRestructure={...controls,goToBeat:i=>nav.goToScene(5,i),setReducedMotion:reduce,getState:()=>({navigation:nav.getState(),visual:scene.getState(),errors,destroyed}),destroy};
+}

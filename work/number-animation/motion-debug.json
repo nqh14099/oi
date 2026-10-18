@@ -1,0 +1,190 @@
+{
+  "start": {
+    "text": "Change has a history1986Historical turning pointĐổi MớiComprehensive renovation; renewed economic thinking.1986Đổi Mới2017Organisational renewal2025Local government reform",
+    "n": [
+      {
+        "text": "1986",
+        "mode": "odometer",
+        "progress": 0,
+        "channel": null,
+        "kind": "DOM"
+      },
+      {
+        "text": "1986",
+        "mode": "odometer",
+        "progress": 0,
+        "channel": null,
+        "kind": "DOM"
+      },
+      {
+        "text": "2017",
+        "mode": "odometer",
+        "progress": 0,
+        "channel": null,
+        "kind": "DOM"
+      },
+      {
+        "text": "2025",
+        "mode": "odometer",
+        "progress": 0,
+        "channel": null,
+        "kind": "DOM"
+      },
+      {
+        "text": "04",
+        "mode": "odometer",
+        "progress": 0,
+        "channel": null,
+        "kind": "DOM"
+      },
+      {
+        "text": "15",
+        "mode": "odometer",
+        "progress": 0,
+        "channel": null,
+        "kind": "DOM"
+      },
+      {
+        "text": "03",
+        "mode": "odometer",
+        "progress": 0,
+        "channel": null,
+        "kind": "DOM"
+      },
+      {
+        "text": "04",
+        "mode": "odometer",
+        "progress": 0,
+        "channel": null,
+        "kind": "DOM"
+      },
+      {
+        "text": "15",
+        "mode": "odometer",
+        "progress": 0,
+        "channel": null,
+        "kind": "DOM"
+      }
+    ],
+    "rect": [
+      [
+        86.390625,
+        180,
+        479.453125,
+        228
+      ],
+      [
+        91.1875,
+        734.40625,
+        72.484375,
+        38
+      ],
+      [
+        563.71875,
+        734.40625,
+        70.703125,
+        38
+      ],
+      [
+        1036.265625,
+        734.40625,
+        75.890625,
+        38
+      ]
+    ]
+  },
+  "mid": {
+    "text": "Change has a history1986Historical turning pointĐổi MớiComprehensive renovation; renewed economic thinking.1986Đổi Mới2017Organisational renewal2025Local government reform",
+    "n": [
+      {
+        "text": "1986",
+        "mode": "odometer",
+        "progress": 0.41788235292715187,
+        "channel": null,
+        "kind": "DOM"
+      },
+      {
+        "text": "1986",
+        "mode": "odometer",
+        "progress": 0.41776470587534065,
+        "channel": null,
+        "kind": "DOM"
+      },
+      {
+        "text": "2017",
+        "mode": "odometer",
+        "progress": 0.4176470588059986,
+        "channel": null,
+        "kind": "DOM"
+      },
+      {
+        "text": "2025",
+        "mode": "odometer",
+        "progress": 0.4175294117541874,
+        "channel": null,
+        "kind": "DOM"
+      },
+      {
+        "text": "04",
+        "mode": "odometer",
+        "progress": 0.4175294117541874,
+        "channel": null,
+        "kind": "DOM"
+      },
+      {
+        "text": "15",
+        "mode": "odometer",
+        "progress": 0.4175294117541874,
+        "channel": null,
+        "kind": "DOM"
+      },
+      {
+        "text": "03",
+        "mode": "odometer",
+        "progress": 0.4175294117541874,
+        "channel": null,
+        "kind": "DOM"
+      },
+      {
+        "text": "04",
+        "mode": "odometer",
+        "progress": 0.4175294117541874,
+        "channel": null,
+        "kind": "DOM"
+      },
+      {
+        "text": "15",
+        "mode": "odometer",
+        "progress": 0.4175294117541874,
+        "channel": null,
+        "kind": "DOM"
+      }
+    ],
+    "rect": [
+      [
+        86.390625,
+        180,
+        479.453125,
+        228
+      ],
+      [
+        91.1875,
+        734.40625,
+        72.484375,
+        38
+      ],
+      [
+        563.71875,
+        734.40625,
+        70.703125,
+        38
+      ],
+      [
+        1036.265625,
+        734.40625,
+        75.890625,
+        38
+      ]
+    ]
+  }
+}

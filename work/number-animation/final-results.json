@@ -1,0 +1,39 @@
+[
+  {
+    "name": "actual map callback drives counter",
+    "pass": true,
+    "sync": [
+      {
+        "text": "34",
+        "mode": "count",
+        "progress": 0.03125000000000001,
+        "channel": "restructuring",
+        "kind": "DOM"
+      }
+    ]
+  },
+  {
+    "name": "stable 63 does not restart on next beat",
+    "pass": true
+  },
+  {
+    "name": "OS reduced motion settles",
+    "pass": true
+  },
+  {
+    "name": "portrait 4 numbers contained",
+    "pass": true
+  },
+  {
+    "name": "portrait 5 numbers contained",
+    "pass": true
+  },
+  {
+    "name": "portrait 10 numbers contained",
+    "pass": true
+  },
+  {
+    "name": "no app errors",
+    "pass": true
+  }
+]

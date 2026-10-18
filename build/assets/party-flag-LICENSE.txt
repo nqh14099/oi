@@ -1,0 +1,8 @@
+Reference: Flag of the Communist Party of Vietnam.svg
+https://commons.wikimedia.org/wiki/File:Flag_of_the_Communist_Party_of_Vietnam.svg
+Original work: Eureka287; vector work: Lasse Havelund; current revision: Sshu94.
+License: Creative Commons Attribution-Share Alike 3.0 Unported.
+https://creativecommons.org/licenses/by-sa/3.0/
+Changes: vector boundaries sampled into normalized contours; rendered as a
+muted crimson/gold, gently waving particle sculpture. This emblem adaptation
+is offered under the same license. The source SVG is preserved alongside it.

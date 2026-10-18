@@ -1,0 +1,153 @@
+{
+  "checks": [
+    {
+      "name": "keyboard reverse boundary",
+      "pass": true
+    },
+    {
+      "name": "keyboard next boundary",
+      "pass": true
+    },
+    {
+      "name": "replay position",
+      "pass": true
+    },
+    {
+      "name": "quiz 11 four options, answer hidden",
+      "pass": true
+    },
+    {
+      "name": "quiz 11 no premature explanation",
+      "pass": true
+    },
+    {
+      "name": "quiz 11 correct explanation",
+      "pass": true
+    },
+    {
+      "name": "quiz 11 no auto advance",
+      "pass": true
+    },
+    {
+      "name": "quiz 11 reset",
+      "pass": true
+    },
+    {
+      "name": "quiz 12 four options, answer hidden",
+      "pass": true
+    },
+    {
+      "name": "quiz 12 no premature explanation",
+      "pass": true
+    },
+    {
+      "name": "quiz 12 correct explanation",
+      "pass": true
+    },
+    {
+      "name": "quiz 12 no auto advance",
+      "pass": true
+    },
+    {
+      "name": "quiz 12 reset",
+      "pass": true
+    },
+    {
+      "name": "quiz 13 four options, answer hidden",
+      "pass": true
+    },
+    {
+      "name": "quiz 13 no premature explanation",
+      "pass": true
+    },
+    {
+      "name": "quiz 13 correct explanation",
+      "pass": true
+    },
+    {
+      "name": "quiz 13 no auto advance",
+      "pass": true
+    },
+    {
+      "name": "quiz 13 reset",
+      "pass": true
+    },
+    {
+      "name": "quiz 14 four options, answer hidden",
+      "pass": true
+    },
+    {
+      "name": "quiz 14 no premature explanation",
+      "pass": true
+    },
+    {
+      "name": "quiz 14 correct explanation",
+      "pass": true
+    },
+    {
+      "name": "quiz 14 no auto advance",
+      "pass": true
+    },
+    {
+      "name": "quiz 14 reset",
+      "pass": true
+    },
+    {
+      "name": "wrong answer state",
+      "pass": true
+    },
+    {
+      "name": "editor apply",
+      "pass": true
+    },
+    {
+      "name": "editor undo",
+      "pass": true
+    },
+    {
+      "name": "editor redo",
+      "pass": true
+    },
+    {
+      "name": "localStorage restores actual edit",
+      "pass": true
+    },
+    {
+      "name": "HTML download",
+      "pass": true
+    },
+    {
+      "name": "presenter notes open",
+      "pass": true
+    },
+    {
+      "name": "audio toggle on",
+      "pass": true
+    },
+    {
+      "name": "audio toggle off",
+      "pass": true
+    },
+    {
+      "name": "export reopens with edit",
+      "pass": true
+    },
+    {
+      "name": "export all 37 beats",
+      "pass": true
+    },
+    {
+      "name": "closing exact phrase",
+      "pass": true
+    },
+    {
+      "name": "2D fallback starts without WebGL",
+      "pass": true
+    },
+    {
+      "name": "no page exceptions",
+      "pass": true
+    }
+  ],
+  "errors": []
+}
