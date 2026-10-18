@@ -23,7 +23,7 @@ function createTransitionDirector({ THREE, createCameraRig, invalidate, report =
   const clamp01 = v => Math.max(0, Math.min(1, v));
   // Styles: 0 iris · 1 portal · 2 paper · 3 light-lines · 4 frame · 5 branches · 6 horizon · 7 ui
   const PAIRS = {
-    '1>2': { name: 'Party emblem match', style: 0, duration: 2.6, center: [.5, .5], exit: { dolly: 1.45, orbit: 5, crane: .04 }, enter: { dolly: .30, orbit: -7, crane: -.02 } },
+    '1>2': { name: 'Party emblem match morph', style: 8, duration: 3.0, center: [.5, .5], exit: { dolly: .34, orbit: 3 }, enter: { dolly: .30, orbit: -5, crane: -.02 } },
     '2>3': { name: 'Institution to experience', style: 1, duration: 2.2, center: [.5, .56], exit: { dolly: .52, orbit: -3 }, enter: { dolly: .58, orbit: 6, crane: .03 } },
     '3>4': { name: 'Procedure to history', style: 2, duration: 2.0, dir: [1, .18], exit: { dolly: .78, orbit: 4 }, enter: { dolly: 1.32, crane: .08 } },
     '4>5': { name: 'History into restructuring', style: 4, duration: 2.0, rect: [.5, .52, .2, .5], exit: { dolly: .62 }, enter: { dolly: 1.45, orbit: -5 } },
@@ -53,6 +53,7 @@ function createTransitionDirector({ THREE, createCameraRig, invalidate, report =
   }
 
   let renderer = null, rt = null, quad = null, size = { width: 1, height: 1 }, dpr = 1;
+  const framing = { cur: { orbit: 0, dolly: 1, crane: 0 }, target: { orbit: 0, dolly: 1, crane: 0 }, vel: { orbit: 0, dolly: 0, crane: 0 }, moving: false };
   let handoff = null, blend = null, lastState = null, completed = 0, effective = null;
   const history = [];
   const tmp = { p: new THREE.Vector3(), t: new THREE.Vector3(), f: new THREE.Vector3(), q: new THREE.Quaternion() };
@@ -88,6 +89,9 @@ void main(){
   m=smoothstep(t+w+n,t-w+n,y);edge=y-t-n;
  }else if(uStyle<6.5){ // horizon slit opening along time
   float hh=pow(p,1.4)*.62;float d=abs(uv.y-uCenter.y)-hh*(1.+.08*sin(uv.x*6.283+uTime));m=smoothstep(w,-w,d);edge=d;
+ }else if(uStyle>7.5){ // emblem match morph: the gold emblem of the outgoing frame resolves first, then the cloth
+  vec4 q=texture2D(tOut,uv);float gold=clamp((q.r+q.g)*.5-q.b*1.2-.18,0.,1.)*2.2;float n=(fbm(uv*a*6.)-.5)*.12;float t=p*1.9-.55;
+  m=smoothstep(-.06,.06,gold*.9+t+n-.5+p*.25);edge=.5-(gold*.9+t+n-.5+p*.25);w=.01;
  }else{ // unified quiz UI sweep
   vec2 dir=normalize(uDir);float s=dot((uv-.5)*a,dir)/(.5*abs(dir.x)*uAspect+.5*abs(dir.y))*.5+.5;float e=ease(p);
   m=smoothstep(e*1.2-.1+w,e*1.2-.1-w,s);edge=s-(e*1.2-.1);
@@ -164,7 +168,7 @@ void main(){
   }
   const api = {
     configure(r, nextSize, pixelRatio) { size = { ...nextSize }; dpr = pixelRatio || 1; if (r) ensure(r); resizeTarget(); handoff?.rig.resize(size.width, size.height); },
-    get busy() { return Boolean(handoff || blend); },
+    get busy() { return Boolean(handoff || blend || framing.moving); },
     // prepare: hand the outgoing record to the director instead of destroying it.
     capture(record, { world, lights, mainCamera, contextFor, hookFn, fromId, toId, disabled }) {
       if (disabled || !renderer || !record) return false;
@@ -203,8 +207,19 @@ void main(){
       invalidate();
     },
     cancelBlend() { blend = null; },
+    // Per-beat framing layer: every beat gets its own camera framing (orbit / push / crane),
+    // eased with a slightly over-damped spring so the camera never stands still between beats.
+    setFraming(sceneId, beat, immediate = false) {
+      const O = [0, 4.5, -4, 6, -5.5, 3], Dl = [1, .93, 1.05, .9, 1.07, .95], C = [0, .025, -.02, .035, -.01, .02];
+      const k = beat % 6, flip = sceneId % 2 ? 1 : -1;
+      framing.target = { orbit: O[k] * flip, dolly: Dl[k], crane: C[k] };
+      if (immediate) { framing.cur = { ...framing.target }; framing.vel = { orbit: 0, dolly: 0, crane: 0 }; }
+      invalidate();
+    },
     tick(dt) {
       if (blend) { blend.t += dt; if (blend.t >= blend.duration) blend = null; }
+      for (const key of ['orbit', 'dolly', 'crane']) { const x = framing.target[key] - framing.cur[key]; framing.vel[key] += (x * 9 - framing.vel[key] * 5.6) * dt; framing.cur[key] += framing.vel[key] * dt; }
+      framing.moving = Object.keys(framing.vel).some(key => Math.abs(framing.vel[key]) > 1e-4 || Math.abs(framing.target[key] - framing.cur[key]) > 1e-4);
       if (!handoff) return;
       const h = handoff;
       if (!api.frozen) h.t += dt;
@@ -222,6 +237,7 @@ void main(){
         const k = 1 - ease.inOut(clamp01(handoff.t / handoff.config.duration));
         const r = cameraLayer(cam, mainCamera, handoff.config.enter, k); if (r) undo.push(r);
       }
+      const f = cameraLayer(cam, mainCamera, framing.cur, 1); if (f) undo.push(f);
       const b = blendLayer(cam); if (b) undo.push(b);
       effective = cam.position.toArray().map(v => +v.toFixed(4));
       return () => { while (undo.length) undo.pop()(); };
@@ -274,7 +290,7 @@ void main(){
     pauseClock(value) { api.frozen = Boolean(value); },
     getState: () => Object.freeze({ active: Boolean(handoff), phase: handoff?.phase ?? 'idle', key: handoff?.config.key ?? null,
       name: handoff?.config.name ?? null, progress: handoff ? clamp01(handoff.t / handoff.config.duration) : 1, blending: Boolean(blend),
-      completed, last: lastState, effective, history: history.slice(-12) }),
+      completed, last: lastState, effective, framing: { ...framing.cur }, history: history.slice(-12) }),
     pairs: PAIRS,
     dispose() { if (handoff) api.finish('disposed'); rt?.dispose(); quad?.material.dispose(); quad = null; rt = null; renderer = null; }
   };

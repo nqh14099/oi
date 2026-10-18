@@ -111,3 +111,10 @@ body.reduced-motion .doc-moment *, body.reduced-motion .doc-moment { animation-d
   .moment-image { inset:0 0 15vw 0; } .moment figcaption strong { font-size:6vw; } .moment figcaption small, .moment figcaption span { font-size:3vw; }
   .moment-lines { display:none; } .moment-close { position:relative; bottom:auto; margin:8vw 5vw; } .moment-close .display { font-size:7vw; } .moment-close .scene-body { font-size:3.8vw; }
 }
+
+/* Scene 9 — orbital gallery of responsibilities (moved from Scene 4) */
+.responsibility.branches .archive-orbit { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:0; }
+.responsibility.branches .commitment-copy, .responsibility.branches .commitment-sequence { z-index:2; }
+.responsibility.branches .commitment-copy .display { font-size:4.6cqw; }
+.responsibility.branches .orbit-note { position:absolute; right:5.7%; top:6%; margin:0; font:600 .6cqw/1 var(--font-body); letter-spacing:.2em; text-transform:uppercase; color:#7f6c5d; }
+@media (orientation: portrait) { .responsibility.branches .archive-orbit { height:48svh; } }

@@ -66,7 +66,8 @@ must(content.scenes.length === 15 && content.scenes.reduce((n, s) => n + s.beats
       if (token !== generation || destroyed) return false;
       camera.reset(); justActivated = true;`, 'activateScene');
   w = replaceOnce(w, `      camera.cancel('beat-change');
-      if (token !== generation || destroyed) return false;`, `      if (justActivated) justActivated = false; else if (mode === 'webgl' && !reduced) director.beatBlend(camera.camera);
+      if (token !== generation || destroyed) return false;`, `      director.setFraming(record.id, index, justActivated || reduced);
+      if (justActivated) justActivated = false; else if (mode === 'webgl' && !reduced) director.beatBlend(camera.camera);
       camera.cancel('beat-change');
       if (token !== generation || destroyed) return false;`, 'setBeat');
   w = replaceOnce(w, `        if (typeof active?.module.render === 'function') {
@@ -128,7 +129,7 @@ must(content.scenes.length === 15 && content.scenes.reduce((n, s) => n + s.beats
   const formation = (await rd('build/final/model-formation.mjs')).replace(/^export const CPVModelFormation[^\n]*\n/m, '');
   js = insertBefore(js, 'CPVArchives', bundle('CPVModelFormation', formation, ['createModelFormation', 'create:(T,o)=>createModelFormation(T,o)']));
   // Scene 4 Reform Archive replaces the static archive collection
-  js = replaceModule(js, 'CPVArchives', bundle('CPVArchives', await rd('build/final/reform-archive.mjs'), ['createArchiveScene', 'ARCHIVE_VOLUMES', 'ARCHIVE_SLOTS']));
+  js = replaceModule(js, 'CPVArchives', bundle('CPVArchives', await rd('build/final/reform-archive.mjs'), ['createArchiveScene', 'createArchiveOrbit', 'ARCHIVE_VOLUMES', 'ARCHIVE_SLOTS']));
   // Hall: respect the caller's render target (needed for live hand-off rendering)
   {
     const [s, e] = moduleSpan(js, 'CPVHall'); let hall = js.slice(s, e);
@@ -159,6 +160,16 @@ must(content.scenes.length === 15 && content.scenes.reduce((n, s) => n + s.beats
     r = r.slice(0, r.indexOf('function createFlagHero')) + hero + r.slice(r.indexOf('function restoreEnvironment'));
     r = replaceOnce(r, 'const {createMazeScene}=CPVMaze;', 'const {createParticleWordmark}=CPVWordmark;const {createMazeScene}=CPVMaze;', 'wordmark binding');
     r = replaceOnce(r, 'createArchiveScene(data.scenes.find(s=>s.id===4))', 'createArchiveScene(data.scenes.find(s=>s.id===4),{assets:CPVAssets.scene7,createFormation:CPVModelFormation.createModelFormation})', 'archive options');
+    r = replaceOnce(r, 'world.registerScene(6,hall);', `world.registerScene(6,hall);
+  { // Scene 9: the orbital gallery now expresses responsibilities converging (moved from Scene 4)
+    const G=[['Read the sources','Check the facts','Cite clearly','Explain accurately'],['Share the work','Support each other','Discuss openly','Coordinate tasks'],['Separate fact from goal','State uncertainty','Present honestly','Own our work']];
+    const assetsByBeat=[['administration','digital','accountability','help'],['cooperation','citizens','cooperation','help'],['accountability','administration','citizens','digital']];
+    const slots=[];for(let n=0;n<4;n++)for(let g=0;g<3;g++)slots.push({id:'R'+(g+1)+'·'+(n+1),title:G[g][n],volume:g,asset:assetsByBeat[g][n]});
+    const orbit9=CPVArchives.createArchiveOrbit({assets:CPVAssets.scene7,slots,headline:'RESPONSIBILITY',cap:70,cy:520,a:560,tile:104});const m9=modules.get(9);
+    if(m9){const up=m9.update,sb=m9.setBeat,ac=m9.activate;Object.defineProperty(m9,'animated',{get:()=>true,configurable:true});
+      m9.update=(dt,ctx)=>{up?.call(m9,dt,ctx);const n=document.querySelector('.responsibility .archive-orbit');if(n){orbit9.attach(n);orbit9.update(dt,{reduced:ctx.reducedMotion});}ctx.invalidate();};
+      m9.setBeat=(i,ctx,meta)=>{sb?.call(m9,i,ctx,meta);orbit9.setFocus(i);};m9.activate=ctx=>{ac?.call(m9,ctx);orbit9.restart();};window.__cpvOrbit9=orbit9;}
+  }`, 'scene 9 orbit');
     r = replaceOnce(r, 'world.registerScene(4,archives);', 'world.registerScene(4,archives);window.__cpvArchive=archives;', 'archive handle');
     new Script(r); js = js.slice(0, s) + r + js.slice(e);
   }

@@ -21,17 +21,18 @@ export const ARCHIVE_SLOTS = [
   ['RA-07', 'Clear accountability', 1, 'accountability'], ['RA-08', 'Restructured administration', 1, 'administration'], ['RA-09', 'Citizens at the centre', 2, 'citizens'],
   ['RA-10', 'Working together', 2, 'cooperation'], ['RA-11', 'Community support', 2, 'help'], ['RA-12', 'Learning with evidence', 2, 'digital']
 ].map(([id, title, volume, asset]) => ({ id, title, volume, asset, source: null, status: 'IMAGE SLOT · source pending' }));
-const BEAT_VOLUME = [0, 1, 1];
+const BEAT_VOLUME = [0, 1, 2];
 
-function createArchiveOrbit({ assets = {} } = {}) {
+export function createArchiveOrbit({ assets = {}, slots = null, headline = 'REFORM', cap = 132, cy = 236, a = 540, tile = 118 } = {}) {
+  const SLOTS = slots || ARCHIVE_SLOTS;
   // ring constants in a 1600×900 stage (GalleryHeading RING model, re-proportioned)
-  const RING = { cx: 800, cy: 236, a: 540, ratio: .2, axis: -5, n: 12, tile: 118, radius: .16, dist: 9, phase: 90 };
+  const RING = { cx: 800, cy, a, ratio: .2, axis: -5, n: 12, tile, radius: .16, dist: 9, phase: 90 };
   const DUR = 72; // one slow revolution; purposeful, never a commercial spinner
   const images = new Map();
   for (const [key, src] of Object.entries(assets)) { const img = new Image(); img.decoding = 'async'; img.src = src; images.set(key, img); }
   let canvas = null, ctx = null, W = 0, H = 0, K = 1, OX = 0, OY = 0, dpr = 1;
   let t = 0, spin = 0, spinVel = 0, focus = 0, focusTarget = 0, hover = 0, hoverTarget = 0, pointer = [0, 0], pointerS = [0, 0], reveal = 0, paused = false, grain = null;
-  const tileState = ARCHIVE_SLOTS.map(() => ({ r: 1, rv: 0, a: 1 }));
+  const tileState = SLOTS.map(() => ({ r: 1, rv: 0, a: 1 }));
   function basis() {
     const ax = (RING.axis + pointerS[0] * 3) * Math.PI / 180, cf = RING.ratio + pointerS[1] * .035, sf = Math.sqrt(1 - cf * cf);
     const U = [Math.cos(ax), Math.sin(ax), 0], V = [-Math.sin(ax) * cf, Math.cos(ax) * cf, sf];
@@ -56,7 +57,7 @@ function createArchiveOrbit({ assets = {} } = {}) {
   }
   function roundRect(g, w, h, r) { g.beginPath(); g.moveTo(-w / 2 + r, -h / 2); g.arcTo(w / 2, -h / 2, w / 2, h / 2, r); g.arcTo(w / 2, h / 2, -w / 2, h / 2, r); g.arcTo(-w / 2, h / 2, -w / 2, -h / 2, r); g.arcTo(-w / 2, -h / 2, w / 2, -h / 2, r); g.closePath(); }
   function drawTile(g, i, psi, b) {
-    const st = tileState[i], slot = ARCHIVE_SLOTS[i];
+    const st = tileState[i], slot = SLOTS[i];
     const c = Math.cos(psi), s = Math.sin(psi), R = st.r;
     const C = [(c * b.U[0] + s * b.V[0]) * R, (c * b.U[1] + s * b.V[1]) * R, (c * b.U[2] + s * b.V[2]) * R];
     const Tg = [-s * b.U[0] + c * b.V[0], -s * b.U[1] + c * b.V[1], -s * b.U[2] + c * b.V[2]];
@@ -86,20 +87,19 @@ function createArchiveOrbit({ assets = {} } = {}) {
     if (grain) { g.fillStyle = g.createPattern(grain, 'repeat'); g.fillRect(-TS / 2, -TS / 2, TS, TS); }
     g.fillStyle = '#e8d9bd'; g.font = '600 30px "Segoe UI",Arial,sans-serif'; g.textAlign = 'left'; g.fillText(slot.id, -TS / 2 + 30, TS / 2 - 78);
     g.font = '400 25px Georgia,serif'; g.fillText(slot.title, -TS / 2 + 30, TS / 2 - 42);
-    g.fillStyle = 'rgba(232,217,189,.62)'; g.font = '600 18px "Segoe UI",Arial,sans-serif'; g.fillText('IMAGE SLOT · SOURCE PENDING', -TS / 2 + 30, -TS / 2 + 42);
     g.restore();
     g.setTransform(1, 0, 0, 1, 0, 0);
   }
   const focusTarget01 = () => Math.max(0, Math.min(1, focusTarget));
   function drawHeadline(g) {
-    const cap = 132 * K, y = OY + RING.cy * K + cap * .36, x = OX + 800 * K;
+    const capPx = cap * K, y = OY + RING.cy * K + capPx * .36, x = OX + 800 * K;
     g.save(); g.globalAlpha = reveal; g.textAlign = 'center'; g.textBaseline = 'alphabetic';
-    g.font = `400 ${cap / .7}px Georgia,"Times New Roman",serif`;
-    if ('letterSpacing' in g) g.letterSpacing = `${cap * .16}px`;
+    g.font = `400 ${capPx / .7}px Georgia,"Times New Roman",serif`;
+    if ('letterSpacing' in g) g.letterSpacing = `${capPx * .12}px`;
     const rise = (1 - reveal) * 40 * K; // Matte Rise: the word lifts into place under soft light
-    const grad = g.createLinearGradient(0, y - cap, 0, y); grad.addColorStop(0, '#f4ebdc'); grad.addColorStop(1, '#c3a47b');
-    g.fillStyle = 'rgba(37,7,13,.9)'; g.fillText('REFORM', x + 5 * K, y + rise + 6 * K);
-    g.fillStyle = grad; g.fillText('REFORM', x, y + rise);
+    const grad = g.createLinearGradient(0, y - capPx, 0, y); grad.addColorStop(0, '#f4ebdc'); grad.addColorStop(1, '#c3a47b');
+    g.fillStyle = 'rgba(37,7,13,.9)'; g.fillText(headline, x + 5 * K, y + rise + 6 * K);
+    g.fillStyle = grad; g.fillText(headline, x, y + rise);
     g.restore();
   }
   function render() {
@@ -121,7 +121,7 @@ function createArchiveOrbit({ assets = {} } = {}) {
     const b = basis(); let best = 0, bestZ = -9;
     for (let k = 0; k < 72; k++) {
       const s = k / 72 * Math.PI * 2; let z = 0;
-      ARCHIVE_SLOTS.forEach((slot, i) => { if (slot.volume !== volume) return; const psi = RING.phase * Math.PI / 180 - i * 2 * Math.PI / RING.n + s; z += Math.cos(psi) * b.U[2] + Math.sin(psi) * b.V[2]; });
+      SLOTS.forEach((slot, i) => { if (slot.volume !== volume) return; const psi = RING.phase * Math.PI / 180 - i * 2 * Math.PI / RING.n + s; z += Math.cos(psi) * b.U[2] + Math.sin(psi) * b.V[2]; });
       if (z > bestZ) { bestZ = z; best = s; }
     }
     return best;
@@ -144,7 +144,7 @@ function createArchiveOrbit({ assets = {} } = {}) {
         } else spin += (Math.PI * 2 / DUR) * (1 - .85 * hover) * dt;
       } else if (reduced && spinGoal !== null) { spin = spinGoal; spinGoal = null; }
       tileState.forEach((st, i) => {
-        const related = ARCHIVE_SLOTS[i].volume === focus;
+        const related = SLOTS[i].volume === focus;
         const r = related ? .94 : 1.12, a = related ? 1 : .42;
         st.rv += ((r - st.r) * 30 - st.rv * 9) * dt; st.r += st.rv * dt; st.a += (a - st.a) * Math.min(1, dt * 3);
         if (reduced) { st.r = r; st.a = a; st.rv = 0; }
@@ -156,7 +156,7 @@ function createArchiveOrbit({ assets = {} } = {}) {
     setHover(v) { hoverTarget = v ? 1 : 0; },
     pause() { paused = true; }, resume() { paused = false; },
     restart() { reveal = 0; },
-    getState: () => ({ attached: !!canvas?.isConnected, spin, focus, paused, reveal, tiles: ARCHIVE_SLOTS.length, imagesReady: [...images.values()].filter(i => i.complete && i.naturalWidth).length })
+    getState: () => ({ attached: !!canvas?.isConnected, spin, focus, paused, reveal, tiles: SLOTS.length, imagesReady: [...images.values()].filter(i => i.complete && i.naturalWidth).length })
   };
 }
 
