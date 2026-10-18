@@ -25,7 +25,7 @@ const BEAT_VOLUME = [0, 1, 1];
 
 function createArchiveOrbit({ assets = {} } = {}) {
   // ring constants in a 1600×900 stage (GalleryHeading RING model, re-proportioned)
-  const RING = { cx: 800, cy: 268, a: 610, ratio: .26, axis: -6, n: 12, tile: 168, radius: .16, dist: 9, phase: 90 };
+  const RING = { cx: 800, cy: 236, a: 540, ratio: .2, axis: -5, n: 12, tile: 118, radius: .16, dist: 9, phase: 90 };
   const DUR = 72; // one slow revolution; purposeful, never a commercial spinner
   const images = new Map();
   for (const [key, src] of Object.entries(assets)) { const img = new Image(); img.decoding = 'async'; img.src = src; images.set(key, img); }
@@ -232,10 +232,10 @@ export function createArchiveScene(sceneData, { assets = {}, createFormation = n
   function layout(instant = false) {
     const focusV = selected ?? volume;
     books.forEach((b, i) => {
-      const slot = i - focusV, front = slot === 0;
-      b.target.p.set(slot * 3.85, front ? -1.25 : -1.55, front ? 1.2 : -.35);
-      b.target.r.set(-.04, front ? -.12 : (slot < 0 ? .34 : -.38), front ? -.01 : (slot < 0 ? .05 : -.05));
-      b.target.s = front ? 1 : .86;
+      const slot = i - 1, front = i === focusV;
+      b.target.p.set(slot * 3.45, front ? -1.3 : -1.6, front ? .95 : -.55);
+      b.target.r.set(-.04, front ? -.1 + slot * -.06 : (slot < 0 ? .3 : slot > 0 ? -.34 : -.06), front ? -.01 : (slot < 0 ? .04 : -.04));
+      b.target.s = front ? 1 : .8;
       if (instant) { b.pivot.position.copy(b.target.p); b.pivot.rotation.copy(b.target.r); b.pivot.scale.setScalar(b.target.s); }
     });
     orbit.setFocus(focusV, { immediate: instant });
@@ -243,8 +243,8 @@ export function createArchiveScene(sceneData, { assets = {}, createFormation = n
   }
   function cameraPose(ctx, focusV = selected ?? volume) {
     const portrait = ctx.size.width < ctx.size.height;
-    const x = portrait ? 0 : 0; // composition is centred on the focused volume
-    return { projection: 'perspective', position: portrait ? [x, .2, 23] : [x + .25, .35, 15.2], target: [x, -.15, 0], fov: portrait ? 40 : 34 };
+    const x = portrait ? 0 : (focusV - 1) * .9; // camera trucks toward the focused volume
+    return { projection: 'perspective', position: portrait ? [x, .6, 25] : [x + .25, 1.1, 20.5], target: [x, .55, 0], fov: portrait ? 40 : 34 };
   }
   function syncDom() {
     const node = document.querySelector('.reform-archive'); if (!node) return;
@@ -295,7 +295,7 @@ export function createArchiveScene(sceneData, { assets = {}, createFormation = n
       on(document, 'click', e => {
         const go = e.target.closest?.('[data-archive-go]'); if (go) { e.preventDefault(); window.CPVApp?.navigation.goToScene(Number(go.dataset.archiveGo)); return; }
         if (e.target.closest?.('button,a,input,textarea,select,[role="dialog"],#controls')) return;
-        const v = pick(e); if (v < 0) return; selected = v === (selected ?? volume) && selected !== null ? null : v; layout(); ctxRef?.invalidate();
+        const v = pick(e); if (v < 0) return; selected = v === (selected ?? volume) && selected !== null ? null : v; layout(); if (ctxRef && !ctxRef.camera.isTransitioning()) ctxRef.camera.moveTo(cameraPose(ctxRef), { duration: 1400 }); ctxRef?.invalidate();
       });
     },
     setBeat(i, ctx, meta = {}) {

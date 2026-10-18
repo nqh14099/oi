@@ -6,7 +6,9 @@
 
 /* hand-off: DOM of the incoming scene arrives after the live 3D composite has opened */
 @keyframes cpv-dom-arrive { 0%, 42% { opacity:0; transform:translate3d(0,1.1cqw,0); clip-path:inset(0 0 100% 0); } 100% { opacity:1; transform:none; clip-path:inset(0 0 0 0); } }
-body.cpv-handoff:not([data-scene="7"]) #content > .scene { animation:cpv-dom-arrive var(--handoff-ms,1600ms) cubic-bezier(.2,.7,.1,1) both !important; }
+/* DOM is driven by the director's progress (--handoff-p), not wall-clock time, so text never leads the 3D reveal */
+body.cpv-handoff:not([data-scene="7"]) #content > .scene { animation:none !important; opacity:clamp(0, calc((var(--handoff-p, 1) - .5) * 2.6), 1);
+  transform:translate3d(0, calc((1 - clamp(0, calc((var(--handoff-p, 1) - .45) * 2), 1)) * 1.1cqw), 0); clip-path:inset(0 0 calc((1 - clamp(0, calc((var(--handoff-p, 1) - .42) * 1.9), 1)) * 100%) 0); }
 body.reduced-motion #content > .scene { animation:none !important; }
 
 /* ---------------- Scene 4 · THE REFORM ARCHIVE ---------------- */
@@ -16,7 +18,7 @@ body.reduced-motion #content > .scene { animation:none !important; }
 .reform-archive .archive-masthead p { margin:0; font:600 .82cqw/1 var(--font-body); letter-spacing:.42em; color:var(--antique); }
 .reform-archive .archive-masthead span { font:italic 400 1.1cqw/1 var(--font-display); color:#cdbba0; }
 .reform-archive .archive-lede { position:absolute; right:5.6cqw; top:3.3cqw; width:23cqw; margin:0; font:400 .95cqw/1.5 var(--font-display); color:#cbb9a0; text-align:right; }
-.reform-archive .archive-volume-card { position:absolute; left:5.6cqw; bottom:6.2cqw; width:21cqw; padding:1.5cqw 1.6cqw 1.3cqw; pointer-events:auto;
+.reform-archive .archive-volume-card { position:absolute; left:5.6cqw; bottom:6.2cqw; width:19.5cqw; padding:1.5cqw 1.6cqw 1.3cqw; pointer-events:auto;
   background:linear-gradient(160deg, rgba(74,14,24,.78), rgba(37,7,13,.86)); border:1px solid rgba(195,164,123,.42); box-shadow:0 1.6cqw 3cqw rgba(0,0,0,.45);
   animation:archive-card .9s .25s var(--ease-out) both; }
 .reform-archive[data-volume="1"] .archive-volume-card { background:linear-gradient(160deg, rgba(120,92,52,.82), rgba(52,33,14,.9)); }
@@ -29,16 +31,16 @@ body.reduced-motion #content > .scene { animation:none !important; }
 .archive-volume-card li::before { content:''; position:absolute; left:0; top:.5em; width:.5cqw; height:1px; background:var(--antique); }
 .archive-volume-link { pointer-events:auto; border:0; border-top:1px solid rgba(195,164,123,.35); background:none; color:var(--antique); padding:.7cqw 0 0; width:100%; text-align:left; font:600 .74cqw/1 var(--font-body); letter-spacing:.14em; text-transform:uppercase; }
 .archive-volume-link:hover, .archive-volume-link:focus-visible { color:#f4ebdc; }
-.reform-archive .archive-milestone { position:absolute; right:5.6cqw; bottom:6.2cqw; width:22cqw; text-align:left; animation:archive-card .9s .4s var(--ease-out) both; }
-.reform-archive .archive-index { display:flex; gap:1.6cqw; margin-bottom:.9cqw; font:600 .78cqw/1 var(--font-body); letter-spacing:.16em; color:#8f7b68; }
+.reform-archive .archive-milestone { position:absolute; right:5.6cqw; bottom:6.2cqw; width:19.5cqw; text-align:left; animation:archive-card .9s .4s var(--ease-out) both; }
+.reform-archive .archive-index { position:static; inset:auto; transform:none; display:flex; gap:1.6cqw; margin-bottom:.9cqw; font:600 .78cqw/1 var(--font-body); letter-spacing:.16em; color:#8f7b68; }
 .reform-archive .archive-index span { position:relative; padding-bottom:.45cqw; }
 .reform-archive .archive-index span.selected { color:var(--parchment); }
 .reform-archive .archive-index span.selected::after { content:''; position:absolute; left:0; right:0; bottom:0; height:2px; background:var(--antique); }
-.reform-archive .archive-year { display:block; font:400 4.4cqw/.9 var(--font-display); color:#f4ebdc; }
+.reform-archive .archive-year { position:static; display:block; font:400 4.4cqw/.9 var(--font-display); color:#f4ebdc; }
 .reform-archive .archive-kind { margin:.5cqw 0 .2cqw; font:600 .7cqw/1.3 var(--font-body); letter-spacing:.18em; text-transform:uppercase; color:var(--antique); }
 .reform-archive .archive-milestone h3 { margin:0 0 .4cqw; font:400 1.55cqw/1.15 var(--font-display); color:#f4ebdc; }
 .reform-archive .archive-milestone .scene-body { margin:0; font-size:.98cqw; line-height:1.45; color:#d9c9b3; max-width:none; }
-.reform-archive .archive-disclaimer { position:absolute; left:50%; bottom:2.2cqw; transform:translateX(-50%); margin:0; font:600 .62cqw/1 var(--font-body); letter-spacing:.2em; text-transform:uppercase; color:#7f6c5d; white-space:nowrap; }
+.reform-archive .archive-disclaimer { position:absolute; top:auto; right:auto; left:50%; bottom:2.2cqw; transform:translateX(-50%); margin:0; font:600 .62cqw/1 var(--font-body); letter-spacing:.2em; text-transform:uppercase; color:#7f6c5d; white-space:nowrap; }
 body.archive-book-hover #viewport, body.archive-book-hover #content { cursor:pointer; }
 
 /* ---------------- Scene 8 · WHAT WOULD YOU DO? (one beat, internal timeline) ---------------- */

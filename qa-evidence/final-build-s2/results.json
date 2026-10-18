@@ -1,0 +1,39 @@
+[
+ {
+  "name": "S2c beat 0→1 camera moves through an intermediate pose (light sampling)",
+  "status": "PASS",
+  "detail": {
+   "a": [
+    0.15,
+    5.7,
+    16.4
+   ],
+   "mid": [
+    0.248,
+    5.718,
+    16.491
+   ],
+   "b": [
+    0.514,
+    5.767,
+    16.736
+   ],
+   "goal": [
+    3.4,
+    6.3,
+    19.4
+   ],
+   "ms": 96767
+  }
+ },
+ {
+  "name": "No page/console errors during targeted run",
+  "status": "PASS",
+  "detail": ""
+ },
+ {
+  "name": "No presentation runtime errors (CPVApp.getErrors)",
+  "status": "PASS",
+  "detail": "[]"
+ }
+]

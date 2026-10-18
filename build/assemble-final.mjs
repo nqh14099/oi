@@ -134,7 +134,22 @@ must(content.scenes.length === 15 && content.scenes.reduce((n, s) => n + s.beats
     const [s, e] = moduleSpan(js, 'CPVHall'); let hall = js.slice(s, e);
     const before = (hall.match(/setRenderTarget\(null\)/g) || []).length;
     hall = hall.replace(/render\(ctx,renderer,scene,camera\)\{/, 'render(ctx,renderer,scene,camera){const __outT=renderer.getRenderTarget();').replace(/setRenderTarget\(null\)/g, 'setRenderTarget(__outT)');
-    must(before >= 2 && hall.includes('__outT=renderer'), 'hall render target patch'); js = js.slice(0, s) + hall + js.slice(e); log('hall render-target patches', before);
+    must(before >= 2 && hall.includes('__outT=renderer'), 'hall render target patch');
+    must(!/\bupdate\(dt,ctx\)/.test(hall), 'hall has no update hook yet');
+    hall = replaceOnce(hall, "const pose=ctx=>ctx.size.width<ctx.size.height?{...CAMERA.hero,position:[0,3.6,12],fov:68}:CAMERA.hero;",
+      "const BEATCAM=[{position:[0,3.5,-5],target:[0,5.2,-60],fov:45},{position:[5.2,4.7,-3],target:[-1.6,4.9,-60],fov:44},{position:[-3,3.1,-11],target:[1.1,5.5,-60],fov:42}];const pose=(ctx,b=beat)=>ctx.size.width<ctx.size.height?{...CAMERA.hero,position:[[0,3.6,12],[2.4,4.2,12],[-1.6,3.2,8]][b]||[0,3.6,12],fov:68}:{...CAMERA.hero,...(BEATCAM[b]||BEATCAM[0])};let lerp=null;", 'hall beat camera');
+    hall = replaceOnce(hall, "get animated(){return false;},", "get animated(){return !!lerp;},update(dt,ctx){if(!lerp)return;lerp.t=Math.min(1,lerp.t+dt/1.6);const e=lerp.t*lerp.t*(3-2*lerp.t),o={};for(const k of Object.keys(STATES[0]))if(k!=='name')o[k]=mix(lerp.from[k],lerp.to[k],e);o.name=lerp.to.name;applyState(o);if(lerp.t>=1)lerp=null;ctx.invalidate();},", 'hall animated');
+    hall = replaceOnce(hall, "setBeat(i,ctx){beat=clamp(i|0,0,2);applyState(STATES[beat]);ctx.camera.reset(pose(ctx));ctx.invalidate();",
+      "setBeat(i,ctx){const from={...S};beat=clamp(i|0,0,2);if(ctx.reducedMotion){lerp=null;applyState(STATES[beat]);ctx.camera.reset(pose(ctx));}else{lerp={from,to:STATES[beat],t:0};ctx.camera.moveTo(pose(ctx),{duration:2600,signal:ctx.signal});}ctx.invalidate();", 'hall setBeat'); js = js.slice(0, s) + hall + js.slice(e); log('hall render-target patches', before);
+  }
+  // Scene 2: authored per-beat camera path (Party → State/Front/organisations → People)
+  {
+    const [s, e] = moduleSpan(js, 'CPVSystem'); let sys = js.slice(s, e);
+    sys = replaceOnce(sys, "function camera(ctx){const portrait=ctx.size.width<ctx.size.height;ctx.camera.reset({projection:'perspective',position:portrait?[.3,8.2,24]:[.35,5.35,20.25],target:portrait?[.6,3,0]:[-1.4,3.05,0],fov:portrait?45:40});}",
+      "function cameraPose(ctx,b=beat){if(ctx.size.width<ctx.size.height)return {projection:'perspective',position:[.3+[0,.9,-.3][b||0],8.2-[0,.4,1.2][b||0],24-[1.5,0,3][b||0]],target:[.6,3,0],fov:45};const P=[{position:[.15,5.7,16.4],target:[-.75,4.2,0],fov:38},{position:[3.4,6.3,19.4],target:[.2,2.5,0],fov:41},{position:[-.35,3.9,14.6],target:[-.95,2.3,0],fov:37}];return {projection:'perspective',...(P[b]||P[0])};}function camera(ctx){ctx.camera.reset(cameraPose(ctx));}", 'system camera');
+    sys = replaceOnce(sys, 'setBeat(i,ctx){beat=i;highlights(ctx);', 'setBeat(i,ctx){beat=i;highlights(ctx);if(ctx.reducedMotion)ctx.camera.reset(cameraPose(ctx,i));else ctx.camera.moveTo(cameraPose(ctx,i),{duration:2400,signal:ctx.signal});', 'system beat camera');
+    sys = replaceOnce(sys, 'if(size!==lastSize){lastSize=size;camera(ctx);cameraObject=ctx.camera.camera;}', 'if(size!==lastSize){lastSize=size;if(!ctx.camera.isTransitioning())camera(ctx);cameraObject=ctx.camera.camera;}', 'system resize');
+    js = js.slice(0, s) + sys + js.slice(e);
   }
   // Registration: newest Scene 1 hero + archive options
   {

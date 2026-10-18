@@ -1,0 +1,306 @@
+[
+ {
+  "name": "S1 living flag renders with particle wordmark (WebGL2)",
+  "status": "PASS",
+  "detail": {
+   "mode": "webgl",
+   "module": {
+    "beat": 0,
+    "time": 0.4666000000000003,
+    "particlesOnly": true,
+    "particles": 500000,
+    "disposed": false
+   },
+   "ms": 7400
+  }
+ },
+ {
+  "name": "S1 title is editable data (DOM heading = data heading)",
+  "status": "PASS",
+  "detail": {
+   "dom": "Reforming Vietnam’s political system",
+   "data": "REFORMING VIETNAM’S POLITICAL SYSTEM",
+   "ms": 3
+  }
+ },
+ {
+  "name": "Hand-off 1→2 sampled 0/25/50/75/100 (live, camera moving, clean end)",
+  "status": "FAIL",
+  "detail": {
+   "live": true,
+   "cameraMovesBetweenSamples": false,
+   "end": {
+    "scene": 2,
+    "beat": 0,
+    "active": 2,
+    "tr": false,
+    "dom": "2"
+   },
+   "phases": [
+    "animate",
+    "animate",
+    "animate",
+    "animate",
+    "idle"
+   ],
+   "cams": [
+    [
+     0.15,
+     5.7,
+     16.4
+    ],
+    [
+     0.15,
+     5.7,
+     16.4
+    ],
+    [
+     0.15,
+     5.7,
+     16.4
+    ],
+    [
+     0.15,
+     5.7,
+     16.4
+    ],
+    [
+     0.15,
+     5.7,
+     16.4
+    ]
+   ],
+   "ms": 237073
+  }
+ },
+ {
+  "name": "S2 beat changes move the camera through intermediate poses",
+  "status": "FAIL",
+  "detail": {
+   "a": [
+    0.15,
+    5.7,
+    16.4
+   ],
+   "mid": [
+    0.15,
+    5.7,
+    16.4
+   ],
+   "b": [
+    0.633,
+    5.789,
+    16.846
+   ],
+   "ms": 156405
+  }
+ },
+ {
+  "name": "S2 HTML labels follow projected model anchors",
+  "status": "PASS",
+  "detail": {
+   "labels": [
+    [
+     "party",
+     "52.834944161383966%",
+     "45.10546635481348%"
+    ],
+    [
+     "state",
+     "30.911801230306367%",
+     "79.59689533073899%"
+    ],
+    [
+     "front",
+     "73.09647132570336%",
+     "79.67225513210143%"
+    ],
+    [
+     "organisations",
+     "80.10914617985547%",
+     "97.58193417525585%"
+    ],
+    [
+     "people",
+     "50.90531649538453%",
+     "89.80035895126571%"
+    ]
+   ],
+   "ms": 2
+  }
+ },
+ {
+  "name": "Hand-off 2→3 sampled 0/50/100",
+  "status": "NOT_TESTED",
+  "detail": "TIMEOUT after 240001 ms"
+ },
+ {
+  "name": "S3 maze: before (beat 0) vs after reform (beat 5) states differ",
+  "status": "FAIL",
+  "detail": {
+   "before": "{}",
+   "after": "{}",
+   "ms": 191190
+  }
+ },
+ {
+  "name": "Hand-off 3→4 sampled 0/50/100",
+  "status": "PASS",
+  "detail": {
+   "live": true,
+   "cameraMovesBetweenSamples": true,
+   "end": {
+    "scene": 4,
+    "beat": 0,
+    "active": 4,
+    "tr": false,
+    "dom": "4"
+   },
+   "phases": [
+    "animate",
+    "animate",
+    "idle"
+   ],
+   "cams": [
+    [
+     -1.943,
+     2.443,
+     21.679
+    ],
+    [
+     -1.279,
+     1.81,
+     19.719
+    ],
+    [
+     -0.08,
+     0.665,
+     16.174
+    ]
+   ],
+   "ms": 121419
+  }
+ },
+ {
+  "name": "S4 ModelFormation seek 0/25/50/75/100 on archive volumes",
+  "status": "PASS",
+  "detail": {
+   "prog": [
+    [
+     0,
+     0,
+     0
+    ],
+    [
+     0.25,
+     0.25,
+     0.25
+    ],
+    [
+     0.5,
+     0.5,
+     0.5
+    ],
+    [
+     0.75,
+     0.75,
+     0.75
+    ],
+    [
+     1,
+     1,
+     1
+    ]
+   ],
+   "formation": [
+    {
+     "meshes": 10,
+     "wires": 10,
+     "restored": true
+    },
+    {
+     "meshes": 10,
+     "wires": 10,
+     "restored": true
+    },
+    {
+     "meshes": 10,
+     "wires": 10,
+     "restored": true
+    }
+   ],
+   "ms": 47287
+  }
+ },
+ {
+  "name": "S4 orbit gallery (12 slots) attached; book selection optional, beat unchanged",
+  "status": "PASS",
+  "detail": {
+   "orbit": {
+    "attached": true,
+    "spin": 1.1126648514389077,
+    "focus": 0,
+    "paused": false,
+    "reveal": 1,
+    "tiles": 12,
+    "imagesReady": 8
+   },
+   "selectedBefore": null,
+   "selectedAfter": 0,
+   "card": "WHY REFORM?",
+   "ms": 13800
+  }
+ },
+ {
+  "name": "S4 beats map to volumes I, II, II and keep 1986 · 2017 · 2025 timeline",
+  "status": "PASS",
+  "detail": {
+   "0": {
+    "vol": "0",
+    "year": "1986",
+    "card": "WHY REFORM?"
+   },
+   "1": {
+    "vol": "1",
+    "year": "2017",
+    "card": "REFORM IN ACTION"
+   },
+   "2": {
+    "vol": "1",
+    "year": "2025",
+    "card": "REFORM IN ACTION"
+   },
+   "ms": 35992
+  }
+ },
+ {
+  "name": "S6 hall: ENFORCE / PREVENT / DISCLOSE states and camera differ",
+  "status": "NOT_TESTED",
+  "detail": "TIMEOUT after 240001 ms"
+ },
+ {
+  "name": "Hand-off 5→6 sampled 0/50/100",
+  "status": "FAIL",
+  "detail": "page.screenshot: Target page, context or browser has been closed\nCall log:\n  - taking page screenshot\n  - waiting for fonts to load...\n  - fonts loaded\n after 49726 ms"
+ },
+ {
+  "name": "Hand-off 6→7 sampled 0/50/100",
+  "status": "FAIL",
+  "detail": "page.evaluate: Target page, context or browser has been closed after 1 ms"
+ },
+ {
+  "name": "S7 pressure documentary: 4 beats, persistent frames re-laid out (Flip)",
+  "status": "FAIL",
+  "detail": "page.evaluate: Target page, context or browser has been closed after 1 ms"
+ },
+ {
+  "name": "Hand-off 7→8 sampled 0/50/100 and Scene 8 has no roster",
+  "status": "FAIL",
+  "detail": "page.evaluate: Target page, context or browser has been closed after 1 ms"
+ },
+ {
+  "name": "Audio: Sound button toggles mute/unmute",
+  "status": "FAIL",
+  "detail": "page.evaluate: Target page, context or browser has been closed after 1 ms"
+ }
+]

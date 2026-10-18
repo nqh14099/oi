@@ -1,0 +1,163 @@
+[
+ {
+  "name": "S2b camera path sampled over frames (effective pose, beat 0→1→2)",
+  "status": "NOT_TESTED",
+  "detail": "TIMEOUT after 240001 ms"
+ },
+ {
+  "name": "S4b archive layout after fix (formation complete, beats 0 and 1)",
+  "status": "PASS",
+  "detail": {
+   "note": "visual review screenshot",
+   "ms": 62099
+  }
+ },
+ {
+  "name": "S6 hall: ENFORCE / PREVENT / DISCLOSE states and camera differ",
+  "status": "FAIL",
+  "detail": {
+   "camsDiffer": false,
+   "statesDiffer": true,
+   "s": [
+    {
+     "cam": [
+      0,
+      3.6,
+      0
+     ],
+     "st": "{\"name\":\"ENFORCE\",\"line\":1,\"hue\":1,\"ring\":0.3,\"node\":0.35,\"link\":0,\"reveal\":0,\"exposure\":1,\"shaft\":0.6,\"haze\":1,\"key\":2.4}"
+    },
+    {
+     "cam": [
+      0,
+      3.6,
+      0
+     ],
+     "st": "{\"name\":\"PREVENT\",\"line\":0.8,\"hue\":1,\"ring\":1,\"node\":1,\"link\":1,\"reveal\":0,\"exposure\":1.05,\"shaft\":0.8,\"haze\":1,\"key\":2.6}"
+    },
+    {
+     "cam": [
+      0,
+      3.6,
+      0
+     ],
+     "st": "{\"name\":\"DISCLOSE\",\"line\":0.5,\"hue\":0.55,\"ring\":0.6,\"node\":0.55,\"link\":0.9,\"reveal\":1,\"exposure\":1.28,\"shaft\":1.25,\"haze\":0.55,\"key\":3.4}"
+    }
+   ],
+   "ms": 160700
+  }
+ },
+ {
+  "name": "S7 pressure documentary: 4 beats, persistent frames re-laid out (Flip)",
+  "status": "PASS",
+  "detail": {
+   "flipLib": true,
+   "st": [
+    {
+     "beat": 0,
+     "phase": "opening",
+     "frames": 8,
+     "first": [
+      610,
+      155,
+      590
+     ]
+    },
+    {
+     "beat": 1,
+     "phase": "pressure",
+     "frames": 8,
+     "first": [
+      719,
+      170,
+      396
+     ]
+    },
+    {
+     "beat": 2,
+     "phase": "restructure",
+     "frames": 8,
+     "first": [
+      164,
+      324,
+      330
+     ]
+    },
+    {
+     "beat": 3,
+     "phase": "hold",
+     "frames": 8,
+     "first": [
+      105,
+      345,
+      230
+     ]
+    }
+   ],
+   "ms": 55682
+  }
+ },
+ {
+  "name": "Hand-off 7→8 sampled 0/50/100 and Scene 8 has no roster",
+  "status": "PASS",
+  "detail": {
+   "live": true,
+   "cameraMovesBetweenSamples": true,
+   "end": {
+    "scene": 8,
+    "beat": 0,
+    "active": 8,
+    "tr": false,
+    "dom": "8"
+   },
+   "phases": [
+    "animate",
+    "animate",
+    "idle"
+   ],
+   "cams": [
+    [
+     0.0003,
+     0.0013,
+     24.1968
+    ],
+    [
+     0,
+     0,
+     23.1
+    ],
+    [
+     0,
+     0,
+     22
+    ]
+   ],
+   "noRoster": true,
+   "ms": 21253
+  }
+ },
+ {
+  "name": "Audio: Sound button toggles mute/unmute",
+  "status": "PASS",
+  "detail": {
+   "a": "Sound off",
+   "b": "Sound on",
+   "c": "Sound off",
+   "audio": {
+    "muted": true,
+    "activeNodes": 0
+   },
+   "ms": 1886
+  }
+ },
+ {
+  "name": "No page/console errors during targeted run",
+  "status": "PASS",
+  "detail": ""
+ },
+ {
+  "name": "No presentation runtime errors (CPVApp.getErrors)",
+  "status": "PASS",
+  "detail": "[]"
+ }
+]

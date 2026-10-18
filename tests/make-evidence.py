@@ -1,6 +1,6 @@
 # Builds frame-stepped demo videos + contact sheets from QA captures.
 # usage: python3 -I make-evidence.py <qa_root> <out_dir>
-import sys, os, glob, subprocess, json
+import sys, os, glob, subprocess, json, re
 from PIL import Image, ImageDraw, ImageFont
 qa, out = sys.argv[1], sys.argv[2]
 os.makedirs(out, exist_ok=True)
@@ -36,8 +36,8 @@ for pair in ['1-2', '2-3', '3-4', '4-5', '5-6', '6-7', '7-8', '8-9', '9-10', '10
     for p in fs:
         pct = os.path.basename(p)[:-4].split('-')[-1]
         trans.append((p, .55 if not pct.endswith('100') else 1.4, f'transition {pair.replace("-", " → ")} · {int(pct)}% · {NOTE}'))
-form = [(p, .7, f'ModelFormation · {int(os.path.basename(p)[10:13])}% · {NOTE}') for p in frames('formation-*.jpg')]
-arch = [(p, 1.6, os.path.basename(p)[:-4] + ' · ' + NOTE) for p in frames('archive-*.jpg')]
+form = [(p, .8, f'ModelFormation · {int(os.path.basename(p)[-7:-4])}% · {NOTE}') for p in frames('*formation-*.jpg')]
+arch = [(p, 1.8, os.path.basename(p)[:-4] + ' · ' + NOTE) for p in frames('s4-layout-*.jpg') + frames('s4-b*.jpg')]
 made = {}
 if trans: made['transitions'] = video(trans, 'demo_transitions')
 if form or arch: made['archive'] = video(form + arch, 'demo_reform_archive_formation')

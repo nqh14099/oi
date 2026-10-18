@@ -733,7 +733,9 @@ body[data-scene="7"] #content.is-transitioning{animation:none;opacity:1;transfor
 
 /* hand-off: DOM of the incoming scene arrives after the live 3D composite has opened */
 @keyframes cpv-dom-arrive { 0%, 42% { opacity:0; transform:translate3d(0,1.1cqw,0); clip-path:inset(0 0 100% 0); } 100% { opacity:1; transform:none; clip-path:inset(0 0 0 0); } }
-body.cpv-handoff:not([data-scene="7"]) #content > .scene { animation:cpv-dom-arrive var(--handoff-ms,1600ms) cubic-bezier(.2,.7,.1,1) both !important; }
+/* DOM is driven by the director's progress (--handoff-p), not wall-clock time, so text never leads the 3D reveal */
+body.cpv-handoff:not([data-scene="7"]) #content > .scene { animation:none !important; opacity:clamp(0, calc((var(--handoff-p, 1) - .5) * 2.6), 1);
+  transform:translate3d(0, calc((1 - clamp(0, calc((var(--handoff-p, 1) - .45) * 2), 1)) * 1.1cqw), 0); clip-path:inset(0 0 calc((1 - clamp(0, calc((var(--handoff-p, 1) - .42) * 1.9), 1)) * 100%) 0); }
 body.reduced-motion #content > .scene { animation:none !important; }
 
 /* ---------------- Scene 4 · THE REFORM ARCHIVE ---------------- */
@@ -743,7 +745,7 @@ body.reduced-motion #content > .scene { animation:none !important; }
 .reform-archive .archive-masthead p { margin:0; font:600 .82cqw/1 var(--font-body); letter-spacing:.42em; color:var(--antique); }
 .reform-archive .archive-masthead span { font:italic 400 1.1cqw/1 var(--font-display); color:#cdbba0; }
 .reform-archive .archive-lede { position:absolute; right:5.6cqw; top:3.3cqw; width:23cqw; margin:0; font:400 .95cqw/1.5 var(--font-display); color:#cbb9a0; text-align:right; }
-.reform-archive .archive-volume-card { position:absolute; left:5.6cqw; bottom:6.2cqw; width:21cqw; padding:1.5cqw 1.6cqw 1.3cqw; pointer-events:auto;
+.reform-archive .archive-volume-card { position:absolute; left:5.6cqw; bottom:6.2cqw; width:19.5cqw; padding:1.5cqw 1.6cqw 1.3cqw; pointer-events:auto;
   background:linear-gradient(160deg, rgba(74,14,24,.78), rgba(37,7,13,.86)); border:1px solid rgba(195,164,123,.42); box-shadow:0 1.6cqw 3cqw rgba(0,0,0,.45);
   animation:archive-card .9s .25s var(--ease-out) both; }
 .reform-archive[data-volume="1"] .archive-volume-card { background:linear-gradient(160deg, rgba(120,92,52,.82), rgba(52,33,14,.9)); }
@@ -756,16 +758,16 @@ body.reduced-motion #content > .scene { animation:none !important; }
 .archive-volume-card li::before { content:''; position:absolute; left:0; top:.5em; width:.5cqw; height:1px; background:var(--antique); }
 .archive-volume-link { pointer-events:auto; border:0; border-top:1px solid rgba(195,164,123,.35); background:none; color:var(--antique); padding:.7cqw 0 0; width:100%; text-align:left; font:600 .74cqw/1 var(--font-body); letter-spacing:.14em; text-transform:uppercase; }
 .archive-volume-link:hover, .archive-volume-link:focus-visible { color:#f4ebdc; }
-.reform-archive .archive-milestone { position:absolute; right:5.6cqw; bottom:6.2cqw; width:22cqw; text-align:left; animation:archive-card .9s .4s var(--ease-out) both; }
-.reform-archive .archive-index { display:flex; gap:1.6cqw; margin-bottom:.9cqw; font:600 .78cqw/1 var(--font-body); letter-spacing:.16em; color:#8f7b68; }
+.reform-archive .archive-milestone { position:absolute; right:5.6cqw; bottom:6.2cqw; width:19.5cqw; text-align:left; animation:archive-card .9s .4s var(--ease-out) both; }
+.reform-archive .archive-index { position:static; inset:auto; transform:none; display:flex; gap:1.6cqw; margin-bottom:.9cqw; font:600 .78cqw/1 var(--font-body); letter-spacing:.16em; color:#8f7b68; }
 .reform-archive .archive-index span { position:relative; padding-bottom:.45cqw; }
 .reform-archive .archive-index span.selected { color:var(--parchment); }
 .reform-archive .archive-index span.selected::after { content:''; position:absolute; left:0; right:0; bottom:0; height:2px; background:var(--antique); }
-.reform-archive .archive-year { display:block; font:400 4.4cqw/.9 var(--font-display); color:#f4ebdc; }
+.reform-archive .archive-year { position:static; display:block; font:400 4.4cqw/.9 var(--font-display); color:#f4ebdc; }
 .reform-archive .archive-kind { margin:.5cqw 0 .2cqw; font:600 .7cqw/1.3 var(--font-body); letter-spacing:.18em; text-transform:uppercase; color:var(--antique); }
 .reform-archive .archive-milestone h3 { margin:0 0 .4cqw; font:400 1.55cqw/1.15 var(--font-display); color:#f4ebdc; }
 .reform-archive .archive-milestone .scene-body { margin:0; font-size:.98cqw; line-height:1.45; color:#d9c9b3; max-width:none; }
-.reform-archive .archive-disclaimer { position:absolute; left:50%; bottom:2.2cqw; transform:translateX(-50%); margin:0; font:600 .62cqw/1 var(--font-body); letter-spacing:.2em; text-transform:uppercase; color:#7f6c5d; white-space:nowrap; }
+.reform-archive .archive-disclaimer { position:absolute; top:auto; right:auto; left:50%; bottom:2.2cqw; transform:translateX(-50%); margin:0; font:600 .62cqw/1 var(--font-body); letter-spacing:.2em; text-transform:uppercase; color:#7f6c5d; white-space:nowrap; }
 body.archive-book-hover #viewport, body.archive-book-hover #content { cursor:pointer; }
 
 /* ---------------- Scene 8 · WHAT WOULD YOU DO? (one beat, internal timeline) ---------------- */
@@ -78524,7 +78526,7 @@ function createTransitionDirector({ THREE, createCameraRig, invalidate, report =
   }
 
   let renderer = null, rt = null, quad = null, size = { width: 1, height: 1 }, dpr = 1;
-  let handoff = null, blend = null, lastState = null, completed = 0;
+  let handoff = null, blend = null, lastState = null, completed = 0, effective = null;
   const history = [];
   const tmp = { p: new THREE.Vector3(), t: new THREE.Vector3(), f: new THREE.Vector3(), q: new THREE.Quaternion() };
 
@@ -78542,9 +78544,9 @@ float sdBox(vec2 p,vec2 b,float r){vec2 q=abs(p)-b+r;return length(max(q,0.))+mi
 void main(){
  vec2 uv=vUv,a=vec2(uAspect,1.);float p=uP,m=0.,edge=1e3,w=.006;vec2 warp=vec2(0.);
  if(uStyle<.5){ // iris from a matched anchor
-  float d=length((uv-uCenter)*a);float R=p*p*(3.-2.*p)*1.25*length(a);m=smoothstep(R+w,R-w,d);edge=d-R;warp=normalize((uv-uCenter)*a+1e-5)*.018*exp(-pow(edge/.06,2.))*(1.-p);
+  float d=length((uv-uCenter)*a);vec2 far2=max(uCenter,1.-uCenter)*a;float R=p*p*(3.-2.*p)*(length(far2)+.04);m=smoothstep(R+w,R-w,d);edge=d-R;warp=normalize((uv-uCenter)*a+1e-5)*.018*exp(-pow(edge/.06,2.))*(1.-p);
  }else if(uStyle<1.5){ // portal / doorway that the camera passes through
-  vec2 q=(uv-uCenter)*a;float g=pow(p,1.35);vec2 b=mix(vec2(.035,.07),vec2(1.15*uAspect,1.25),g);float sd=sdBox(q-vec2(0.,mix(-.03,0.,g)),b,mix(.03,.0,g));
+  vec2 q=(uv-uCenter)*a;float g=pow(p,1.35);vec2 b=mix(vec2(.035,.07),vec2((max(uCenter.x,1.-uCenter.x))*uAspect+.03,max(uCenter.y,1.-uCenter.y)+.06),g);float sd=sdBox(q-vec2(0.,mix(-.03,0.,g)),b,mix(.03,.0,g));
   m=smoothstep(w,-w,sd);edge=sd;
  }else if(uStyle<2.5){ // torn paper / archival page reveal
   vec2 dir=normalize(uDir);float s=dot((uv-.5)*a,dir)/(.5*abs(dir.x)*uAspect+.5*abs(dir.y))*.5+.5;
@@ -78659,7 +78661,7 @@ void main(){
         handoff = { record, scene, rig, config, t: 0, phase: 'prepare', fromId, toId, contextFor, hookFn, custom: typeof record.module.render === 'function', startPose: rig.getPose() };
         history.push({ key: config.key, name: config.name, style: config.style, reverse: config.reverse, startedAt: performance.now() });
         if (history.length > 40) history.shift();
-        document.body.classList.add('cpv-handoff');
+        document.body.style.setProperty('--handoff-p', '0'); document.body.classList.add('cpv-handoff');
         document.body.style.setProperty('--handoff-ms', `${Math.round(config.duration * 1000)}ms`);
         document.body.dataset.handoff = config.key;
         handoff.phase = 'enter';
@@ -78690,10 +78692,11 @@ void main(){
     applyCamera(mainCamera) {
       const cam = mainCamera.camera, undo = [];
       if (handoff) {
-        const k = 1 - ease.out(clamp01(handoff.t / handoff.config.duration));
+        const k = 1 - ease.inOut(clamp01(handoff.t / handoff.config.duration));
         const r = cameraLayer(cam, mainCamera, handoff.config.enter, k); if (r) undo.push(r);
       }
       const b = blendLayer(cam); if (b) undo.push(b);
+      effective = cam.position.toArray().map(v => +v.toFixed(4));
       return () => { while (undo.length) undo.pop()(); };
     },
     renderOutgoing() {
@@ -78720,6 +78723,7 @@ void main(){
       const autoClear = renderer.autoClear;
       try { renderer.autoClear = false; renderer.setRenderTarget(null); renderer.render(quad.scene, quad.camera); }
       finally { renderer.autoClear = autoClear; }
+      document.body.style.setProperty('--handoff-p', u.uP.value.toFixed(3));
       lastState = { key: c.key, progress: u.uP.value, raw: clamp01(h.t / c.duration), phase: h.phase };
     },
     // exit + cleanup
@@ -78736,14 +78740,14 @@ void main(){
       h.phase = 'cleanup';
       completed++;
       const last = history[history.length - 1]; if (last) { last.endedBy = reason; last.endedAt = performance.now(); }
-      document.body.classList.remove('cpv-handoff'); delete document.body.dataset.handoff;
+      document.body.classList.remove('cpv-handoff'); delete document.body.dataset.handoff; document.body.style.setProperty('--handoff-p', '1');
       invalidate();
     },
     seek(progress) { if (handoff) { handoff.t = clamp01(progress) * handoff.config.duration; invalidate(); } },
     pauseClock(value) { api.frozen = Boolean(value); },
     getState: () => Object.freeze({ active: Boolean(handoff), phase: handoff?.phase ?? 'idle', key: handoff?.config.key ?? null,
       name: handoff?.config.name ?? null, progress: handoff ? clamp01(handoff.t / handoff.config.duration) : 1, blending: Boolean(blend),
-      completed, last: lastState, history: history.slice(-12) }),
+      completed, last: lastState, effective, history: history.slice(-12) }),
     pairs: PAIRS,
     dispose() { if (handoff) api.finish('disposed'); rt?.dispose(); quad?.material.dispose(); quad = null; rt = null; renderer = null; }
   };
@@ -81095,7 +81099,7 @@ const BEAT_VOLUME = [0, 1, 1];
 
 function createArchiveOrbit({ assets = {} } = {}) {
   // ring constants in a 1600×900 stage (GalleryHeading RING model, re-proportioned)
-  const RING = { cx: 800, cy: 268, a: 610, ratio: .26, axis: -6, n: 12, tile: 168, radius: .16, dist: 9, phase: 90 };
+  const RING = { cx: 800, cy: 236, a: 540, ratio: .2, axis: -5, n: 12, tile: 118, radius: .16, dist: 9, phase: 90 };
   const DUR = 72; // one slow revolution; purposeful, never a commercial spinner
   const images = new Map();
   for (const [key, src] of Object.entries(assets)) { const img = new Image(); img.decoding = 'async'; img.src = src; images.set(key, img); }
@@ -81302,10 +81306,10 @@ function createArchiveScene(sceneData, { assets = {}, createFormation = null } =
   function layout(instant = false) {
     const focusV = selected ?? volume;
     books.forEach((b, i) => {
-      const slot = i - focusV, front = slot === 0;
-      b.target.p.set(slot * 3.85, front ? -1.25 : -1.55, front ? 1.2 : -.35);
-      b.target.r.set(-.04, front ? -.12 : (slot < 0 ? .34 : -.38), front ? -.01 : (slot < 0 ? .05 : -.05));
-      b.target.s = front ? 1 : .86;
+      const slot = i - 1, front = i === focusV;
+      b.target.p.set(slot * 3.45, front ? -1.3 : -1.6, front ? .95 : -.55);
+      b.target.r.set(-.04, front ? -.1 + slot * -.06 : (slot < 0 ? .3 : slot > 0 ? -.34 : -.06), front ? -.01 : (slot < 0 ? .04 : -.04));
+      b.target.s = front ? 1 : .8;
       if (instant) { b.pivot.position.copy(b.target.p); b.pivot.rotation.copy(b.target.r); b.pivot.scale.setScalar(b.target.s); }
     });
     orbit.setFocus(focusV, { immediate: instant });
@@ -81313,8 +81317,8 @@ function createArchiveScene(sceneData, { assets = {}, createFormation = null } =
   }
   function cameraPose(ctx, focusV = selected ?? volume) {
     const portrait = ctx.size.width < ctx.size.height;
-    const x = portrait ? 0 : 0; // composition is centred on the focused volume
-    return { projection: 'perspective', position: portrait ? [x, .2, 23] : [x + .25, .35, 15.2], target: [x, -.15, 0], fov: portrait ? 40 : 34 };
+    const x = portrait ? 0 : (focusV - 1) * .9; // camera trucks toward the focused volume
+    return { projection: 'perspective', position: portrait ? [x, .6, 25] : [x + .25, 1.1, 20.5], target: [x, .55, 0], fov: portrait ? 40 : 34 };
   }
   function syncDom() {
     const node = document.querySelector('.reform-archive'); if (!node) return;
@@ -81365,7 +81369,7 @@ function createArchiveScene(sceneData, { assets = {}, createFormation = null } =
       on(document, 'click', e => {
         const go = e.target.closest?.('[data-archive-go]'); if (go) { e.preventDefault(); window.CPVApp?.navigation.goToScene(Number(go.dataset.archiveGo)); return; }
         if (e.target.closest?.('button,a,input,textarea,select,[role="dialog"],#controls')) return;
-        const v = pick(e); if (v < 0) return; selected = v === (selected ?? volume) && selected !== null ? null : v; layout(); ctxRef?.invalidate();
+        const v = pick(e); if (v < 0) return; selected = v === (selected ?? volume) && selected !== null ? null : v; layout(); if (ctxRef && !ctxRef.camera.isTransitioning()) ctxRef.camera.moveTo(cameraPose(ctxRef), { duration: 1400 }); ctxRef?.invalidate();
       });
     },
     setBeat(i, ctx, meta = {}) {
@@ -82002,7 +82006,7 @@ function createPoliticalSystemScene() {
     ctx.setLighting({ambient:{color:'#c1a88c',intensity:.22},directional:{color:'#ffdfb3',intensity:2.1,position:[-3.5,8,5],castShadow:true},point:{color:'#f8b979',intensity:25,position:[3.5,3,-1],distance:16}});
     const dir=ctx.lights.directional;Object.assign(dir.shadow.camera,{left:-9,right:9,top:10,bottom:-6,near:.5,far:40});dir.shadow.camera.updateProjectionMatrix();dir.shadow.bias=-.00025;dir.shadow.normalBias=.025;
   }
-  function camera(ctx){const portrait=ctx.size.width<ctx.size.height;ctx.camera.reset({projection:'perspective',position:portrait?[.3,8.2,24]:[.35,5.35,20.25],target:portrait?[.6,3,0]:[-1.4,3.05,0],fov:portrait?45:40});}
+  function cameraPose(ctx,b=beat){if(ctx.size.width<ctx.size.height)return {projection:'perspective',position:[.3+[0,.9,-.3][b||0],8.2-[0,.4,1.2][b||0],24-[1.5,0,3][b||0]],target:[.6,3,0],fov:45};const P=[{position:[.15,5.7,16.4],target:[-.75,4.2,0],fov:38},{position:[3.4,6.3,19.4],target:[.2,2.5,0],fov:41},{position:[-.35,3.9,14.6],target:[-.95,2.3,0],fov:37}];return {projection:'perspective',...(P[b]||P[0])};}function camera(ctx){ctx.camera.reset(cameraPose(ctx));}
   function highlights(ctx){for(const [name,g]of Object.entries(sculptures.groups)){g.userData.active=beat===0?name==='party':beat===1?['state','front','organisations'].includes(name):name==='people';}ctx.invalidate();}
   function ibl(renderer){
     const room=new T.Scene(),geometries=[],mats=[];room.background=new T.Color('#393029');
@@ -82021,9 +82025,9 @@ function createPoliticalSystemScene() {
       add('spot','#ffd198',210,[-3,9,5],[0,1,0]);add('directional','#f8bf76',2.4,[4,5,-4]);add('directional','#b0bdc8',.38,[-5,4,7]);
     },
     activate(ctx){ctxRef=ctx;ctx.setBackground({color:'#05060a'});lighting(ctx);camera(ctx);lastSize='';},
-    setBeat(i,ctx){beat=i;highlights(ctx);},
+    setBeat(i,ctx){beat=i;highlights(ctx);if(ctx.reducedMotion)ctx.camera.reset(cameraPose(ctx,i));else ctx.camera.moveTo(cameraPose(ctx,i),{duration:2400,signal:ctx.signal});},
     render(ctx,renderer,scene,cameraObject){
-      const size=ctx.size.width+':'+ctx.size.height;if(size!==lastSize){lastSize=size;camera(ctx);cameraObject=ctx.camera.camera;}
+      const size=ctx.size.width+':'+ctx.size.height;if(size!==lastSize){lastSize=size;if(!ctx.camera.isTransitioning())camera(ctx);cameraObject=ctx.camera.camera;}
       if(!studio)studio=ibl(renderer);
       root.updateMatrixWorld(true);cameraObject.updateMatrixWorld(true);
       for(const [key,point]of Object.entries(sculptures.anchors)){const el=document.querySelector('[data-system-label="'+key+'"]');if(!el)continue;const v=new T.Vector3(...point).project(cameraObject);el.style.setProperty('--sx',((v.x*.5+.5)*100)+'%');el.style.setProperty('--sy',((-v.y*.5+.5)*100)+'%');}
@@ -82278,16 +82282,16 @@ function applyState(p={}){Object.assign(S,p);const L=P.lm;if(!L)return;
  M.tier.opacity=1-.93*S.reveal;M.tier.depthWrite=S.reveal<.4;M.ghost.opacity=.04+.14*S.reveal;
  P.records.visible=S.reveal>.01;P.recMats.forEach(m=>m.opacity=S.reveal*.9);P.frames.visible=S.reveal>.01;P.frameMat.opacity=S.reveal;
  P.shafts.forEach(m=>m.opacity=.14*S.shaft);P.key.intensity=S.key;}
-const pose=ctx=>ctx.size.width<ctx.size.height?{...CAMERA.hero,position:[0,3.6,12],fov:68}:CAMERA.hero;
+const BEATCAM=[{position:[0,3.5,-5],target:[0,5.2,-60],fov:45},{position:[5.2,4.7,-3],target:[-1.6,4.9,-60],fov:44},{position:[-3,3.1,-11],target:[1.1,5.5,-60],fov:42}];const pose=(ctx,b=beat)=>ctx.size.width<ctx.size.height?{...CAMERA.hero,position:[[0,3.6,12],[2.4,4.2,12],[-1.6,3.2,8]][b]||[0,3.6,12],fov:68}:{...CAMERA.hero,...(BEATCAM[b]||BEATCAM[0])};let lerp=null;
 const module={
- get animated(){return false;},
+ get animated(){return !!lerp;},update(dt,ctx){if(!lerp)return;lerp.t=Math.min(1,lerp.t+dt/1.6);const e=lerp.t*lerp.t*(3-2*lerp.t),o={};for(const k of Object.keys(STATES[0]))if(k!=='name')o[k]=mix(lerp.from[k],lerp.to[k],e);o.name=lerp.to.name;applyState(o);if(lerp.t>=1)lerp=null;ctx.invalidate();},
  states:STATES,cameraKeys:CAMERA,parts:P,applyState,
  lerpState(a,b,t){const o={};for(const k of Object.keys(STATES[0]))if(k!=='name')o[k]=mix(STATES[a][k],STATES[b][k],t);applyState(o);},
  setup(ctx){T=ctx.THREE;root=ctx.root;own=ctx.own;build();},
  activate(ctx){ctx.setBackground({color:'#070508',fogNear:55,fogFar:200});
   ctx.setLighting({ambient:{intensity:0},directional:{intensity:0,castShadow:false},point:{intensity:0}});
   ctx.camera.reset(pose(ctx));applyState(STATES[beat]);ctx.invalidate();},
- setBeat(i,ctx){beat=clamp(i|0,0,2);applyState(STATES[beat]);ctx.camera.reset(pose(ctx));ctx.invalidate();},
+ setBeat(i,ctx){const from={...S};beat=clamp(i|0,0,2);if(ctx.reducedMotion){lerp=null;applyState(STATES[beat]);ctx.camera.reset(pose(ctx));}else{lerp={from,to:STATES[beat],t:0};ctx.camera.moveTo(pose(ctx),{duration:2600,signal:ctx.signal});}ctx.invalidate();},
  render(ctx,renderer,scene,camera){const __outT=renderer.getRenderTarget();
   if(!env){const es=new T.Scene();es.background=new T.Color('#070605');const e=(c,k)=>new T.MeshBasicMaterial({color:new T.Color(c).multiplyScalar(k),side:T.DoubleSide});
    const bx=(w,h,d,x,y,z,m)=>{const o=new T.Mesh(new T.BoxGeometry(w,h,d),m);o.position.set(x,y,z);es.add(o);};

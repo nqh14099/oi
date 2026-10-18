@@ -1,0 +1,13 @@
+PASS webgl2 renderer active (not fallback) webgl
+PASS 15 scenes / 37 beats in data {"scenes":15,"beats":37,"s8":false}
+PASS quiz select + submit + explanation {"submitted":true,"explanation":true,"result":"Correct answer: D."}
+FAIL audio mute/unmute toggles Sound off → Sound off
+PASS Export HTML produces a self-contained document {"ok":true,"len":5878642,"type":"string"}
+PASS reduced-motion: no animated hand-off, immediate defined state "idle"
+PASS portrait 390×844 Scene 1 without horizontal overflow overflow 0
+PASS portrait 390×844 Scene 4 without horizontal overflow overflow 0
+PASS portrait 390×844 Scene 7 without horizontal overflow overflow 0
+PASS portrait 390×844 Scene 8 without horizontal overflow overflow 0
+PASS no page/console errors 
+PASS no presentation runtime errors []
+SUMMARY 11/12 passed

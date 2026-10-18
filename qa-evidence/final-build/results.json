@@ -1,0 +1,43 @@
+[
+ {
+  "name": "S4b archive layout after fix (formation complete, beats 0 and 1)",
+  "status": "PASS",
+  "detail": {
+   "note": "visual review screenshot",
+   "ms": 31030
+  }
+ },
+ {
+  "name": "S6c hall beat change moves the camera (ENFORCE → PREVENT, intermediate pose)",
+  "status": "PASS",
+  "detail": {
+   "a": [
+    0,
+    3.5,
+    -5
+   ],
+   "mid": [
+    0.05,
+    3.512,
+    -4.981
+   ],
+   "b": [
+    0.192,
+    3.544,
+    -4.926
+   ],
+   "state": "PREVENT",
+   "ms": 78091
+  }
+ },
+ {
+  "name": "No page/console errors during targeted run",
+  "status": "PASS",
+  "detail": ""
+ },
+ {
+  "name": "No presentation runtime errors (CPVApp.getErrors)",
+  "status": "PASS",
+  "detail": "[]"
+ }
+]

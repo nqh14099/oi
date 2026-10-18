@@ -53,7 +53,7 @@ function createTransitionDirector({ THREE, createCameraRig, invalidate, report =
   }
 
   let renderer = null, rt = null, quad = null, size = { width: 1, height: 1 }, dpr = 1;
-  let handoff = null, blend = null, lastState = null, completed = 0;
+  let handoff = null, blend = null, lastState = null, completed = 0, effective = null;
   const history = [];
   const tmp = { p: new THREE.Vector3(), t: new THREE.Vector3(), f: new THREE.Vector3(), q: new THREE.Quaternion() };
 
@@ -71,9 +71,9 @@ float sdBox(vec2 p,vec2 b,float r){vec2 q=abs(p)-b+r;return length(max(q,0.))+mi
 void main(){
  vec2 uv=vUv,a=vec2(uAspect,1.);float p=uP,m=0.,edge=1e3,w=.006;vec2 warp=vec2(0.);
  if(uStyle<.5){ // iris from a matched anchor
-  float d=length((uv-uCenter)*a);float R=p*p*(3.-2.*p)*1.25*length(a);m=smoothstep(R+w,R-w,d);edge=d-R;warp=normalize((uv-uCenter)*a+1e-5)*.018*exp(-pow(edge/.06,2.))*(1.-p);
+  float d=length((uv-uCenter)*a);vec2 far2=max(uCenter,1.-uCenter)*a;float R=p*p*(3.-2.*p)*(length(far2)+.04);m=smoothstep(R+w,R-w,d);edge=d-R;warp=normalize((uv-uCenter)*a+1e-5)*.018*exp(-pow(edge/.06,2.))*(1.-p);
  }else if(uStyle<1.5){ // portal / doorway that the camera passes through
-  vec2 q=(uv-uCenter)*a;float g=pow(p,1.35);vec2 b=mix(vec2(.035,.07),vec2(1.15*uAspect,1.25),g);float sd=sdBox(q-vec2(0.,mix(-.03,0.,g)),b,mix(.03,.0,g));
+  vec2 q=(uv-uCenter)*a;float g=pow(p,1.35);vec2 b=mix(vec2(.035,.07),vec2((max(uCenter.x,1.-uCenter.x))*uAspect+.03,max(uCenter.y,1.-uCenter.y)+.06),g);float sd=sdBox(q-vec2(0.,mix(-.03,0.,g)),b,mix(.03,.0,g));
   m=smoothstep(w,-w,sd);edge=sd;
  }else if(uStyle<2.5){ // torn paper / archival page reveal
   vec2 dir=normalize(uDir);float s=dot((uv-.5)*a,dir)/(.5*abs(dir.x)*uAspect+.5*abs(dir.y))*.5+.5;
@@ -188,7 +188,7 @@ void main(){
         handoff = { record, scene, rig, config, t: 0, phase: 'prepare', fromId, toId, contextFor, hookFn, custom: typeof record.module.render === 'function', startPose: rig.getPose() };
         history.push({ key: config.key, name: config.name, style: config.style, reverse: config.reverse, startedAt: performance.now() });
         if (history.length > 40) history.shift();
-        document.body.classList.add('cpv-handoff');
+        document.body.style.setProperty('--handoff-p', '0'); document.body.classList.add('cpv-handoff');
         document.body.style.setProperty('--handoff-ms', `${Math.round(config.duration * 1000)}ms`);
         document.body.dataset.handoff = config.key;
         handoff.phase = 'enter';
@@ -219,10 +219,11 @@ void main(){
     applyCamera(mainCamera) {
       const cam = mainCamera.camera, undo = [];
       if (handoff) {
-        const k = 1 - ease.out(clamp01(handoff.t / handoff.config.duration));
+        const k = 1 - ease.inOut(clamp01(handoff.t / handoff.config.duration));
         const r = cameraLayer(cam, mainCamera, handoff.config.enter, k); if (r) undo.push(r);
       }
       const b = blendLayer(cam); if (b) undo.push(b);
+      effective = cam.position.toArray().map(v => +v.toFixed(4));
       return () => { while (undo.length) undo.pop()(); };
     },
     renderOutgoing() {
@@ -249,6 +250,7 @@ void main(){
       const autoClear = renderer.autoClear;
       try { renderer.autoClear = false; renderer.setRenderTarget(null); renderer.render(quad.scene, quad.camera); }
       finally { renderer.autoClear = autoClear; }
+      document.body.style.setProperty('--handoff-p', u.uP.value.toFixed(3));
       lastState = { key: c.key, progress: u.uP.value, raw: clamp01(h.t / c.duration), phase: h.phase };
     },
     // exit + cleanup
@@ -265,14 +267,14 @@ void main(){
       h.phase = 'cleanup';
       completed++;
       const last = history[history.length - 1]; if (last) { last.endedBy = reason; last.endedAt = performance.now(); }
-      document.body.classList.remove('cpv-handoff'); delete document.body.dataset.handoff;
+      document.body.classList.remove('cpv-handoff'); delete document.body.dataset.handoff; document.body.style.setProperty('--handoff-p', '1');
       invalidate();
     },
     seek(progress) { if (handoff) { handoff.t = clamp01(progress) * handoff.config.duration; invalidate(); } },
     pauseClock(value) { api.frozen = Boolean(value); },
     getState: () => Object.freeze({ active: Boolean(handoff), phase: handoff?.phase ?? 'idle', key: handoff?.config.key ?? null,
       name: handoff?.config.name ?? null, progress: handoff ? clamp01(handoff.t / handoff.config.duration) : 1, blending: Boolean(blend),
-      completed, last: lastState, history: history.slice(-12) }),
+      completed, last: lastState, effective, history: history.slice(-12) }),
     pairs: PAIRS,
     dispose() { if (handoff) api.finish('disposed'); rt?.dispose(); quad?.material.dispose(); quad = null; rt = null; renderer = null; }
   };

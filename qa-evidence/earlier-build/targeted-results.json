@@ -1,0 +1,147 @@
+[
+ {
+  "name": "S1 living flag renders with particle wordmark (WebGL2)",
+  "status": "PASS",
+  "detail": {
+   "mode": "webgl",
+   "module": {
+    "beat": 0,
+    "time": 0.4666000000000003,
+    "particlesOnly": true,
+    "particles": 500000,
+    "disposed": false
+   },
+   "ms": 6807
+  }
+ },
+ {
+  "name": "S1 title is editable data (DOM heading = data heading)",
+  "status": "PASS",
+  "detail": {
+   "dom": "Reforming Vietnam’s political system",
+   "data": "REFORMING VIETNAM’S POLITICAL SYSTEM",
+   "ms": 3
+  }
+ },
+ {
+  "name": "Hand-off 1→2 sampled 0/25/50/75/100 (live, camera moving, clean end)",
+  "status": "NOT_TESTED",
+  "detail": "TIMEOUT after 150001 ms"
+ },
+ {
+  "name": "S2 beat changes move the camera through intermediate poses",
+  "status": "FAIL",
+  "detail": {
+   "a": [
+    0.35,
+    5.35,
+    20.25
+   ],
+   "mid": [
+    0.35,
+    5.35,
+    20.25
+   ],
+   "b": [
+    0.35,
+    5.35,
+    20.25
+   ],
+   "ms": 118408
+  }
+ },
+ {
+  "name": "S2 HTML labels follow projected model anchors",
+  "status": "PASS",
+  "detail": {
+   "labels": [
+    [
+     "party",
+     "55.47582283348179%",
+     "41.81586234780867%"
+    ],
+    [
+     "state",
+     "37.75964440437002%",
+     "69.67001135226644%"
+    ],
+    [
+     "front",
+     "72.66611376656691%",
+     "69.61250036939406%"
+    ],
+    [
+     "organisations",
+     "78.29317698267631%",
+     "80.68114831951023%"
+    ],
+    [
+     "people",
+     "54.88492385192308%",
+     "76.20429512081218%"
+    ]
+   ],
+   "ms": 2
+  }
+ },
+ {
+  "name": "Hand-off 2→3 sampled 0/50/100",
+  "status": "NOT_TESTED",
+  "detail": "TIMEOUT after 150000 ms"
+ },
+ {
+  "name": "S3 maze: before (beat 0) vs after reform (beat 5) states differ",
+  "status": "FAIL",
+  "detail": "page.evaluate: Target page, context or browser has been closed after 5516 ms"
+ },
+ {
+  "name": "Hand-off 3→4 sampled 0/50/100",
+  "status": "FAIL",
+  "detail": "page.evaluate: Target page, context or browser has been closed after 1 ms"
+ },
+ {
+  "name": "S4 ModelFormation seek 0/25/50/75/100 on archive volumes",
+  "status": "FAIL",
+  "detail": "page.evaluate: Target page, context or browser has been closed after 1 ms"
+ },
+ {
+  "name": "S4 orbit gallery (12 slots) attached; book selection optional, beat unchanged",
+  "status": "FAIL",
+  "detail": "page.evaluate: Target page, context or browser has been closed after 1 ms"
+ },
+ {
+  "name": "S4 beats map to volumes I, II, II and keep 1986 · 2017 · 2025 timeline",
+  "status": "FAIL",
+  "detail": "page.evaluate: Target page, context or browser has been closed after 2 ms"
+ },
+ {
+  "name": "S6 hall: ENFORCE / PREVENT / DISCLOSE states and camera differ",
+  "status": "FAIL",
+  "detail": "page.evaluate: Target page, context or browser has been closed after 1 ms"
+ },
+ {
+  "name": "Hand-off 5→6 sampled 0/50/100",
+  "status": "FAIL",
+  "detail": "page.evaluate: Target page, context or browser has been closed after 2 ms"
+ },
+ {
+  "name": "Hand-off 6→7 sampled 0/50/100",
+  "status": "FAIL",
+  "detail": "page.evaluate: Target page, context or browser has been closed after 1 ms"
+ },
+ {
+  "name": "S7 pressure documentary: 4 beats, persistent frames re-laid out (Flip)",
+  "status": "FAIL",
+  "detail": "page.evaluate: Target page, context or browser has been closed after 1 ms"
+ },
+ {
+  "name": "Hand-off 7→8 sampled 0/50/100 and Scene 8 has no roster",
+  "status": "FAIL",
+  "detail": "page.evaluate: Target page, context or browser has been closed after 2 ms"
+ },
+ {
+  "name": "Audio: Sound button toggles mute/unmute",
+  "status": "FAIL",
+  "detail": "page.evaluate: Target page, context or browser has been closed after 1 ms"
+ }
+]
